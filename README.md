@@ -1,23 +1,22 @@
-TinTin#
-===========
+<b>TinTin#</b>
+<hr>
 
-TinTin# is a console client interpreter enhanced with features for various communication protocols such as telnet/ssh/etc.
-Its main purpose is for parallel automation.
+TinTin# is a console client interpreter enhanced with features for various communication protocols such as telnet/ssh/etc.<br>
 
-Text received from the remote server can be screen scraped to execute triggers.
 
--Supported Protocols
+<pre>
+<b>Supported Protocols</b>
 
-• Character Mode  Allows directly transmitting client input, required for BBSes, *NIX servers, and roguelikes.
-• Go Ahead	Allows the server to indicate the end of output, allowing better client side prompt handling.
-• MCCP	Allows the compression of the data transfer from the server to the client.
-• MudMaster Chat	Allows instant messaging and file transfers over private P2P connections.
-• NAWS	Allows sending the client's window size to the server.
-• TELNET	Allows connecting to *NIX servers and BBSes using TELOPT negotiations.
-• VT100	Allows the displaying of a server side text user interface.
-• xterm 256 colors	Allows using 256 different colors instead of the traditional 16.
+• Character Mode - Allows directly transmitting client input, required for BBSes, *NIX servers, and roguelikes.
+• Go Ahead - Allows the server to indicate the end of output, allowing better client side prompt handling.
+• MCCP - Allows the compression of the data transfer from the server to the client.
+• MudMaster Chat - Allows instant messaging and file transfers over private P2P connections.
+• NAWS - Allows sending the client's window size to the server.
+• TELNET - Allows connecting to *NIX servers and BBSes using TELOPT negotiations.
+• VT100	- Allows the displaying of a server side text user interface.
+• xterm 256 colors - Allows using 256 different colors instead of the traditional 16.
 
--Program Features
+<b>Program Features</b>
 
 • Actions -	Match lines of text or patterns of text with wildcard characters.
 • Aliases -	Command shortcuts allow bundling multiple commands together.
@@ -48,3 +47,4 @@ Text received from the remote server can be screen scraped to execute triggers.
 • Status Bar - The user definable status bar lets you display information between the input and output area.
 • Substitutions - Changes text to display as different text. Match simple text or patterns and replace them with a substitute text.
 • Tab Completion - Recall hard to spell words by typing the first couple of letters and pressing tab.
+</pre>
