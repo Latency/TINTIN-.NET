@@ -1,0 +1,5 @@
+End
+
+Syntax: #end
+
+Terminates tintin and return to unix. On most systems, ctrl-c has the same result. In tintin pressing ctrl-d on an empty line will call #end as well.

@@ -1,0 +1,19 @@
+Mathexp
+
+Mathexp, short for mathematical expressions, are used for calculations and boolean if checks. TinTin# supports the full set of C operations, and some additional operators. Following is the priority list of the operators.
+
+Operators     Priority     Description
+! ~ + -         00         Assign logical not, bit wise not, plus, minus
+d               01         Integer random dice roll
+% * /           02         Integer modulo, multiply and devision
++ -             03         Integer plus, minus
+<< >>           04         Bit wise shift left, right
+< > <= >=       05         Logical less, more, equal less, equal more
+== !=           06         Logical equal, not equal
+&               07         Bit wise and
+^               08         Bit wise xor
+|               09         Bit wise or
+&&              10         Logical and
+^^              11         Logical xor
+||              12         Logical or
+( )             13         Parenthesis

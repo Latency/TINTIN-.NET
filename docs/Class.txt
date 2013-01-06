@@ -1,0 +1,23 @@
+Class
+
+Syntax: #class {name} {open|close|read filename|write filename|kill}
+
+#class {<classname>} {open}
+
+The {open} option will open a class and automatically close the previously opened class (if any), all triggers added afterwards will be assigned to this class until it is closed.
+
+#class {<classname>} {close}
+
+The {close} option will close the currently opened class.
+
+#class {<classname>} {read} {<filename>}
+
+The {read} option will open the provided class, read the given file, and close the class after reading.
+
+#class {<classname>} {write} {<filename>}
+
+The {write} option will write all triggers of the given class to file. This option can be used to store data by assigning variables to belong to a specific class.
+
+#class {<classname>} {kill}
+
+The {kill} option will delete all triggers of the given class.

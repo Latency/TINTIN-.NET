@@ -1,0 +1,5 @@
+Snoop
+
+Syntax: #snoop {sessionname}
+
+If you have background sessions this command allows you to spy on them, and see all mud text they receive.

@@ -1,0 +1,7 @@
+Else
+
+Syntax: #else {commands}
+
+The else statement should follow an #IF or #ELSEIF statement and is only called if the proceeding #IF or #ELSEIF is false.
+
+Example: #if {1d2 == 1} {smile};#else {grin}

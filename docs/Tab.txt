@@ -1,0 +1,12 @@
+Tab
+
+Syntax: #tab {completionword}
+
+The tab command will add the completionword to your tab completion list. When pressing the 'tab' key tintin will search through your tab list for the best match. Useful for long commands.
+
+If you hit tab with no tabs defined tintin will use your scrollback buffer to look for matches.
+
+Example: #tab muhahaha
+Typing mu, followed by pressing tab would make this diabolic command appear.
+
+Notice: You can remove tabs with the untab command.

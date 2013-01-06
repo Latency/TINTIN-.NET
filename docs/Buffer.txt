@@ -1,0 +1,60 @@
+Buffer
+
+Syntax: #buffer {home|up|down|end|find|get|lock|write|info}
+
+The buffer command has various options to manipulate your scrollback buffer.
+
+#buffer {home}
+
+Moves you to the top of your scrollback buffer and displays the page. Enables scroll lock mode. Most useful when used in a macro.
+
+#buffer {up}
+
+Moves your scrollback buffer up one page and displays the page. Enables scroll lock mode. Most useful when used in a macro.
+
+#buffer {down}
+
+Moves your scrollback buffer down one page and displays the page. Enables scroll lock mode unless at the end. Most useful when used in a macro.
+
+#buffer {end}
+
+Moves you to the end of your scrollback buffer and displays the page. Disables scroll lock mode. Most useful when used in a macro.
+
+#buffer {find} {[number]} {<string>}
+
+Moves the buffer to the given string which can contain a regular expression. Optionally you can provide the number of matches to skip, allowing you to jump further back in the buffer.
+
+#buffer {get} {<variable>} {<lower bound>} {[upper bound]}
+
+Allows you to store one or several lines from your scrollback buffer (including color codes) into a variable. The lower and upper bound must be between 1 and the size of the buffer. If the upper bound is omitted the given line is stored as a standard variable. If an upper bound is given the lines between the two bounds are stored as a list.
+
+#buffer {lock}
+
+Toggles the lock on the scrollback buffer. When locked, newly incoming text won't be displayed, any command will disable the lock, though several buffer commands will re-enable the lock. When unlocking it'll move you to the end of your scrollback buffer and display the page.
+
+#buffer {write} {<filename>}
+
+Writes the scrollback buffer to the given file.
+
+#buffer {info}
+
+Shows some statistics of the shared string memory system used by the scrollback buffer to conserve memory.
+
+Example: #macro {(press ctrl-v)(press F1)} {#buffer end}
+Associates F1 key to 'scroll buffer to its end' command.
+
+Example: 
+#act {^[Exits: %1]}
+{
+    #loop 2 20 loop
+    {
+        #buffer get name $loop;
+
+        #if {"$name" == "\e[1;33m%*"}
+        {
+            #var roomname &1;
+            #break
+        }
+    }
+}
+When the Exits: line shows up, loop through the last 20 lines of the buffer looking for a bold yellow (\e[1;33m) room name. Knowing the name of the room you are in can be useful when mapping.

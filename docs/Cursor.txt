@@ -1,0 +1,8 @@
+Cursor
+
+Syntax: #cursor {option}
+
+Typing #cursor without an option will show all available cursor options. The cursor command's primarly goal is adding customizable input editing with macros.
+
+Example: #macro {\e\e[3~} {#cursor clear right}
+When pressing alt-delete all input right from the cursor is cleared, which by default is set to ctrl-k.

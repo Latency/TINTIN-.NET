@@ -59,8 +59,10 @@
     <None Include="config\Makefile.bak" />
     <None Include="config\Makefile.in" />
     <None Include="config\mapper.cw" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Properties\sBIO2.ico" />
     <Content Include="src\action.c" />
     <Content Include="src\advertise.c" />
@@ -115,7 +117,9 @@
     <Content Include="src\variable.c" />
     <Content Include="src\vt102.c" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="docs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,8 @@
+Cr
+
+Syntax: #cr
+
+This command sends a carriage return to the mud. It's obsolete and should be avoided. Useful if you have the repeat enter config option enabled and need an enter without repeating your last command. Alternatively you can use #send without an argument, or two consecutive command separators ;; to insert an enter. If you want to send multiple returns on a DikuMUD server it's best to use #send { \n \n } (three enters total) since DikuMUD treats consecutive returns as a single return.
+
+Example: #ticker {idle} {#cr} {300}
+This will send a carriage return to the mud every 300 seconds (5 minuts) which will stop most muds and networks from disconnecting you for inactivity.

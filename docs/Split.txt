@@ -1,0 +1,13 @@
+Split
+
+Syntax: #split
+
+This will split the screen, resulting in the top part of the screen receiving mud output, and the bottom part receiving keyboard input. This allows you to type without incoming mud text messing up your prompt.
+
+Syntax: #split {bottom row} {top row}
+
+This is the more advanced usage of the split command, allowing you to define the mud output part of the split screen more precisely.
+
+If you split your screen it's suggested to capture the prompt and place it on the split line with the prompt command, otherwise new mud output will be printed over your last prompt.
+
+Notice: You can remove the split screen with the #unsplit command.

@@ -5,46 +5,97 @@ TinTin# is a console client interpreter enhanced with features for various commu
 
 
 <pre>
-<b>Supported Protocols</b>
+  <b>Supported Protocols</b>
 
-• Character Mode - Allows directly transmitting client input, required for BBSes, *NIX servers, and roguelikes.
-• Go Ahead - Allows the server to indicate the end of output, allowing better client side prompt handling.
-• MCCP - Allows the compression of the data transfer from the server to the client.
-• MudMaster Chat - Allows instant messaging and file transfers over private P2P connections.
-• NAWS - Allows sending the client's window size to the server.
-• TELNET - Allows connecting to *NIX servers and BBSes using TELOPT negotiations.
-• VT100	- Allows the displaying of a server side text user interface.
-• xterm 256 colors - Allows using 256 different colors instead of the traditional 16.
+  • Character Mode - Allows directly transmitting client input, required for BBSes, *NIX servers, and roguelikes.
+  • Go Ahead - Allows the server to indicate the end of output, allowing better client side prompt handling.
+  • MCCP - Allows the compression of the data transfer from the server to the client.
+  • MudMaster Chat - Allows instant messaging and file transfers over private P2P connections.
+  • NAWS - Allows sending the client's window size to the server.
+  • TELNET - Allows connecting to *NIX servers and BBSes using TELOPT negotiations.
+  • VT100	- Allows the displaying of a server side text user interface.
+  • xterm 256 colors - Allows using 256 different colors instead of the traditional 16.
 
-<b>Program Features</b>
-
-• Actions -	Match lines of text or patterns of text with wildcard characters.
-• Aliases -	Command shortcuts allow bundling multiple commands together.
-• Class	- Labels a set of triggers to belong to a given class which allows removing or saving them independently.
-• Delay	- Execute a script after a predefined amount of time has passed.
-• Events - Execute a script when a predefined event occurs.
-• Format - Format text using a printf like syntax.
-• Functions - Execute a script and substitute the function call with the returned result.
-• Gags - Prevent lines of text from being displayed.
-• Grep - Searches and displays matching lines in the scrollback buffer.
-• Highlights - Change the color of incoming text.
-• History Buffer - Stores the last commands you typed. Press UP to scroll through the list, or ctrl-r to find matches.
-• If - Checks	Handles both numeric boolean checks and string comparisons.
-• Input editing - Input editing and handling that work much like the Unix Shell.
-• Lists	- Store information in an unsorted or sorted manner and recall it when needed.
-• Log	- Log incoming data as HTML, VT100, or plain text.
-• Macros - Assign text or commands to specific key combinations.
-• Map	- Allows one to create an interactive map to help navigate the game world.
-• Math - 64 bit floating point mathematical expressions.
-• Multiple Sessions -	Open Multiple session windows to use more than one character or connect to more than one server.
-• Read - Read in script files which can be indented and spaced out over several lines if braces are used.
-• Regular expressions	- Text substitutions and triggers using Perl Compatible Regular Expressions.
-• Run	- Runs a given application, such as ssh, with access to all of tintin's scripting capabilities.
-• Scan - Reads in an ANSI or plain text log file so you can view it in the scrollback buffer.
-• Script - Runs the given script written in python, ruby, perl, php, etc., processing the output as a client command.
-• Scrollback - Store the last 5000 (default) lines of text which can be viewed using page-up/down.
-• Splitscreen	- Splits the screens in an input, output, and status area.
-• Status Bar - The user definable status bar lets you display information between the input and output area.
-• Substitutions - Changes text to display as different text. Match simple text or patterns and replace them with a substitute text.
-• Tab Completion - Recall hard to spell words by typing the first couple of letters and pressing tab.
+  <b>Program Features</b>
+  • <a href="./docs/Alias.txt">Alias</a>
+  • <a href="./docs/All.txt">All</a>
+  • <a href="./docs/Bell.txt">Bell</a>
+  • <a href="./docs/Break.txt">Break</a>
+  • <a href="./docs/Buffer.txt">Buffer</a>
+  • <a href="./docs/Case.txt">Case</a>
+  • <a href="./docs/Chat.txt">Chat</a>
+  • <a href="./docs/Chat_Protocol.txt">Chat_Protocol</a>
+  • <a href="./docs/Class.txt">Class</a>
+  • <a href="./docs/Colors.txt">Colors</a>
+  • <a href="./docs/Commands.txt">Commands</a>
+  • <a href="./docs/Config.txt">Config</a>
+  • <a href="./docs/Continue.txt">Continue</a>
+  • <a href="./docs/Cr.txt">Cr</a>
+  • <a href="./docs/Cursor.txt">Cursor</a>
+  • <a href="./docs/Debug.txt">Debug</a>
+  • <a href="./docs/Default.txt">Default</a>
+  • <a href="./docs/Delay.txt">Delay</a>
+  • <a href="./docs/Echo.txt">Echo</a>
+  • <a href="./docs/Else.txt">Else</a>
+  • <a href="./docs/Elseif.txt">Elseif</a>
+  • <a href="./docs/End.txt">End</a>
+  • <a href="./docs/Escape_Codes.txt">Escape_Codes</a>
+  • <a href="./docs/Event.txt">Event</a>
+  • <a href="./docs/Forall.txt">Forall</a>
+  • <a href="./docs/Foreach.txt">Foreach</a>
+  • <a href="./docs/Format.txt">Format</a>
+  • <a href="./docs/Function.txt">Function</a>
+  • <a href="./docs/Gag.txt">Gag</a>
+  • <a href="./docs/Greeting.txt">Greeting</a>
+  • <a href="./docs/Grep.txt">Grep</a>
+  • <a href="./docs/Help.txt">Help</a>
+  • <a href="./docs/Highlight.txt">Highlight</a>
+  • <a href="./docs/History.txt">History</a>
+  • <a href="./docs/If.txt">If</a>
+  • <a href="./docs/Ignore.txt">Ignore</a>
+  • <a href="./docs/Info.txt">Info</a>
+  • <a href="./docs/Keypad.txt">Keypad</a>
+  • <a href="./docs/Kill.txt">Kill</a>
+  • <a href="./docs/Line.txt">Line</a>
+  • <a href="./docs/List.txt">List</a>
+  • <a href="./docs/Log.txt">Log</a>
+  • <a href="./docs/Loop.txt">Loop</a>
+  • <a href="./docs/Macro.txt">Macro</a>
+  • <a href="./docs/Map.txt">Map</a>
+  • <a href="./docs/Math.txt">Math</a>
+  • <a href="./docs/Mathexp.txt">Mathexp</a>
+  • <a href="./docs/Message.txt">Message</a>
+  • <a href="./docs/Name.txt">Name</a>
+  • <a href="./docs/Nop.txt">Nop</a>
+  • <a href="./docs/Parse.txt">Parse</a>
+  • <a href="./docs/Path.txt">Path</a>
+  • <a href="./docs/Pathdir.txt">Pathdir</a>
+  • <a href="./docs/Prompt.txt">Prompt</a>
+  • <a href="./docs/Read.txt">Read</a>
+  • <a href="./docs/Regexp.txt">Regexp</a>
+  • <a href="./docs/Repeat.txt">Repeat</a>
+  • <a href="./docs/Replace.txt">Replace</a>
+  • <a href="./docs/Return.txt">Return</a>
+  • <a href="./docs/Run.txt">Run</a>
+  • <a href="./docs/Scan.txt">Scan</a>
+  • <a href="./docs/Script.txt">Script</a>
+  • <a href="./docs/Send.txt">Send</a>
+  • <a href="./docs/Session.txt">Session</a>
+  • <a href="./docs/Showme.txt">Showme</a>
+  • <a href="./docs/Snoop.txt">Snoop</a>
+  • <a href="./docs/Speedwalk.txt">Speedwalk</a>
+  • <a href="./docs/Split.txt">Split</a>
+  • <a href="./docs/Substitute.txt">Substitute</a>
+  • <a href="./docs/Suspend.txt">Suspend</a>
+  • <a href="./docs/Switch.txt">Switch</a>
+  • <a href="./docs/System.txt">System</a>
+  • <a href="./docs/Tab.txt">Tab</a>
+  • <a href="./docs/Textin.txt">Textin</a>
+  • <a href="./docs/Ticker.txt">Ticker</a>
+  • <a href="./docs/Variable.txt">Variable</a>
+  • <a href="./docs/While.txt">While</a>
+  • <a href="./docs/Wildcards.txt">Wildcards</a>
+  • <a href="./docs/Write.txt">Write</a>
+  • <a href="./docs/Writebuffer.txt">Writebuffer</a>
+  • <a href="./docs/Zap.txt">Zap</a>
 </pre>

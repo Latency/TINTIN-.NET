@@ -1,0 +1,12 @@
+Bell
+
+Syntax: #bell
+
+This command rings the terminal bell. It's obsolete and should be avoided, instead use #showme {\a} to send the terminal alarm character to the terminal.
+
+Example: #action {Bubba tells you} {#showme {\a\}
+If you aren't watching the screen this could be useful if you don't want to miss out on a conversation with Bubba. Alternatively you can use #system to play a sound file.
+
+Some terminals will allow you to use VT100 Operating System Commands to change the terminal's icon name which can be used as a visual alert.
+
+Example: #action {Bubba tells you} {#showme {\e]1;New Message\e\\};#delay 10 #showme {\e]1;TinTin# MUD client\e\\}

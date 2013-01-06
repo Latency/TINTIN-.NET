@@ -1,0 +1,7 @@
+While
+
+Syntax: #while {variable} {commands}
+
+The while command works like the while command in c. The while loops will stop once the condition equals 0.
+
+Example: #while {$cnt > 0} {#math cnt $cnt - 1}

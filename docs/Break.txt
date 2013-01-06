@@ -1,0 +1,7 @@
+Break
+
+Syntax: #break
+
+The break command can be used to break out of the #foreach, #loop, #parse, #switch, and #while commands. When #break is found tintin will move to the end of the command and continue from there.
+
+Example: #math cnt 0;#while {1} {#math cnt $cnt + 1;#if {$cnt == 20} {#break}}

@@ -1,0 +1,9 @@
+Kill
+
+Syntax: #kill {trigger type} {argument}
+
+The kill command will delete every node in every list. This includes a marked path, pathdirs, and configurations. Useful if you want to read in a new script file and want to start out clean.
+
+Using kill with a given list will delete the specified list, for example: #kill alias
+
+Additionally you can give both a list and an argument, in which case only the matching triggers in a list will be killed, for example: #kill alias %*bla%*

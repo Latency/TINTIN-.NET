@@ -1,0 +1,21 @@
+Map
+
+Syntax: #map
+
+This command is used for the auto mapper and supports most of the auto mapping functionality available. For basic path tracking see path.
+
+To start mapping use #map create <number of rooms> which will create the first room and set the maximum number of rooms to the specified amount. If you don't specify a number of rooms it'll default to 15,000 rooms. To enter the map use: #map goto 1 which will move you to the first room.
+
+In order to add rooms you can simply move around. The default directions, n ne e se s sw w nw u d, are created by default. If your mud has non standard directions you must add these with the pathdir command for them to work.
+
+There are three ways to display the map. The first is #map map which will display an ascii map of the surrounding rooms. The second option is splitting the screen in 3 sections, using #split 10 1 where 10 is the size of the top section. With #map flag vtmap the map will be shown in the top section, and will be updated as you move around. The third option is to create a MAP ENTER ROOM event and have it execute: #map map 80x24 map.txt. This will write a printout of the map to the file map.txt and if you use: tail -fs 0.1 map.txt in another terminal it'll continously update your map in that terminal window.
+
+Quite a few muds have overlapping areas or even overlapping rooms within areas. To deal with this you can stretch out rooms by turning a room into a link between 2 other rooms. You do this with #map roomflag void. Keep in mind a room with this flag should only have 2 exits. You can easily insert void rooms using: #map insert <direction> void.
+
+Like most auto mappers you can speedwalk easily. Assuming you named the first room recall using #map name recall while standing in the first room, next walked from Midgaard to Bubba in the Mushroom Forest whose room you named Bubba's bar, you can speedwalk back using: #map run recall. Of course it's faster to simply recall back, in which case you can tell the mapper you are back in midgaard using: #map goto recall.
+
+If you particularly enjoy watching the map update itself with vtmap enabled, or are anxious to try this out, you can slow walk back to Bubba. Enter #map run {Bubba's bar} 0.75 to do this.
+
+After all this hard work you can save your map using #map write <filename> which can be loaded back in with #map read <filename>. To go back to the room you were in when you saved the map use after loading it: #map return.
+
+For more information about the available commands use #help map within tintin which has the most up to date command summary.

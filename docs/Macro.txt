@@ -1,0 +1,11 @@
+Macro
+
+Syntax: #macro {key sequence} {commands}
+
+The key sequence which is send to the terminal when pressing a function key can differ depending on OS and terminal, to find out what sequence is send you can enable the CONVERT META config option.
+
+If you want to create a macro that executes murder bubba whenever you press F1 you would do the following:
+
+Type: #macro {(press the F1 key)} {murder bubba} -- The macro should work now.
+
+Notice: You can remove macros with the #unmacro command.

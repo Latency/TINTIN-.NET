@@ -1,0 +1,32 @@
+Wildcards
+
+Wildcards are used for string match searches using regular expressions.
+
+If the regex starts with ^ the beginning of the string must match. If the string ends with a $ the end of the string and regex must match.
+
+The following options are available for regular expressions.
+
+  { } embed a perl compatible regular expression.
+
+  [ ] . + | ( ) ? * are treated as normal text unlessed used within braces. Keep in mind that { } is replaced with ( ).
+
+  %w match zero to any number of letters.
+  %W match zero to any number of non letters.
+  %d match zero to any number of digits.
+  %D match zero to any number of non digits.
+  %s match zero to any number of spaces.
+  %S match zero to any number of non spaces.
+  
+  %? match zero or one character.
+  %. match one character.
+  %+ match one to any number of characters. 
+  %* match zero to any number of characters.
+  
+  %i match becomes case insensitive.
+  %I match becomes case sensitive (default).
+
+Example: #alias {bla%*}
+This would display all aliasses starting with 'bla'
+
+Example: #if {"$test" == "%*%ibla%*"} {#showme true}
+This checks if the variable test contains the substring 'bla' - regardless of capitalization.

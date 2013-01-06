@@ -1,0 +1,10 @@
+If
+
+Syntax: #if {condition} {true} {false}
+
+The condition is a c style mathematical or regular expression. Strings must be surrounded by quotes " ". Any none zero result will be executed as a command in the true part. If the result equals zero it will be executed as a command in the optional false part.
+
+See the help file on Mathexp and Regexp for more information.
+
+Example: #act {%1 tells you} {#if {"%1" == "Heidi"} {tell %1 I'm afk hon} {tell %1 I'm afk dude}}
+Useful if you go afk or are busy writing scripts or something.
