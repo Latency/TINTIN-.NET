@@ -63,6 +63,88 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="docs\Action.txt" />
+    <Content Include="docs\Alias.txt" />
+    <Content Include="docs\All.txt" />
+    <Content Include="docs\Bell.txt" />
+    <Content Include="docs\Break.txt" />
+    <Content Include="docs\Buffer.txt" />
+    <Content Include="docs\Case.txt" />
+    <Content Include="docs\Chat.txt" />
+    <Content Include="docs\Chat_Protocol.txt" />
+    <Content Include="docs\Class.txt" />
+    <Content Include="docs\Colors.txt" />
+    <Content Include="docs\Commands.txt" />
+    <Content Include="docs\Config.txt" />
+    <Content Include="docs\Continue.txt" />
+    <Content Include="docs\Cr.txt" />
+    <Content Include="docs\Cursor.txt" />
+    <Content Include="docs\Debug.txt" />
+    <Content Include="docs\Default.txt" />
+    <Content Include="docs\Delay.txt" />
+    <Content Include="docs\Echo.txt" />
+    <Content Include="docs\Else.txt" />
+    <Content Include="docs\Elseif.txt" />
+    <Content Include="docs\End.txt" />
+    <Content Include="docs\Escape_Codes.txt" />
+    <Content Include="docs\Event.txt" />
+    <Content Include="docs\Forall.txt" />
+    <Content Include="docs\Foreach.txt" />
+    <Content Include="docs\Format.txt" />
+    <Content Include="docs\Function.txt" />
+    <Content Include="docs\Gag.txt" />
+    <Content Include="docs\Greeting.txt" />
+    <Content Include="docs\Grep.txt" />
+    <Content Include="docs\Help.txt" />
+    <Content Include="docs\Highlight.txt" />
+    <Content Include="docs\History.txt" />
+    <Content Include="docs\If.txt" />
+    <Content Include="docs\Ignore.txt" />
+    <Content Include="docs\Info.txt" />
+    <Content Include="docs\Keypad.txt" />
+    <Content Include="docs\Kill.txt" />
+    <Content Include="docs\Line.txt" />
+    <Content Include="docs\List.txt" />
+    <Content Include="docs\Log.txt" />
+    <Content Include="docs\Loop.txt" />
+    <Content Include="docs\Macro.txt" />
+    <Content Include="docs\Map.txt" />
+    <Content Include="docs\Math.txt" />
+    <Content Include="docs\Mathexp.txt" />
+    <Content Include="docs\Message.txt" />
+    <Content Include="docs\Name.txt" />
+    <Content Include="docs\Nop.txt" />
+    <Content Include="docs\Parse.txt" />
+    <Content Include="docs\Path.txt" />
+    <Content Include="docs\Pathdir.txt" />
+    <Content Include="docs\Prompt.txt" />
+    <Content Include="docs\Read.txt" />
+    <Content Include="docs\Regexp.txt" />
+    <Content Include="docs\Repeat.txt" />
+    <Content Include="docs\Replace.txt" />
+    <Content Include="docs\Return.txt" />
+    <Content Include="docs\Run.txt" />
+    <Content Include="docs\Scan.txt" />
+    <Content Include="docs\Script.txt" />
+    <Content Include="docs\Send.txt" />
+    <Content Include="docs\Session.txt" />
+    <Content Include="docs\Showme.txt" />
+    <Content Include="docs\Snoop.txt" />
+    <Content Include="docs\Speedwalk.txt" />
+    <Content Include="docs\Split.txt" />
+    <Content Include="docs\Substitute.txt" />
+    <Content Include="docs\Suspend.txt" />
+    <Content Include="docs\Switch.txt" />
+    <Content Include="docs\System.txt" />
+    <Content Include="docs\Tab.txt" />
+    <Content Include="docs\Textin.txt" />
+    <Content Include="docs\Ticker.txt" />
+    <Content Include="docs\Variable.txt" />
+    <Content Include="docs\While.txt" />
+    <Content Include="docs\Wildcards.txt" />
+    <Content Include="docs\Write.txt" />
+    <Content Include="docs\Writebuffer.txt" />
+    <Content Include="docs\Zap.txt" />
     <Content Include="Properties\sBIO2.ico" />
     <Content Include="src\action.c" />
     <Content Include="src\advertise.c" />
@@ -117,9 +199,7 @@
     <Content Include="src\variable.c" />
     <Content Include="src\vt102.c" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="docs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
