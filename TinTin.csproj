@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinTin</RootNamespace>
+    <AssemblyName>tt</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>tt.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sBIO2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="config\config.h.in" />
+    <None Include="config\configure" />
+    <None Include="config\configure.in" />
+    <None Include="config\Makefile.bak" />
+    <None Include="config\Makefile.in" />
+    <None Include="config\mapper.cw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sBIO2.ico" />
+    <Content Include="src\action.c" />
+    <Content Include="src\advertise.c" />
+    <Content Include="src\alias.c" />
+    <Content Include="src\buffer.c" />
+    <Content Include="src\chat.c" />
+    <Content Include="src\class.c" />
+    <Content Include="src\config.c" />
+    <Content Include="src\cursor.c" />
+    <Content Include="src\data.c" />
+    <Content Include="src\debug.c" />
+    <Content Include="src\event.c" />
+    <Content Include="src\files.c" />
+    <Content Include="src\forkpty.c" />
+    <Content Include="src\function.c" />
+    <Content Include="src\gag.c" />
+    <Content Include="src\help.c" />
+    <Content Include="src\highlight.c" />
+    <Content Include="src\history.c" />
+    <Content Include="src\input.c" />
+    <Content Include="src\line.c" />
+    <Content Include="src\list.c" />
+    <Content Include="src\log.c" />
+    <Content Include="src\macro.c" />
+    <Content Include="src\main.c" />
+    <Content Include="src\mapper.c" />
+    <Content Include="src\math.c" />
+    <Content Include="src\memory.c" />
+    <Content Include="src\misc.c" />
+    <Content Include="src\nest.c" />
+    <Content Include="src\net.c" />
+    <Content Include="src\parse.c" />
+    <Content Include="src\path.c" />
+    <Content Include="src\prompt.c" />
+    <Content Include="src\session.c" />
+    <Content Include="src\split.c" />
+    <Content Include="src\strhash.c" />
+    <Content Include="src\substitute.c" />
+    <Content Include="src\system.c" />
+    <Content Include="src\tab.c" />
+    <Content Include="src\tables.c" />
+    <Content Include="src\telnet.h" />
+    <Content Include="src\telopt.c" />
+    <Content Include="src\terminal.c" />
+    <Content Include="src\text.c" />
+    <Content Include="src\tick.c" />
+    <Content Include="src\tinexp.c" />
+    <Content Include="src\tintin.h" />
+    <Content Include="src\tokenize.c" />
+    <Content Include="src\update.c" />
+    <Content Include="src\utils.c" />
+    <Content Include="src\variable.c" />
+    <Content Include="src\vt102.c" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
