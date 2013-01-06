@@ -2,7 +2,8 @@ Config
 
 Syntax: #config {option} {argument}
 
-When TinTin# starts up it will generate a config file, it can be modified with the config command. Typing config without an argument will show the current configuration, and these can be written to file with the #write command.
+When TinTin# starts up it will generate a config file, it can be modified with the config command. Typing config without an
+argument will show the current configuration, and these can be written to file with the #write command.
 
 The following configuration options are not enabled by default:
 

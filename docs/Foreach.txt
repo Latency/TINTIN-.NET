@@ -2,7 +2,8 @@ Foreach
 
 Syntax: #foreach {list} {variable} {commands}
 
-The foreach command works like a simplified loop. Each word in the list will be stored in the variable at execution time and can be used in the commands part.
+The foreach command works like a simplified loop. Each word in the list will be stored in the variable at execution time and
+can be used in the commands part.
 
 Items in the provided list must either be separated by using semi-colons, or by encasing them in braces.
 

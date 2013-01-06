@@ -2,7 +2,8 @@ Help
 
 Syntax: #help {subject}
 
-The help command will show some basic help on the subject using the build in help documentation. Without an argument it shows all available help topics.
+The help command will show some basic help on the subject using the build in help documentation. Without an argument it shows
+all available help topics.
 
 The help command is more up to date than the online manual.
 

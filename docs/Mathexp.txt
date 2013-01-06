@@ -1,6 +1,7 @@
 Mathexp
 
-Mathexp, short for mathematical expressions, are used for calculations and boolean if checks. TinTin# supports the full set of C operations, and some additional operators. Following is the priority list of the operators.
+Mathexp, short for mathematical expressions, are used for calculations and boolean if checks. TinTin# supports the full set
+of C operations, and some additional operators. Following is the priority list of the operators.
 
 Operators     Priority     Description
 ! ~ + -         00         Assign logical not, bit wise not, plus, minus

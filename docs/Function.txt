@@ -2,9 +2,14 @@ Function
 
 Syntax: #function {name} {commands}
 
-The function command is used much like a variable, except that you can pass along arguments. You can execute commands inside a function, and after the function is finished the line that called the function has the function call replaced with whatever the $result variable holds.
+The function command is used much like a variable, except that you can pass along arguments. You can execute commands inside
+a function, and after the function is finished the line that called the function has the function call replaced with whatever
+the $result variable holds.
 
-The result variable is also used in the echo command, so you should be careful when using #echo inside a function. You can use a function by calling it with: @<functionname>{<arguments>} the arguments are stored in %0 to %99, with %0 holding all arguments, %1 the first, %2 the second, etc. The arguments are separated by encasing the arguments in braces, or using semicolons.
+The result variable is also used in the echo command, so you should be careful when using #echo inside a function. You can
+use a function by calling it with: @<functionname>{<arguments>} the arguments are stored in %0 to %99, with %0 holding all
+arguments, %1 the first, %2 the second, etc. The arguments are separated by encasing the arguments in braces, or using
+semicolons.
 
 Example: 
 
@@ -20,7 +25,9 @@ Example:
   };
   #format {result} {%t} {{%T}{$epoch}
 }
-The if check in the function will check if an argument has been passed, if so the argument (assumed to be a timestamp) is stored in $epoch, if not the current number of seconds since 1970 is retrieved with #format {epoch} %T. Next $epoch is used to store the current time in $result. Using: #showme @time{} will display the current military time.
+The if check in the function will check if an argument has been passed, if so the argument (assumed to be a timestamp) is
+stored in $epoch, if not the current number of seconds since 1970 is retrieved with #format {epoch} %T. Next $epoch is used
+to store the current time in $result. Using: #showme @time{} will display the current military time.
 
 See the scripts section for more examples.
 

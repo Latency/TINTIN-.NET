@@ -27,9 +27,7 @@ For xterm 256 colors support use <aaa> to <fff> for RGB foreground colors and <A
 
 For the grayscale foreground colors use <g00> to <g23> and for grayscale background colors use <G00> to <G23>.
 
-
 Example: #showme <034>T<025>i<016>n<007>T<043>i<052>n<061>+<070>+<088>
-Execute this in TinTin# to see the actual result.
 
 Example: #showme <fca> orange <cfa> lime <caf> indigo <acf> azure <fac> crimson
-Execute this in TinTin# to see the actual result, your terminal must support xterm 256 colors.
+Your terminal must support xterm 256 colors.

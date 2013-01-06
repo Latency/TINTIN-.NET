@@ -2,7 +2,8 @@ Wildcards
 
 Wildcards are used for string match searches using regular expressions.
 
-If the regex starts with ^ the beginning of the string must match. If the string ends with a $ the end of the string and regex must match.
+If the regex starts with ^ the beginning of the string must match. If the string ends with a $ the end of the string and
+regex must match.
 
 The following options are available for regular expressions.
 

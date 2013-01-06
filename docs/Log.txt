@@ -2,9 +2,11 @@ Log
 
 Syntax: #log {mode} {filename}
 
-The log command will log all data received in the scrolling region to the specified filename. The mode is either o (ovewrite) or a (append).
+The log command will log all data received in the scrolling region to the specified filename. The mode is either o (ovewrite)
+or a (append).
 
-With the config command you can specify the data type used for the log file. These are: raw (prints escape codes as well), plain (strips escape codes), html (converts escape color codes to html color codes).
+With the config command you can specify the data type used for the log file. These are: raw (prints escape codes as well),
+plain (strips escape codes), html (converts escape color codes to html color codes).
 
 Example: #log o mylog.html
 Asuming you have html logging enabled (the default) this will write all the mud output to mylog.html.

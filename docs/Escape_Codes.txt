@@ -1,6 +1,7 @@
 Escape Codes
 
-The escape character in tintin is the backslash: \ which can be used in combination with several characters to create escape codes.
+The escape character in tintin is the backslash: \ which can be used in combination with several characters to create escape
+codes.
 
  \a   will beep the terminal.
  \b   will send a backspace character.

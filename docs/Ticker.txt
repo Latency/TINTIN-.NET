@@ -2,7 +2,8 @@ Ticker
 
 Syntax: #ticker {name} {commands} {interval}
 
-The name part can be whatever you want it to be, and is only required for the unticker command. The commands will be executed every x amount of seconds, which is specified in the interval part.
+The name part can be whatever you want it to be, and is only required for the unticker command. The commands will be executed
+every x amount of seconds, which is specified in the interval part.
 
 Example: #ticker {autosave} {save} {300}
 This would make tintin execute the save command every 300 seconds.

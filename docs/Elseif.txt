@@ -2,6 +2,7 @@ Elseif
 
 Syntax: #elseif {commands}
 
-The elseif statement should follow an #IF or #ELSEIF statement and is only called when the statement is true and the proceeding #IF and #ELSEIF statements are false.
+The elseif statement should follow an #IF or #ELSEIF statement and is only called when the statement is true and the
+proceeding #IF and #ELSEIF statements are false.
 
 Example: #if {1d3 == 1} {smirk};#elseif {1d2 == 1} {snicker};#else {laugh}

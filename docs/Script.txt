@@ -2,7 +2,8 @@ Script
 
 Syntax: #script {variable} {shell commands}
 
-The script command allows you to execute commands in the shell. The output of these commands will be stored as a list in the given variable. The script command can be used to execute Lua, PHP, Perl, Python, Tcl, and Ruby scripts.
+The script command allows you to execute commands in the shell. The output of these commands will be stored as a list in the
+given variable. The script command can be used to execute Lua, PHP, Perl, Python, Tcl, and Ruby scripts.
 
 Example: #script {result} {lua -e 'print("Hello TinTin#")'
 Example: #script {result} {ruby -e 'print "Hello TinTin#"'}
@@ -10,8 +11,11 @@ Example: #script {result} {python -c 'print "Hello TinTin#"'}
 Example: #script {result} {php -r 'echo "Hello TinTin#"'}
 Example: #script {result} {tcl -c 'puts "Hello TinTin#"'}
 Example: #script {path} {pwd}
-If no variable argument is given the script output will be treated as tintin input, allowing you to use #showme and #send commands to process the output of a script. Keep in mind you can also execute script files.
 
-If a variable argument is given the output of the script will be stored inside the variable as a list. Use $variable[1], $variable[2], etc, to go through the list.
+If no variable argument is given the script output will be treated as tintin input, allowing you to use #showme and #send
+commands to process the output of a script. Keep in mind you can also execute script files.
+
+If a variable argument is given the output of the script will be stored inside the variable as a list. Use $variable[1],
+$variable[2], etc, to go through the list.
 
 Notice: You can also use the #run and #system commands to execute shell commands.

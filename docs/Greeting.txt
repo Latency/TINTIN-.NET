@@ -2,6 +2,7 @@ Greeting
 
 Syntax: #help greeting
 
-Will, plain and simply, show you the greeting-message which is displayed every time you start the client (and which contains the client version number). Useful if you wish to see it, and it is no longer available in the buffer.
+Will, plain and simply, show you the greeting-message which is displayed every time you start the client
+(and which contains the client version number). Useful if you wish to see it, and it is no longer available in the buffer.
 
 It is not really a command, as you can only summon it thru #help.

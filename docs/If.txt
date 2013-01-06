@@ -2,7 +2,9 @@ If
 
 Syntax: #if {condition} {true} {false}
 
-The condition is a c style mathematical or regular expression. Strings must be surrounded by quotes " ". Any none zero result will be executed as a command in the true part. If the result equals zero it will be executed as a command in the optional false part.
+The condition is a c style mathematical or regular expression. Strings must be surrounded by quotes " ". Any none zero result
+will be executed as a command in the true part. If the result equals zero it will be executed as a command in the optional
+false part.
 
 See the help file on Mathexp and Regexp for more information.
 

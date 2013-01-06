@@ -2,6 +2,7 @@ Case
 
 Syntax: #case {conditional} {arguments}
 
-The case command must be used within the switch command. When the conditional argument of the case command matches the conditional argument of the switch command the body of the case is executed.
+The case command must be used within the switch command. When the conditional argument of the case command matches the
+conditional argument of the switch command the body of the case is executed.
 
 Example: #switch {1d4} {#case 1 cackle;#case 2 smile;#default giggle}

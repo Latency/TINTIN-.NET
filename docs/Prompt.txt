@@ -2,13 +2,16 @@ Prompt
 
 Syntax: #prompt {message} {newmessage} {row}
 
-This command works very much like the substitute command and only works while in split mode. It will substitute the mud message and place it in your split line if no row number is given.
+This command works very much like the substitute command and only works while in split mode. It will substitute the server
+message and place it in your split line if no row number is given.
 
-The optional row argument allows prompts for custom split screens. A positive number will write the prompt # rows up from the bottom of the screen. A negative number will write the prompt # rows down from the top of the screen.
+The optional row argument allows prompts for custom split screens. A positive number will write the prompt # rows up from the
+bottom of the screen. A negative number will write the prompt # rows down from the top of the screen.
 
 See the entry on actions for information about the available regular expression options.
 
 Example: #prompt {[%1/%2hp]} {[<078>%1/%2hp]}
-This would print a matching line in your status line, setting the color to dim white. A more advanced example is available in the example script file.
+This would print a matching line in your status line, setting the color to dim white. A more advanced example is available in
+the example script file.
 
 Notice: You can remove prompts with the #unprompt command.

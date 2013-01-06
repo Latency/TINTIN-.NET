@@ -2,7 +2,8 @@ Run
 
 Syntax: #run {session name} {shell commands}
 
-The run command runs a shell command interactively. When the shell command terminates so will the session much like a normal session.
+The run command runs a shell command interactively. When the shell command terminates so will the session much like a normal
+session.
 
 You can run any shell command, wether that be ssh, telnet, python, php, perl or ruby.
 

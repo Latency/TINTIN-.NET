@@ -13,7 +13,8 @@ When TinTin# starts up it sends \e= to the terminal to enable the terminal's app
   |0          |.    |Enter|   |Ins        |Del  |Enter|   |nkp0       |nkp. |nkpEn|
   +-----------+-----+-----+   +-----------+-----+-----+   +-----------+-----+-----+
 
-With keypad mode disabled numlock on will give you configuration A, and numlock off will give you configuration B. With keypad mode enabled you'll get configuration C.
+With keypad mode disabled numlock on will give you configuration A, and numlock off will give you configuration B.
+With keypad mode enabled you'll get configuration C.
 
 Terminals that support keypad mode:
 Linux Console, PuTTY, Eterm, aterm.
@@ -24,7 +25,8 @@ RXVT on Cygwin, Windows Console, Gnome Terminal, Konsole.
 Peculiar Terminals:
 RXVT requires turning off numlock to enable configuration C.
 
-Xterm may require disabling Alt/NumLock Modifiers (num-lock) in the ctrl-leftclick menu. Or edit ~/.Xresources and add XTerm*VT100.numLock:false
+Xterm may require disabling Alt/NumLock Modifiers (num-lock) in the ctrl-leftclick menu. Or edit ~/.Xresources and add
+XTerm*VT100.numLock:false
 
 Mac OS X Terminal:
 Requires enabling "strict vt100 keypad behavior" in Terminal -> Window Settings -> Emulation.

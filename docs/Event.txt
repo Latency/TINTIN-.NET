@@ -2,7 +2,8 @@ Event
 
 Syntax: #event {event name} {commands}
 
-Events allow the creation of triggers for predetermined client events. Using #event without an argument will list most of the possible events with a brief description. Using #event %* will show all defined events. Some events set arguments.
+Events allow the creation of triggers for predetermined client events. Using #event without an argument will list most of
+the possible events with a brief description. Using #event %* will show all defined events. Some events set arguments.
 
 DATE
 
@@ -22,27 +23,36 @@ Triggers each hour or given hour.
 
 IAC
 
-This event triggers for all telnet negotiation. Use #config {debug telnet} {on} to see the proper name of telnet events as they happen. If you create a telnet event for a telnet negotiation that is normally handled by the mud client, like IAC SB TTYPE, only the event will be executed; the automatic response will be blocked.
+This event triggers for all telnet negotiation. Use #config {debug telnet} {on} to see the proper name of telnet events as
+they happen. If you create a telnet event for a telnet negotiation that is normally handled by the mud client, like IAC SB
+TTYPE, only the event will be executed; the automatic response will be blocked.
 
 IAC SB MSDP
 
-This event triggers on a MSDP (Mud Server Data Protocol) sub negotiation. The %0 argument contains the variable's name, the %1 argument contains the variable's value. If a variable is send as an array a name/value event is generated for each index.
+This event triggers on a MSDP (Mud Server Data Protocol) sub negotiation. The %0 argument contains the variable's name, the
+%1 argument contains the variable's value. If a variable is send as an array a name/value event is generated for each index.
 
 IAC SB MSSP
 
-This event triggers on a MSSP (Mud Server Status Protocol) sub negotiation. The %0 argument contains the variable's name, the %1 argument contains the variable's value. If a variable is send as an array a name/value event is generated for each index.
+This event triggers on a MSSP (Mud Server Status Protocol) sub negotiation. The %0 argument contains the variable's name,
+the %1 argument contains the variable's value. If a variable is send as an array a name/value event is generated for each
+index.
 
 IAC SB NEW-ENVIRON
 
-This event triggers on a NEW-ENVIRON sub negotiation. Depending on the negotiation type you'll have to append SEND, IS, or INFO to the event name, as shown when using #config {debug telnet} {on}. The %0 argument contains the variable's name, the %1 argument contains the variable's value.
+This event triggers on a NEW-ENVIRON sub negotiation. Depending on the negotiation type you'll have to append SEND, IS, or
+INFO to the event name, as shown when using #config {debug telnet} {on}. The %0 argument contains the variable's name, the
+%1 argument contains the variable's value.
 
 IAC SB ZMP
 
-This event triggers on a ZMP sub negotiation. Depending on the ZMP package you'll have to append the package to the event name, as shown when using #config {debug telnet} {on}. The %0 argument contains the ZMP package data.
+This event triggers on a ZMP sub negotiation. Depending on the ZMP package you'll have to append the package to the event
+name, as shown when using #config {debug telnet} {on}. The %0 argument contains the ZMP package data.
 
 IAC SB
 
-This event triggers on any undefined sub negotiation. Some telnet options will be named, others will be a number, as shown when using #config {debug telnet} {on}. The %0 argument will contain the data inside the sub negotiation.
+This event triggers on any undefined sub negotiation. Some telnet options will be named, others will be a number, as shown
+when using #config {debug telnet} {on}. The %0 argument will contain the data inside the sub negotiation.
 
 MAP ENTER MAP
 
@@ -78,11 +88,13 @@ This event triggers at the end of TinTin#'s termination process inside the start
 
 RECEIVED INPUT
 
-This event triggers right after any kind of input has been entered and has been executed. The %0 argument contains the raw input.
+This event triggers right after any kind of input has been entered and has been executed. The %0 argument contains the raw
+input.
 
 RECEIVED LINE
 
-This event triggers when a line is received from the server, right before the execution of any triggers. The %0 argument contains the raw line, the %1 argument contains the plain line, stripped of all color codes.
+This event triggers when a line is received from the server, right before the execution of any triggers. The %0 argument
+contains the raw line, the %1 argument contains the plain line, stripped of all color codes.
 
 RECEIVED OUTPUT
 
@@ -106,7 +118,8 @@ Triggers when a session is activated.
 
 SESSION CONNECTED
 
-This event triggers right after a session connects to a server. The %0 argument contains the session name, the %1 argument contains the host name, the %2 argument contains the numeric IP address, the %3 argument contains the port number.
+This event triggers right after a session connects to a server. The %0 argument contains the session name, the %1 argument
+contains the host name, the %2 argument contains the numeric IP address, the %3 argument contains the port number.
 
 SESSION DEACTIVATED
 
@@ -114,7 +127,8 @@ Triggers when a session is deactivated.
 
 SESSION DISCONNECTED
 
-This event triggers right after a session is disconnected from a server. The %0 argument contains the session name, the %1 argument contains the host name, the %2 argument contains the numeric IP address, the %3 argument contains the port number.
+This event triggers right after a session is disconnected from a server. The %0 argument contains the session name, the %1
+argument contains the host name, the %2 argument contains the numeric IP address, the %3 argument contains the port number.
 
 TIME
 

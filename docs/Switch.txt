@@ -2,8 +2,12 @@ Switch
 
 Syntax: #switch {condition} {arguments}
 
-The #switch command works similar to the switch statement in other languages. When the #switch command is encountered its body is parsed and each #case command found will be compared to the conditional argument of the switch and executed if there is a match. If the #default command is found and no #case statement has been matched the #default command's argument is executed.
+The #switch command works similar to the switch statement in other languages. When the #switch command is encountered its
+body is parsed and each #case command found will be compared to the conditional argument of the switch and executed if there
+is a match. If the #default command is found and no #case statement has been matched the #default command's argument is
+executed.
 
-The #break command can be used to break out of a switch, but is not required like it is in C because only one #case command can be executed per switch.
+The #break command can be used to break out of a switch, but is not required like it is in C because only one #case command
+can be executed per switch.
 
 Example: #switch {1d4} {#case 1 cackle;#case 2 smile;#default giggle}

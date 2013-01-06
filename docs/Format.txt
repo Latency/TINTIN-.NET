@@ -2,7 +2,9 @@ Format
 
 Syntax: #format {variablename} {format} {argument1} {argument2} {etc}
 
-This command allows you to format text very much like the sprintf function in C. The result will be stored in the variable given. The format part can contain text and argument variables. You can give up to 20 arguments in the arguments part. Also see the linux man file on sprintf.
+This command allows you to format text very much like the sprintf function in C. The result will be stored in the variable
+given. The format part can contain text and argument variables. You can give up to 20 arguments in the arguments part. Also
+see the linux man file on sprintf.
 
 Parameter     Name          Description
 %+9s          String        Pre pad string with 9 spaces

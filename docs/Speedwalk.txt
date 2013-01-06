@@ -1,6 +1,7 @@
 Speedwalk
 
-Speedwalking allows you to type multiple directions not separated by semicolons, and now it lets you prefix a direction with a number, to signify how many times to go that direction. You can turn it on/off with #config.
+Speedwalking allows you to type multiple directions not separated by semicolons, and now it lets you prefix a direction with
+a number, to signify how many times to go that direction. You can turn it on/off with #config.
 
 Example: 2s5w3s3w2nw
 Without speedwalk, you have to type: s;s;w;w;w;w;w;s;s;s;w;w;w;n;n;w

@@ -4,7 +4,8 @@ Syntax: #math {variable} {mathematical expression}
 
 See the mathexp manual entry for a list of operators that can be used.
 
-Math allows you to do calculations and store the result in the given variable. It also allows for string and regexp comparisons.
+Math allows you to do calculations and store the result in the given variable. It also allows for string and regexp
+comparisons.
 
 Example: #math sumvar {(1 + 1) * 10}
 This basic operation would store the result (which is 20) in sumvar.

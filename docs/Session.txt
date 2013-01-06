@@ -5,6 +5,8 @@ Syntax: #session {name} {address} {port}
 Will start a session with the given name, connecting to the specified address and port.
 
 Example: #ses twinkie neverneverland.bla 1234
-Ofcourse you'd have to fill in something else if you actually want to go somewhere. The Mud connector offers a large searchable list of muds.
+Ofcourse you'd have to fill in something else if you actually want to go somewhere. The Mud connector offers a large
+searchable list of muds.
 
-Other options are #session + and - to go to the next or previous session. This only works if you are multiplaying. #session <number> activates the session corresponding to the given number.
+Other options are #session + and - to go to the next or previous session. This only works if you are multiplaying.
+#session <number> activates the session corresponding to the given number.

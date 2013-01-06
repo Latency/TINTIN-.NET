@@ -2,7 +2,8 @@ Parse
 
 Syntax: #parse {string} {variable} {commands}
 
-The parse command works like a simplified loop. Each character in the string will be stored in the given variable and can be used in the commands part.
+The parse command works like a simplified loop. Each character in the string will be stored in the given variable and can be
+used in the commands part.
 
 Example: #parse {hello} {character} {say $character!}
 This equals: say h!;say e!;say l!;say l!;say o!
