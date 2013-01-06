@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2006 (See CREDITS file)                                     *
@@ -27,202 +28,170 @@
 
 #include "tintin.h"
 
-DO_COMMAND(do_history)
-{
-	char left[BUFFER_SIZE], right[BUFFER_SIZE];
-	int cnt;
+DO_COMMAND(do_history) {
+  char left[BUFFER_SIZE], right[BUFFER_SIZE];
+  int cnt;
 
-	arg = get_arg_in_braces(ses, arg, left,  FALSE);
+  arg = get_arg_in_braces(ses, arg, left, FALSE);
 
-	arg = get_arg_in_braces(ses, arg, right, TRUE);
-	substitute(ses, right, right, SUB_VAR|SUB_FUN);
+  arg = get_arg_in_braces(ses, arg, right, TRUE);
+  substitute(ses, right, right, SUB_VAR | SUB_FUN);
 
-	if (*left == 0)
-	{
-		tintin_header(ses, " HISTORY COMMANDS ");
+  if (*left == 0) {
+    tintin_header(ses, " HISTORY COMMANDS ");
 
-		for (cnt = 0 ; *history_table[cnt].name != 0 ; cnt++)
-		{
-			tintin_printf2(ses, "  [%-13s] %s", history_table[cnt].name, history_table[cnt].desc);
-		}
-		tintin_header(ses, "");
+    for (cnt = 0; *history_table[cnt].name != 0; cnt++) {
+      tintin_printf2(ses, "  [%-13s] %s", history_table[cnt].name, history_table[cnt].desc);
+    }
+    tintin_header(ses, "");
 
-		return ses;
-	}
+    return ses;
+  }
 
-	for (cnt = 0 ; *history_table[cnt].name ; cnt++)
-	{
-		if (!is_abbrev(left, history_table[cnt].name))
-		{
-			continue;
-		}
+  for (cnt = 0; *history_table[cnt].name; cnt++) {
+    if (!is_abbrev(left, history_table[cnt].name)) {
+      continue;
+    }
 
-		history_table[cnt].fun(ses, right);
+    history_table[cnt].fun(ses, right);
 
-		return ses;
-	}
+    return ses;
+  }
 
-	do_history(ses, "");
+  do_history(ses, "");
 
-	return ses;
+  return ses;
 }
 
+void add_line_history(struct session *ses, char *line) {
+  struct listroot *root;
 
-void add_line_history(struct session *ses, char *line)
-{
-	struct listroot *root;
+  root = ses->list[LIST_HISTORY];
 
-	root = ses->list[LIST_HISTORY];
+  if (*line == 0) {
+    if (root->used && HAS_BIT(ses->flags, SES_FLAG_REPEATENTER)) {
+      strcpy(line, root->list[root->used - 1]->left);
+    }
+    return;
+  }
 
-	if (*line == 0)
-	{
-		if (root->used && HAS_BIT(ses->flags, SES_FLAG_REPEATENTER))
-		{
-			strcpy(line, root->list[root->used - 1]->left);
-		}
-		return;
-	}
+  if (*line == gtd->repeat_char) {
+    search_line_history(ses, line);
+  }
 
-	if (*line == gtd->repeat_char)
-	{
-		search_line_history(ses, line);
-	}
+  update_node_list(ses->list[LIST_HISTORY], line, "", "");
 
-	update_node_list(ses->list[LIST_HISTORY], line, "", "");
+  while (root->used > gtd->history_size) {
+    delete_index_list(ses->list[LIST_HISTORY], 0);
+  }
 
-	while (root->used > gtd->history_size)
-	{
-		delete_index_list(ses->list[LIST_HISTORY], 0);
-	}
-
-	return;
+  return;
 }
 
-void search_line_history(struct session *ses, char *line)
-{
-	struct listroot *root;
-	int i;
+void search_line_history(struct session *ses, char *line) {
+  struct listroot *root;
+  int i;
 
-	root = ses->list[LIST_HISTORY];
+  root = ses->list[LIST_HISTORY];
 
-	for (i = root->used - 1 ; i >= 0 ; i--)
-	{
-		if (!strncmp(root->list[i]->left, &line[1], strlen(&line[1])))
-		{
-			strcpy(line, root->list[i]->left);
+  for (i = root->used - 1; i >= 0; i--) {
+    if (!strncmp(root->list[i]->left, &line[1], strlen(&line[1]))) {
+      strcpy(line, root->list[i]->left);
 
-			return;
-		}
-	}
-	tintin_printf2(ses, "#REPEAT: NO MATCH FOUND FOR '%s'", line);
+      return;
+    }
+  }
+  tintin_printf2(ses, "#REPEAT: NO MATCH FOUND FOR '%s'", line);
 }
 
-DO_HISTORY(history_character)
-{
-	gtd->repeat_char = *arg;
+DO_HISTORY(history_character) {
+  gtd->repeat_char = *arg;
 
-	show_message(ses, LIST_HISTORY, "#HISTORY CHARACTER SET TO {%c}.", gtd->repeat_char);
+  show_message(ses, LIST_HISTORY, "#HISTORY CHARACTER SET TO {%c}.", gtd->repeat_char);
 }
 
-DO_HISTORY(history_delete)
-{
-	if (ses->list[LIST_HISTORY]->used)
-	{
-		delete_index_list(ses->list[LIST_HISTORY], ses->list[LIST_HISTORY]->used - 1);
-	}
+DO_HISTORY(history_delete) {
+  if (ses->list[LIST_HISTORY]->used) {
+    delete_index_list(ses->list[LIST_HISTORY], ses->list[LIST_HISTORY]->used - 1);
+  }
 
-	return;
+  return;
 }
 
-DO_HISTORY(history_insert)
-{
-	add_line_history(ses, arg);
+DO_HISTORY(history_insert) {
+  add_line_history(ses, arg);
 }
 
-DO_HISTORY(history_list)
-{
-	struct listroot *root;
-	int i, cnt = 1;
+DO_HISTORY(history_list) {
+  struct listroot *root;
+  int i, cnt = 1;
 
-	root = ses->list[LIST_HISTORY];
+  root = ses->list[LIST_HISTORY];
 
-	for (i = 0 ; i < root->used ; i++)
-	{
-		tintin_printf2(ses, "%6d - %s", cnt++, root->list[i]->left);
-	}
-	return;
+  for (i = 0; i < root->used; i++) {
+    tintin_printf2(ses, "%6d - %s", cnt++, root->list[i]->left);
+  }
+  return;
 }
 
-DO_HISTORY(history_read)
-{
-	FILE *file;
-	char *cptr, buffer[BUFFER_SIZE];
+DO_HISTORY(history_read) {
+  FILE *file;
+  char *cptr, buffer[BUFFER_SIZE];
 
-	file = fopen(arg, "r");
+  file = fopen(arg, "r");
 
-	if (file == NULL)
-	{
-		tintin_printf2(ses, "#HISTORY: COULDN'T OPEN FILE {%s} TO READ.", arg);
-		return;
-	}
+  if (file == NULL) {
+    tintin_printf2(ses, "#HISTORY: COULDN'T OPEN FILE {%s} TO READ.", arg);
+    return;
+  }
 
-	kill_list(ses->list[LIST_HISTORY]);
+  kill_list(ses->list[LIST_HISTORY]);
 
-	while (fgets(buffer, BUFFER_SIZE-1, file))
-	{
-		cptr = strchr(buffer, '\n');
+  while (fgets(buffer, BUFFER_SIZE - 1, file)) {
+    cptr = strchr(buffer, '\n');
 
-		if (cptr)
-		{
-			*cptr = 0;
+    if (cptr) {
+      *cptr = 0;
 
-			if (*buffer)
-			{
-				insert_node_list(ses->list[LIST_HISTORY], buffer, "", "");
-			}
-		}
-	}
-	insert_node_list(ses->list[LIST_HISTORY], "", "", "");
+      if (*buffer) {
+        insert_node_list(ses->list[LIST_HISTORY], buffer, "", "");
+      }
+    }
+  }
+  insert_node_list(ses->list[LIST_HISTORY], "", "", "");
 
-	fclose(file);
+  fclose(file);
 
-	return;
+  return;
 }
 
-DO_HISTORY(history_size)
-{
-	if (atoi(arg) < 1 || atoi(arg) > 100000)
-	{
-		tintin_printf(ses, "#HISTORY SIZE: PROVIDE A NUMBER BETWEEN 1 and 100,000");
-	}
-	else
-	{
-		gtd->history_size = atoi(arg);
-	}
-	return;
+DO_HISTORY(history_size) {
+  if (atoi(arg) < 1 || atoi(arg) > 100000) {
+    tintin_printf(ses, "#HISTORY SIZE: PROVIDE A NUMBER BETWEEN 1 and 100,000");
+  } else {
+    gtd->history_size = atoi(arg);
+  }
+  return;
 }
 
-DO_HISTORY(history_write)
-{
-	struct listroot *root = ses->list[LIST_HISTORY];
-	FILE *file;
-	int i;
+DO_HISTORY(history_write) {
+  struct listroot *root = ses->list[LIST_HISTORY];
+  FILE *file;
+  int i;
 
-	file = fopen(arg, "w");
+  file = fopen(arg, "w");
 
-	if (file == NULL)
-	{
-		tintin_printf2(ses, "#HISTORY: COULDN'T OPEN FILE {%s} TO WRITE.", arg);
+  if (file == NULL) {
+    tintin_printf2(ses, "#HISTORY: COULDN'T OPEN FILE {%s} TO WRITE.", arg);
 
-		return;
-	}
+    return;
+  }
 
-	for (i = 0 ; i < root->used ; i++)
-	{
-		fprintf(file, "%s\n", root->list[i]->left);
-	}
+  for (i = 0; i < root->used; i++) {
+    fprintf(file, "%s\n", root->list[i]->left);
+  }
 
-	fclose(file);
+  fclose(file);
 
-	return;
+  return;
 }

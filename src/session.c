@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2004 (See CREDITS file)                                     *
@@ -31,400 +32,350 @@
 #include <signal.h>
 
 /************************/
+
 /* the #session command */
+
 /************************/
 
-DO_COMMAND(do_session)
-{
-	char temp[BUFFER_SIZE], left[BUFFER_SIZE];
-	struct session *sesptr;
-	int cnt;
+DO_COMMAND(do_session) {
+  char temp[BUFFER_SIZE], left[BUFFER_SIZE];
+  struct session *sesptr;
+  int cnt;
 
-	substitute(ses, arg, temp, SUB_VAR|SUB_FUN);
+  substitute(ses, arg, temp, SUB_VAR | SUB_FUN);
 
-	arg = temp;
+  arg = temp;
 
-	arg = get_arg_in_braces(ses, arg, left,  FALSE);
+  arg = get_arg_in_braces(ses, arg, left, FALSE);
 
-	if (*left == 0)
-	{
-		tintin_puts(ses, "#THESE SESSIONS HAVE BEEN DEFINED:");
+  if (*left == 0) {
+    tintin_puts(ses, "#THESE SESSIONS HAVE BEEN DEFINED:");
 
-		for (sesptr = gts->next ; sesptr ; sesptr = sesptr->next)
-		{
-			show_session(ses, sesptr);
-		}
-	}
-	else if (*left && *arg == 0)
-	{
-		if (*left == '+')
-		{
-			return activate_session(ses->next ? ses->next : gts->next ? gts->next : ses);
-		}
+    for (sesptr = gts->next; sesptr; sesptr = sesptr->next) {
+      show_session(ses, sesptr);
+    }
+  } else if (*left && *arg == 0) {
+    if (*left == '+') {
+      return activate_session(ses->next ? ses->next : gts->next ? gts->next : ses);
+    }
 
-		if (*left == '-')
-		{
-			return activate_session(ses->prev ? ses->prev : gts->prev ? gts->prev : ses);
-		}
+    if (*left == '-') {
+      return activate_session(ses->prev ? ses->prev : gts->prev ? gts->prev : ses);
+    }
 
-		if (is_number(left))
-		{
-			for (cnt = 0, sesptr = gts ; sesptr ; cnt++, sesptr = sesptr->next)
-			{
-				if (cnt == atoi(left))
-				{
-					return activate_session(sesptr);
-				}
-			}
-		}
+    if (is_number(left)) {
+      for (cnt = 0, sesptr = gts; sesptr; cnt++, sesptr = sesptr->next) {
+        if (cnt == atoi(left)) {
+          return activate_session(sesptr);
+        }
+      }
+    }
 
-		tintin_puts(ses, "#THAT SESSION IS NOT DEFINED.");
-	}
-	else
-	{
-		ses = new_session(ses, left, arg, 0);
-	}
-	return gtd->ses;
+    tintin_puts(ses, "#THAT SESSION IS NOT DEFINED.");
+  } else {
+    ses = new_session(ses, left, arg, 0);
+  }
+  return gtd->ses;
 }
 
-
 /******************/
+
 /* show a session */
+
 /******************/
 
-void show_session(struct session *ses, struct session *ptr)
-{
-	char temp[BUFFER_SIZE];
+void show_session(struct session *ses, struct session *ptr) {
+  char temp[BUFFER_SIZE];
 
-	sprintf(temp, "%3d %-12s %20s:%-5s", ptr->socket, ptr->name, ptr->host, ptr->port);
+  sprintf(temp, "%3d %-12s %20s:%-5s", ptr->socket, ptr->name, ptr->host, ptr->port);
 
-	if (ptr == gtd->ses)
-	{
-		strcat(temp, " (active)");
-	}
-	else
-	{
-		strcat(temp, "         ");
-	}
+  if (ptr == gtd->ses) {
+    strcat(temp, " (active)");
+  } else {
+    strcat(temp, "         ");
+  }
 
-	if (ptr->mccp)
-	{
-		strcat(temp, " (mccp)   ");
-	}
+  if (ptr->mccp) {
+    strcat(temp, " (mccp)   ");
+  }
 
-	if (HAS_BIT(ptr->flags, SES_FLAG_SNOOP))
-	{
-		strcat(temp, " (snooped)");
-	}
+  if (HAS_BIT(ptr->flags, SES_FLAG_SNOOP)) {
+    strcat(temp, " (snooped)");
+  }
 
-	if (ptr->logfile)
-	{
-		strcat(temp, " (logging)");
-	}
+  if (ptr->logfile) {
+    strcat(temp, " (logging)");
+  }
 
-	tintin_puts2(ses, temp);
+  tintin_puts2(ses, temp);
 }
 
 /**********************************/
+
 /* find a new session to activate */
+
 /**********************************/
 
-struct session *newactive_session(void)
-{
-	push_call("newactive_session(void)");
+struct session *newactive_session(void) {
+  push_call("newactive_session(void)");
 
-	if (gts->next)
-	{
-		activate_session(gts->next);
-	}
-	else
-	{
-		activate_session(gts);
-	}
-	pop_call();
-	return gtd->ses;
+  if (gts->next) {
+    activate_session(gts->next);
+  } else {
+    activate_session(gts);
+  }
+  pop_call();
+  return gtd->ses;
 }
 
-struct session *activate_session(struct session *ses)
-{
-	check_all_events(gtd->ses, SUB_ARG|SUB_SEC, 0, 1, "SESSION DEACTIVATED", gtd->ses->name);
+struct session *activate_session(struct session *ses) {
+  check_all_events(gtd->ses, SUB_ARG | SUB_SEC, 0, 1, "SESSION DEACTIVATED", gtd->ses->name);
 
-	gtd->ses = ses;
+  gtd->ses = ses;
 
-	dirty_screen(ses);
+  dirty_screen(ses);
 
-	tintin_printf(ses, "#SESSION '%s' ACTIVATED.", ses->name);
+  tintin_printf(ses, "#SESSION '%s' ACTIVATED.", ses->name);
 
-	check_all_events(ses, SUB_ARG|SUB_SEC, 0, 1, "SESSION ACTIVATED", ses->name);
+  check_all_events(ses, SUB_ARG | SUB_SEC, 0, 1, "SESSION ACTIVATED", ses->name);
 
-	return ses;
+  return ses;
 }
 
 /**********************/
+
 /* open a new session */
+
 /**********************/
 
-struct session *new_session(struct session *ses, char *name, char *address, int desc)
-{
-	int cnt = 0;
-	char host[BUFFER_SIZE], port[BUFFER_SIZE];
-	struct session *newsession;
+struct session *new_session(struct session *ses, char *name, char *address, int desc) {
+  int cnt = 0;
+  char host[BUFFER_SIZE], port[BUFFER_SIZE];
+  struct session *newsession;
 
-	push_call("new_session(%p,%p,%p,%d)",ses,name,address,desc);
+  push_call("new_session(%p,%p,%p,%d)", ses, name, address, desc);
 
-	if (HAS_BIT(gtd->flags, TINTIN_FLAG_TERMINATE))
-	{
-		pop_call();
-		return ses;
-	}
+  if (HAS_BIT(gtd->flags, TINTIN_FLAG_TERMINATE)) {
+    pop_call();
+    return ses;
+  }
 
-	address = get_arg_in_braces(ses, address, host, FALSE);
-	address = get_arg_in_braces(ses, address, port, FALSE);
+  address = get_arg_in_braces(ses, address, host, FALSE);
+  address = get_arg_in_braces(ses, address, port, FALSE);
 
-	if (desc == 0)
-	{
-		if (*host == 0)
-		{
-			tintin_puts(ses, "#HEY! SPECIFY AN ADDRESS WILL YOU?");
+  if (desc == 0) {
+    if (*host == 0) {
+      tintin_puts(ses, "#HEY! SPECIFY AN ADDRESS WILL YOU?");
 
-			pop_call();
-			return ses;
-		}
+      pop_call();
+      return ses;
+    }
 
-		if (*port == 0)
-		{
-			tintin_puts(ses, "#HEY! SPECIFY A PORT NUMBER WILL YOU?");
+    if (*port == 0) {
+      tintin_puts(ses, "#HEY! SPECIFY A PORT NUMBER WILL YOU?");
 
-			pop_call();
-			return ses;
-		}
-	}
+      pop_call();
+      return ses;
+    }
+  }
 
-	for (newsession = gts ; newsession ; newsession = newsession->next)
-	{
-		if (!strcmp(newsession->name, name))
-		{
-			tintin_puts(ses, "THERE'S A SESSION WITH THAT NAME ALREADY.");
+  for (newsession = gts; newsession; newsession = newsession->next) {
+    if (!strcmp(newsession->name, name)) {
+      tintin_puts(ses, "THERE'S A SESSION WITH THAT NAME ALREADY.");
 
-			pop_call();
-			return ses;
-		}
-	}
+      pop_call();
+      return ses;
+    }
+  }
 
-	newsession                = (struct session *) calloc(1, sizeof(struct session));
+  newsession = (struct session *)calloc(1, sizeof (struct session));
 
-	newsession->name          = strdup(name);
-	newsession->host          = strdup(host);
-	newsession->ip            = strdup("");
-	newsession->port          = strdup(port);
+  newsession->name = strdup(name);
+  newsession->host = strdup(host);
+  newsession->ip = strdup("");
+  newsession->port = strdup(port);
 
-	newsession->group         = strdup(gts->group);
-	newsession->flags         = gts->flags;
-	newsession->telopts       = gts->telopts;
-	newsession->auto_tab      = gts->auto_tab;
+  newsession->group = strdup(gts->group);
+  newsession->flags = gts->flags;
+  newsession->telopts = gts->telopts;
+  newsession->auto_tab = gts->auto_tab;
 
-	newsession->cmd_color     = strdup(gts->cmd_color);
+  newsession->cmd_color = strdup(gts->cmd_color);
 
-	newsession->read_max      = gts->read_max;
-	newsession->read_buf      = (unsigned char *) calloc(1, gts->read_max);
+  newsession->read_max = gts->read_max;
+  newsession->read_buf = (unsigned char *)calloc(1, gts->read_max);
 
-	LINK(newsession, gts->next, gts->prev);
+  LINK(newsession, gts->next, gts->prev);
 
-	for (cnt = 0 ; cnt < LIST_MAX ; cnt++)
-	{
-		newsession->list[cnt] = copy_list(newsession, gts->list[cnt], cnt);
-	}
+  for (cnt = 0; cnt < LIST_MAX; cnt++) {
+    newsession->list[cnt] = copy_list(newsession, gts->list[cnt], cnt);
+  }
 
-	newsession->rows          = gts->rows;
-	newsession->cols          = gts->cols;
-	newsession->top_row       = gts->top_row;
-	newsession->bot_row       = gts->bot_row;
+  newsession->rows = gts->rows;
+  newsession->cols = gts->cols;
+  newsession->top_row = gts->top_row;
+  newsession->bot_row = gts->bot_row;
 
-	init_buffer(newsession, gts->scroll_max);
+  init_buffer(newsession, gts->scroll_max);
 
-	if (desc)
-	{
-		tintin_printf(ses, "#TRYING TO LAUNCH '%s' RUNNING '%s'.", newsession->name, newsession->host);
-	}
-	else
-	{
-		tintin_printf(ses, "#TRYING TO CONNECT '%s' TO '%s' PORT '%s'.", newsession->name, newsession->host, newsession->port);
-	}
+  if (desc) {
+    tintin_printf(ses, "#TRYING TO LAUNCH '%s' RUNNING '%s'.", newsession->name, newsession->host);
+  } else {
+    tintin_printf(ses, "#TRYING TO CONNECT '%s' TO '%s' PORT '%s'.", newsession->name, newsession->host, newsession->port);
+  }
 
-	gtd->ses = newsession;
+  gtd->ses = newsession;
 
-	dirty_screen(newsession);
+  dirty_screen(newsession);
 
-	if (desc == 0)
-	{
-		connect_session(newsession);
-	}
-	else
-	{
-		SET_BIT(newsession->flags, SES_FLAG_CONNECTED|SES_FLAG_RUN);
+  if (desc == 0) {
+    connect_session(newsession);
+  } else {
+    SET_BIT(newsession->flags, SES_FLAG_CONNECTED | SES_FLAG_RUN);
 
-		SET_BIT(newsession->telopts, TELOPT_FLAG_SGA);
-		DEL_BIT(newsession->telopts, TELOPT_FLAG_ECHO);
+    SET_BIT(newsession->telopts, TELOPT_FLAG_SGA);
+    DEL_BIT(newsession->telopts, TELOPT_FLAG_ECHO);
 
-		gtd->ses = newsession;
+    gtd->ses = newsession;
 
-		gtd->ses->socket = desc;
-	}
+    gtd->ses->socket = desc;
+  }
 
-	pop_call();
-	return gtd->ses;
+  pop_call();
+  return gtd->ses;
 }
 
-void connect_session(struct session *ses)
-{
-	int sock;
+void connect_session(struct session *ses) {
+  int sock;
 
-	ses->connect_retry = utime() + gts->connect_retry;
+  ses->connect_retry = utime() + gts->connect_retry;
 
-	reconnect:
+ reconnect:
 
-	sock = connect_mud(ses, ses->host, ses->port);
+  sock = connect_mud(ses, ses->host, ses->port);
 
-	if (sock == -1)
-	{
-		cleanup_session(ses);
+  if (sock == -1) {
+    cleanup_session(ses);
 
-		return;
-	}
+    return;
+  }
 
-	if (sock)
-	{
-		gtd->ses    = ses;
-		ses->socket = sock;
+  if (sock) {
+    gtd->ses = ses;
+    ses->socket = sock;
 
-		ses->connect_retry = 0;
+    ses->connect_retry = 0;
 
-		SET_BIT(ses->flags, SES_FLAG_CONNECTED);
+    SET_BIT(ses->flags, SES_FLAG_CONNECTED);
 
-		tintin_printf2(ses, "");
+    tintin_printf2(ses, "");
 
-		tintin_printf(ses, "#SESSION '%s' CONNECTED TO '%s' PORT '%s'", ses->name, ses->host, ses->port);
+    tintin_printf(ses, "#SESSION '%s' CONNECTED TO '%s' PORT '%s'", ses->name, ses->host, ses->port);
 
-		check_all_events(ses, SUB_ARG|SUB_SEC, 0, 4, "SESSION CONNECTED", ses->name, ses->host, ses->ip, ses->port);
+    check_all_events(ses, SUB_ARG | SUB_SEC, 0, 4, "SESSION CONNECTED", ses->name, ses->host, ses->ip, ses->port);
 
-		return;
-	}
+    return;
+  }
 
-	if (ses->connect_retry > utime())
-	{
-		goto reconnect;
-	}
+  if (ses->connect_retry > utime()) {
+    goto reconnect;
+  }
 
-	if (ses->connect_error)
-	{
-		tintin_printf(ses, "#SESSION '%s' FAILED TO CONNECT.", ses->name);
-	}
+  if (ses->connect_error) {
+    tintin_printf(ses, "#SESSION '%s' FAILED TO CONNECT.", ses->name);
+  }
 
-	cleanup_session(ses);
+  cleanup_session(ses);
 
 }
 
 /*****************************************************************************/
+
 /* cleanup after session died. if session=gtd->ses, try find new active      */
+
 /*****************************************************************************/
 
-void cleanup_session(struct session *ses)
-{
-	push_call("cleanup_session(%p)",ses);
+void cleanup_session(struct session *ses) {
+  push_call("cleanup_session(%p)", ses);
 
-	if (ses == gtd->update)
-	{
-		gtd->update = ses->next;
-	}
+  if (ses == gtd->update) {
+    gtd->update = ses->next;
+  }
 
-	UNLINK(ses, gts->next, gts->prev);
+  UNLINK(ses, gts->next, gts->prev);
 
-	if (ses->socket)
-	{
-		if (close(ses->socket) == -1)
-		{
-			syserr("close in cleanup");
-		}
+  if (ses->socket) {
+    if (close(ses->socket) == -1) {
+      syserr("close in cleanup");
+    }
+    // the PID is stored in the session's port.
 
-		// the PID is stored in the session's port.
+    if (HAS_BIT(ses->flags, SES_FLAG_RUN)) {
+      kill(atoi(ses->port), SIGKILL);
+    }
 
-		if (HAS_BIT(ses->flags, SES_FLAG_RUN))
-		{
-			kill(atoi(ses->port), SIGKILL);
-		}
+  }
 
-	}
+  if (HAS_BIT(ses->flags, SES_FLAG_CONNECTED)) {
+    check_all_events(ses, SUB_ARG | SUB_SEC, 0, 4, "SESSION DISCONNECTED", ses->name, ses->host, ses->ip, ses->port);
 
-	if (HAS_BIT(ses->flags, SES_FLAG_CONNECTED))
-	{
-		check_all_events(ses, SUB_ARG|SUB_SEC, 0, 4, "SESSION DISCONNECTED", ses->name, ses->host, ses->ip, ses->port);
+    tintin_printf(gtd->ses, "#SESSION '%s' DIED.", ses->name);
+  } else {
+    check_all_events(ses, SUB_ARG | SUB_SEC, 0, 4, "SESSION TIMED OUT", ses->name, ses->host, ses->ip, ses->port);
 
-		tintin_printf(gtd->ses, "#SESSION '%s' DIED.", ses->name);
-	}
-	else
-	{
-		check_all_events(ses, SUB_ARG|SUB_SEC, 0, 4, "SESSION TIMED OUT", ses->name, ses->host, ses->ip, ses->port);
+    tintin_printf(gtd->ses, "#SESSION '%s' TIMED OUT.", ses->name);
+  }
 
-		tintin_printf(gtd->ses, "#SESSION '%s' TIMED OUT.", ses->name);
-	}
+  if (ses == gtd->ses) {
+    gtd->ses = newactive_session();
+  }
 
-	if (ses == gtd->ses)
-	{
-		gtd->ses = newactive_session();
-	}
+  if (ses->logfile) {
+    fclose(ses->logfile);
+  }
 
-	if (ses->logfile)
-	{
-		fclose(ses->logfile);
-	}
+  if (ses->logline) {
+    fclose(ses->logline);
+  }
 
-	if (ses->logline)
-	{
-		fclose(ses->logline);
-	}
+  LINK(ses, gtd->dispose_next, gtd->dispose_prev);
 
-	LINK(ses, gtd->dispose_next, gtd->dispose_prev);
-
-	pop_call();
-	return;
+  pop_call();
+  return;
 }
 
-void dispose_session(struct session *ses)
-{
-	int index;
+void dispose_session(struct session *ses) {
+  int index;
 
-	push_call("dispose_session(%p)", ses);
+  push_call("dispose_session(%p)", ses);
 
-	UNLINK(ses, gtd->dispose_next, gtd->dispose_prev);
+  UNLINK(ses, gtd->dispose_next, gtd->dispose_prev);
 
-	for (index = 0 ; index < LIST_MAX ; index++)
-	{
-		free_list(ses->list[index]);
-	}
+  for (index = 0; index < LIST_MAX; index++) {
+    free_list(ses->list[index]);
+  }
 
-	if (ses->map)
-	{
-		delete_map(ses);
-	}
+  if (ses->map) {
+    delete_map(ses);
+  }
 
-	if (ses->mccp)
-	{
-		inflateEnd(ses->mccp);
-		free(ses->mccp);
-	}
+  if (ses->mccp) {
+    inflateEnd(ses->mccp);
+    free(ses->mccp);
+  }
 
-	init_buffer(ses, 0);
+  init_buffer(ses, 0);
 
-	free(ses->name);
-	free(ses->host);
-	free(ses->ip);
-	free(ses->port);
-	free(ses->group);
-	free(ses->read_buf);
-	free(ses->cmd_color);
+  free(ses->name);
+  free(ses->host);
+  free(ses->ip);
+  free(ses->port);
+  free(ses->group);
+  free(ses->read_buf);
+  free(ses->cmd_color);
 
-	free(ses);
+  free(ses);
 
-	pop_call();
-	return;
+  pop_call();
+  return;
 }

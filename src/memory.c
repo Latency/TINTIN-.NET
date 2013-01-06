@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2007 (See CREDITS file)                                     *
@@ -27,26 +28,23 @@
 
 #include "tintin.h"
 
-char *restring(char *point, char *string)
-{
-	free(point);
+char *restring(char *point, char *string) {
+  free(point);
 
-	return strdup(string);
+  return strdup(string);
 }
 
-char *refstring(char *point, char *fmt, ...)
-{
-	char string[STRING_SIZE];
-	va_list args;
+char *refstring(char *point, char *fmt, ...) {
+  char string[STRING_SIZE];
+  va_list args;
 
-	va_start(args, fmt);
-	vsprintf(string, fmt, args);
-	va_end(args);
+  va_start(args, fmt);
+  vsprintf(string, fmt, args);
+  va_end(args);
 
-	if (point)
-	{
-		free(point);
-	}
+  if (point) {
+    free(point);
+  }
 
-	return strdup(string);
+  return strdup(string);
 }

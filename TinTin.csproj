@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>tt.Program</StartupObject>
+    <StartupObject>TinTin.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Properties\sBIO2.ico</ApplicationIcon>
@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Functions.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,7 +159,6 @@
     <Content Include="src\debug.c" />
     <Content Include="src\event.c" />
     <Content Include="src\files.c" />
-    <Content Include="src\forkpty.c" />
     <Content Include="src\function.c" />
     <Content Include="src\gag.c" />
     <Content Include="src\help.c" />

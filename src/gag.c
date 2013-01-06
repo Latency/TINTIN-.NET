@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2007 (See CREDITS file)                                     *
@@ -25,47 +26,37 @@
 *                       coded by Igor van den Hoven 2007                      *
 ******************************************************************************/
 
-
 #include "tintin.h"
 
-DO_COMMAND(do_gag)
-{
-	char arg1[BUFFER_SIZE];
+DO_COMMAND(do_gag) {
+  char arg1[BUFFER_SIZE];
 
-	arg = sub_arg_in_braces(ses, arg, arg1, 1, SUB_VAR|SUB_FUN);
+  arg = sub_arg_in_braces(ses, arg, arg1, 1, SUB_VAR | SUB_FUN);
 
-	if (*arg1 == 0)
-	{
-		show_list(ses->list[LIST_GAG], 0);
-	}
-	else
-	{
-		update_node_list(ses->list[LIST_GAG], arg1, "", "");
+  if (*arg1 == 0) {
+    show_list(ses->list[LIST_GAG], 0);
+  } else {
+    update_node_list(ses->list[LIST_GAG], arg1, "", "");
 
-		show_message(ses, LIST_GAG, "#OK. {%s} IS NOW GAGGED.", arg1);
-	}
-	return ses;
+    show_message(ses, LIST_GAG, "#OK. {%s} IS NOW GAGGED.", arg1);
+  }
+  return ses;
 }
 
+DO_COMMAND(do_ungag) {
+  delete_node_with_wild(ses, LIST_GAG, arg);
 
-DO_COMMAND(do_ungag)
-{
-	delete_node_with_wild(ses, LIST_GAG, arg);
-
-	return ses;
+  return ses;
 }
 
-void check_all_gags(struct session *ses, char *original, char *line)
-{
-	struct listroot *root = ses->list[LIST_GAG];
+void check_all_gags(struct session *ses, char *original, char *line) {
+  struct listroot *root = ses->list[LIST_GAG];
 
-	for (root->update = 0 ; root->update < root->used ; root->update++)
-	{
-		if (check_one_regexp(ses, root->list[root->update], line, original, 0))
-		{
-			SET_BIT(ses->flags, SES_FLAG_GAG);
+  for (root->update = 0; root->update < root->used; root->update++) {
+    if (check_one_regexp(ses, root->list[root->update], line, original, 0)) {
+      SET_BIT(ses->flags, SES_FLAG_GAG);
 
-			return;
-		}
-	}
+      return;
+    }
+  }
 }

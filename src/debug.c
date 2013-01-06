@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2004 (See CREDITS file)                                     *
@@ -25,7 +26,6 @@
 *                     coded by Igor van den Hoven 2004                        *
 ******************************************************************************/
 
-
 #include "tintin.h"
 
 #define MAX_STACK_SIZE     51
@@ -35,64 +35,52 @@ char debug_stack[MAX_STACK_SIZE][MAX_DEBUG_SIZE];
 
 short debug_index;
 
-int push_call(char *f, ...)
-{
-	va_list ap;
+int push_call(char *f, ...) {
+  va_list ap;
 
-	if (debug_index < MAX_STACK_SIZE)
-	{
-		va_start(ap, f);
+  if (debug_index < MAX_STACK_SIZE) {
+    va_start(ap, f);
 
-		vsnprintf(debug_stack[debug_index], MAX_DEBUG_SIZE - 1, f, ap);
+    vsnprintf(debug_stack[debug_index], MAX_DEBUG_SIZE - 1, f, ap);
 
-		va_end(ap);
-	}
+    va_end(ap);
+  }
 
-	if (++debug_index == 10000)
-	{
-		dump_stack();
+  if (++debug_index == 10000) {
+    dump_stack();
 
-		return 1;
-	}
+    return 1;
+  }
 
-	return 0;
+  return 0;
 }
 
-void pop_call(void)
-{
-	if (debug_index > 0)
-	{
-		debug_index--;
-	}
-	else
-	{
-		tintin_printf2(gtd->ses, "pop_call: index is zero.");
-		dump_full_stack();
-	}
+void pop_call(void) {
+  if (debug_index > 0) {
+    debug_index--;
+  } else {
+    tintin_printf2(gtd->ses, "pop_call: index is zero.");
+    dump_full_stack();
+  }
 }
 
-void dump_stack(void)
-{
-	unsigned char i;
+void dump_stack(void) {
+  unsigned char i;
 
-	for (i = 0 ; i < debug_index && i < MAX_STACK_SIZE ; i++)
-	{
-		printf("\033[1;32mDEBUG_STACK[\033[1;31m%03d\033[1;32m] = \033[1;31m%s\n", i, debug_stack[i]);
-	}
+  for (i = 0; i < debug_index && i < MAX_STACK_SIZE; i++) {
+    printf("\033[1;32mDEBUG_STACK[\033[1;31m%03d\033[1;32m] = \033[1;31m%s\n", i, debug_stack[i]);
+  }
 }
 
-void dump_full_stack(void)
-{
-	unsigned char i;
+void dump_full_stack(void) {
+  unsigned char i;
 
-	tintin_header(gtd->ses, " FULL DEBUG STACK ");
+  tintin_header(gtd->ses, " FULL DEBUG STACK ");
 
-	for (i = 0 ; i < MAX_STACK_SIZE ; i++)
-	{
-		if (*debug_stack[i])
-		{
-			tintin_printf2(gtd->ses, "\033[1;31mDEBUG_STACK[%03d] = %s", i, debug_stack[i]);
-		}
-	}
-	tintin_header(gtd->ses, "");
+  for (i = 0; i < MAX_STACK_SIZE; i++) {
+    if (*debug_stack[i]) {
+      tintin_printf2(gtd->ses, "\033[1;31mDEBUG_STACK[%03d] = %s", i, debug_stack[i]);
+    }
+  }
+  tintin_header(gtd->ses, "");
 }

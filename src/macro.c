@@ -1,3 +1,4 @@
+
 /******************************************************************************
 *   TinTin++                                                                  *
 *   Copyright (C) 2004 (See CREDITS file)                                     *
@@ -25,43 +26,32 @@
 *                      coded by Igor van den Hoven 2006                       *
 ******************************************************************************/
 
-
 #include "tintin.h"
 
-DO_COMMAND(do_macro)
-{
-	char arg1[BUFFER_SIZE], arg2[BUFFER_SIZE], arg3[BUFFER_SIZE];
+DO_COMMAND(do_macro) {
+  char arg1[BUFFER_SIZE], arg2[BUFFER_SIZE], arg3[BUFFER_SIZE];
 
-	arg = sub_arg_in_braces(ses, arg, arg1, 0, SUB_VAR|SUB_FUN);
-	arg = get_arg_in_braces(ses, arg, arg2, 1);
+  arg = sub_arg_in_braces(ses, arg, arg1, 0, SUB_VAR | SUB_FUN);
+  arg = get_arg_in_braces(ses, arg, arg2, 1);
 
-	if (*arg1 == 0)
-	{
-		show_list(ses->list[LIST_MACRO], 0);
-	}
-	else if (*arg1 && *arg2 == 0)
-	{
-		if (show_node_with_wild(ses, arg1, LIST_MACRO) == FALSE)
-		{
-			show_message(ses, LIST_MACRO, "#MACRO: NO MATCH(ES) FOUND FOR {%s}.", arg1);
-		}
-	}
-	else
-	{
-		unconvert_meta(arg1, arg3);
+  if (*arg1 == 0) {
+    show_list(ses->list[LIST_MACRO], 0);
+  } else if (*arg1 && *arg2 == 0) {
+    if (show_node_with_wild(ses, arg1, LIST_MACRO) == FALSE) {
+      show_message(ses, LIST_MACRO, "#MACRO: NO MATCH(ES) FOUND FOR {%s}.", arg1);
+    }
+  } else {
+    unconvert_meta(arg1, arg3);
 
-		update_node_list(ses->list[LIST_MACRO], arg1, arg2, arg3);
+    update_node_list(ses->list[LIST_MACRO], arg1, arg2, arg3);
 
-		show_message(ses, LIST_MACRO, "#OK. MACRO {%s} HAS BEEN SET TO {%s}.", arg1, arg2);
-	}
-	return ses;
+    show_message(ses, LIST_MACRO, "#OK. MACRO {%s} HAS BEEN SET TO {%s}.", arg1, arg2);
+  }
+  return ses;
 }
 
+DO_COMMAND(do_unmacro) {
+  delete_node_with_wild(ses, LIST_MACRO, arg);
 
-DO_COMMAND(do_unmacro)
-{
-	delete_node_with_wild(ses, LIST_MACRO, arg);
-
-	return ses;
+  return ses;
 }
-
