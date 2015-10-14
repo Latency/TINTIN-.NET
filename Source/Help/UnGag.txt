@@ -1,0 +1,8 @@
+UnGag
+
+Syntax: #ungag {message}
+
+The #ungag command removes a previously gagged message.
+The message will revert to being displayed once again.
+
+Example: #ungag {%iTwinkie chats}
