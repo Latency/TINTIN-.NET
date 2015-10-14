@@ -1,0 +1,12 @@
+Name
+
+Syntax: #[sessionname] {commands}
+
+When using the session command you must specify a name, this name can be used to activate the session if no additional
+argument is given. If an additional argument is given it will be executed by that session as a command without putting the
+session on the foreground.
+
+Example: #ses one address 23;#ses two address 23;#one;#two wiggle
+This will create two sessions, the last created session (two) will be in the foreground. Using #one, session (one) is placed
+back in the foreground. Using #two wiggle, the wiggle social will be executed by session (two), this because it's always good
+to do some exercises with your character after a long mud break.

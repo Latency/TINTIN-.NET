@@ -1,0 +1,12 @@
+Nop
+
+Syntax: #nop
+
+The name 'nop' means 'no operation' and is useful if you don't want to do a thing.
+
+Example: #act {&} {#nop} {0}
+Some muds allow you to separate commands using '&', while still allowing players to use it in says or tells. This would allow
+some devious players to abuse you triggers without this protection. So if a message contains the '&' character vulnerable
+actions will not be triggered, since only 1 action is allowed to be triggered at a time.
+
+You can also use #nop to leave comments in scripts, make sure to avoid using the '{' and '}' characters in that case.

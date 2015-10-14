@@ -1,0 +1,29 @@
+History
+
+Syntax: #history {command} {argument}
+
+The history command is used in conjunction with the repeat character which is set to '!' by default. The command history is a
+list of manually entered commands, by default the last 1000 unique commands are remembered for each session, this can be
+changed with the config command.
+
+#history {delete}
+
+#history delete will delete the last command in the command history.
+
+#history {insert} {command}
+
+#history insert will add the given command to the end of the command history.
+
+#history {list}
+
+#history list will show all entries in the command history.
+
+#history {read} {filename}
+
+#history read allows reading in a previously saved command history list. Using event triggers this can be done whenever a
+session is opened.
+
+#history {write} {filename}
+
+#history write allows writing the command history list to file. Using event triggers this can be done whenever a session is
+closed.

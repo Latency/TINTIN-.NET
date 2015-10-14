@@ -1,0 +1,16 @@
+Pathdir
+
+Syntax: #pathdir {forward direction} {backward direction} {coord}
+
+By default tintin sets the most commonly used movement commands meaning you generally don't really have to bother with
+pathdirs. Pathdirs are used by the #path and #map commands.
+
+The first argument is a direction, the second argument is the reversed direction. The reverse direction of north is south, etc.
+
+The third argument is a spatial coordinate. In general, each cardinal direction should have a unique value which is a power
+of two (e.g. 1, 2, 4, 8, 16, 32, 64, etc). The exception is for compound directions, whose value should be the sum of the
+values for each component direction. For example, if the third value for 'n' is 1, and 'e' is 2, then you would want 'ne' to
+have a value of 3 (1 + 2). This value is required for the #map functionality to work.
+
+Example: #pathdir {ue} {dw} {18}
+Notice: You can remove pathdirs with the #unpathdir command.

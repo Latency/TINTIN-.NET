@@ -1,0 +1,14 @@
+Gag
+
+Syntax: #gag {message}
+
+The #gag command does the same thing as #substitute {message} {.} and adds the message to your substitution list. A gagged
+message will no longer be displayed.
+
+See the help file on Action for more information.
+
+Example: #gag {%iTwinkie chats}
+If Twinkie is an annoying person, he'll be a gagged annoying person with this gag. The %i at the start makes the gag case
+incensitive, so if Twinkie logs in as TWINKIE the gag will still work.
+
+Notice: You can remove gags with the #ungag command.

@@ -1,0 +1,19 @@
+Highlight
+
+Syntax: #highlight {message} {color}
+
+The highlight command will add a message to your highlight list. If a message matches it will be colored accordingly to the
+given color code(s).
+
+See the entry on #action for information about the available regular expression options. The %0 variable shouldn't be used in
+the message part.
+
+Available color codes are: reset, light, faint, underscore, blink, reverse, dim, black, red, green, yellow, blue, magenta,
+cyan, white, b black, b red, b green, b yellow, b blue, b magenta, b cyan, b white. You can also use TinTin# color codes for
+xterm 256 color support.
+
+Example: #highlight {^{You |Your }} {light cyan}
+This will highlight lines starting with 'You ' and 'Your ' in light cyan.
+
+Example: #highlight {%* tells you '%*'} {<ace>}
+Notice: You can remove highlights with the #unhighlight command.

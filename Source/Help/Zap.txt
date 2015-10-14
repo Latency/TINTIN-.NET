@@ -1,0 +1,5 @@
+Zap
+
+Syntax: #zap
+
+Will close the current active session. If no session is active it will close TinTin#.

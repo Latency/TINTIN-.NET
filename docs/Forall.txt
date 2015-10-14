@@ -1,9 +1,0 @@
-Forall
-
-Syntax: #forall {list} {commands}
-
-List elements must either be separated by braces or semicolons.
-
-Example: #forall {a;b;c;d} {say &0}
-Example: #forall {{a}{b}{c}{d}} {say &0}
-Both equal: say a;say b;say c;say d

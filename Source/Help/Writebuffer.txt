@@ -1,0 +1,6 @@
+Writebuffer
+
+Syntax: #writebuffer {filename}
+
+This will write your scrollback buffer to file. The data type is the same as the log file data setting in your configuration
+menu.

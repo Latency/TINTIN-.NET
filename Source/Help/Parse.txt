@@ -1,0 +1,34 @@
+Parse
+
+Syntax: #parse {string} {variable} {commands}
+
+The parse command works like a simplified loop. Each character in the string will be stored in the given variable and can be
+used in the commands part.
+
+Example: #parse {hello} {character} {say $character!}
+This equals: say h!;say e!;say l!;say l!;say o!
+
+While generally a useless tintin command, it can be used for some nifty stuff, like using . as a speedwalk command shortcut.
+#alias {.%0}
+{
+  #var cnt {};
+
+  #parse {%0} {char}
+  {
+    #if {"$char" >= "0" && "$char" <= "9"}
+    {
+      #var cnt $cnt$char
+    };
+      #elseif {"$cnt" == ""}
+    {                     
+      #send $char
+    };
+    #else
+    {    
+      #loop $cnt 0 cnt
+      {
+      #send $char
+      }
+    }
+  }
+}

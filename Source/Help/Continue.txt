@@ -1,0 +1,8 @@
+Continue
+
+Syntax: #continue
+
+The continue command can be used to skip the commands inside the #foreach, #loop, #parse, #switch, and #while commands.
+When #continue is found TinTin# will move to the end of the loop or trigger, and continue as usual.
+
+Example: #loop 1 10 cnt {#if {$cnt % 2 == 0} {#continue};say $cnt}

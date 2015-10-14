@@ -1,0 +1,11 @@
+Debug
+
+Syntax: #debug {listname} {argument}
+
+Without an argument debug will show the lists you can toggle. If no argument is given it will toggle the specified list flag.
+You can more specificly change the debug flag using ON, OFF or LOG as the argument.
+
+Not all debug options work as of yet.
+
+Example: #message action on
+Actions will generate a message when triggered, showing you what is being executed.

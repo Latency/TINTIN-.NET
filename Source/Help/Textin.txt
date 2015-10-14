@@ -1,0 +1,10 @@
+Textin
+
+Syntax: #textin {filename}
+
+This will read in a file and send each line to the mud. The text will not be parsed by tintin. Useful to dump a script file
+into a mud's note editor or something of that order. Remember that most muds will close your connection if you send too much
+data.
+
+Example: #textin desc1.txt
+Would load the data of desc1 in an olc editor or something.

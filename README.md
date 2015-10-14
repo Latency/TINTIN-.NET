@@ -1,9 +1,12 @@
-<b>TinTin#</b>
+﻿<b>TinTin#</b>
 <hr>
 
 TinTin# is a console client interpreter enhanced with features for various communication protocols such as telnet/ssh/etc.<br>
 
+<hr>
 
+  <H1>This project is currently in under construction!</H1>
+  
 <pre>
   <b>Supported Protocols</b>
 
@@ -17,6 +20,7 @@ TinTin# is a console client interpreter enhanced with features for various commu
   • xterm 256 colors - Allows using 256 different colors instead of the traditional 16.
 
   <b>Program Features</b>
+  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Action.txt">Action</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Alias.txt">Alias</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/All.txt">All</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Bell.txt">Bell</a>
@@ -27,7 +31,7 @@ TinTin# is a console client interpreter enhanced with features for various commu
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Chat_Protocol.txt">Chat_Protocol</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Class.txt">Class</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Colors.txt">Colors</a>
-  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Commands.txt">Commands</a>
+  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Switchboard.txt">Switchboard</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Config.txt">Config</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Continue.txt">Continue</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Cr.txt">Cr</a>
@@ -92,6 +96,8 @@ TinTin# is a console client interpreter enhanced with features for various commu
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Tab.txt">Tab</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Textin.txt">Textin</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Ticker.txt">Ticker</a>
+  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/UnGag.txt">UnGag</a>
+  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/UnTab.txt">UnTab</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Variable.txt">Variable</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/While.txt">While</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/docs/Wildcards.txt">Wildcards</a>

@@ -1,0 +1,8 @@
+Read
+
+Syntax: #read {filename}
+
+This command will read in a command file.
+
+Example: #read autolevel.tin
+This would read in a file of your making containing aliasses, actions, tickers, etc, to engage in some auto leveling.

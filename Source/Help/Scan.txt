@@ -1,0 +1,6 @@
+Scan
+
+Syntax: #scan
+
+The scan command reads in a filename and sending it to the screen as if it was mud output. This is useful for converting ansi
+files to html and reading log files.

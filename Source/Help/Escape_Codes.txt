@@ -1,0 +1,21 @@
+Escape Codes
+
+The escape character in tintin is the backslash: \ which can be used in combination with several characters to create escape
+codes.
+
+ \a   will beep the terminal.
+ \b   will send a backspace character.
+ \c   will send a control character, \ca for ctrl-a.
+ \e   will start an escape sequence.
+ \n   will send a line feed.
+ \r   will send a carriage return.
+ \t   will send a tab.
+ \x   will print an hexadecimal character value, \xFF for example.
+ \x7B will send the '{' character.
+ \x7D will send the '}' character.
+ \0   will print a 6 bit octal character value, \077 for example.
+ \\   will print a single \.
+
+Ending a line with a \ will stop tintin from appending a line feed when using #showme, #send or #line.
+
+To escape arguments in an alias use %%0 %%1 %%2 etc.

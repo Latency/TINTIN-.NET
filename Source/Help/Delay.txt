@@ -1,0 +1,18 @@
+Delay
+
+Syntax: #delay {seconds} {commands}
+
+Syntax: #delay {name} {command} {seconds}
+
+Delay allows you to have tintin wait the given amount of seconds before executing the given command. Floating point numbers
+for millisecond precision are possible.
+
+The delay command works differently depending on the number of arguments. With three arguments #delay has the same syntax as
+the #tick command, allowing you to name the delay. If you use a named delay and a delay with the exact same name is currently
+pending, it will be removed and never execute. Using a named delay also makes it easier to use the #undelay command.
+
+Example: #delay {600} {#showme Check the oven!
+This will inform you after 600 seconds to check the oven, preferable to relying on the smoke alarm.
+
+Example: #delay {oven timer} {#showme Check the oven!} {600}
+Same as above, instead using a named delay.

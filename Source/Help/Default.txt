@@ -1,0 +1,8 @@
+Default
+
+Syntax: #default {commands}
+
+The default command can only be used within the switch command. When the conditional argument of none of the case commands
+matches the switch command's conditional statement the default command is executed.
+
+Example: #switch {1d4} {#case 1 cackle;#case 2 smile;#default giggle}

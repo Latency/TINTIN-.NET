@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinTin</RootNamespace>
+    <AssemblyName>tt</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TinTin.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Properties\sBIO2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="enums\enm_Chat.cs" />
+    <Compile Include="enums\enm_Chat_Flags.cs" />
+    <Compile Include="enums\enm_Commands.cs" />
+    <Compile Include="enums\enm_Command_Attributes.cs" />
+    <Compile Include="enums\enm_Exit_Flags.cs" />
+    <Compile Include="enums\enm_Map_Exits.cs" />
+    <Compile Include="enums\enm_Map_Flags.cs" />
+    <Compile Include="enums\enm_Map_Search.cs" />
+    <Compile Include="enums\enm_Map_Undo.cs" />
+    <Compile Include="enums\enm_Node_Flags.cs" />
+    <Compile Include="enums\enm_Operator.cs" />
+    <Compile Include="enums\enm_Room_Flags.cs" />
+    <Compile Include="enums\enm_Session_Flags.cs" />
+    <Compile Include="enums\enm_Status.cs" />
+    <Compile Include="enums\enm_Substitution_Flags.cs" />
+    <Compile Include="enums\enm_Telnet_Flags.cs" />
+    <Compile Include="enums\enm_Telnet_Confirmation.cs" />
+    <Compile Include="enums\enm_Lexagraphical.cs" />
+    <Compile Include="enums\enm_Arrows.cs" />
+    <Compile Include="enums\enm_OnOff.cs" />
+    <Compile Include="enums\enm_Timer.cs" />
+    <Compile Include="enums\enm_Tintin_Flags.cs" />
+    <Compile Include="enums\enm_VT100_Attributes.cs" />
+    <Compile Include="enums\enm_VT100_Color.cs" />
+    <Compile Include="ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IFluentInterface.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CmdParser.cs" />
+    <Compile Include="commands\Action.cs" />
+    <Compile Include="commands\Gag.cs" />
+    <Compile Include="commands\UnGag.cs" />
+    <None Include="config\Color256.cs" />
+    <Compile Include="config\Configuration.cs" />
+    <Compile Include="commands\Switchboard.cs" />
+    <Compile Include="EventLogger.cs" />
+    <Compile Include="ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstanceTracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstanceTracker.designer.cs">
+      <DependentUpon>InstanceTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceTracker2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstanceTracker2.designer.cs">
+      <DependentUpon>InstanceTracker2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ICommands.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="structs\ExitData.cs" />
+    <Compile Include="structs\GridData.cs" />
+    <Compile Include="structs\LinkData.cs" />
+    <Compile Include="structs\ListNode.cs" />
+    <Compile Include="structs\ListRoot.cs" />
+    <Compile Include="structs\RoomData.cs" />
+    <Compile Include="structs\SessionData.cs" />
+    <Compile Include="structs\StrHashData.cs" />
+    <Compile Include="structs\TerminalData.cs" />
+    <Compile Include="Timers.cs" />
+    <Compile Include="Typedef.cs" />
+    <Compile Include="types\color_t.cs" />
+    <Compile Include="types\command_t.cs" />
+    <Compile Include="types\event_t.cs" />
+    <Compile Include="types\substutition_t.cs" />
+    <Compile Include="types\term_t.cs" />
+    <Compile Include="commands\Write.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\Action.txt" />
+    <Content Include="Help\Alias.txt" />
+    <Content Include="Help\All.txt" />
+    <Content Include="Help\Bell.txt" />
+    <Content Include="Help\Break.txt" />
+    <Content Include="Help\Buffer.txt" />
+    <Content Include="Help\Case.txt" />
+    <Content Include="Help\Chat.txt" />
+    <Content Include="Help\Chat_Protocol.txt" />
+    <Content Include="Help\Class.txt" />
+    <Content Include="Help\Colors.txt" />
+    <Content Include="Help\Commands.txt" />
+    <Content Include="Help\Config.txt" />
+    <Content Include="Help\Continue.txt" />
+    <Content Include="Help\Cr.txt" />
+    <Content Include="Help\Cursor.txt" />
+    <Content Include="Help\Debug.txt" />
+    <Content Include="Help\Default.txt" />
+    <Content Include="Help\Delay.txt" />
+    <Content Include="Help\Echo.txt" />
+    <Content Include="Help\Else.txt" />
+    <Content Include="Help\Elseif.txt" />
+    <Content Include="Help\End.txt" />
+    <Content Include="Help\Escape_Codes.txt" />
+    <Content Include="Help\Event.txt" />
+    <Content Include="Help\Forall.txt" />
+    <Content Include="Help\Foreach.txt" />
+    <Content Include="Help\Format.txt" />
+    <Content Include="Help\Function.txt" />
+    <Content Include="Help\Gag.txt" />
+    <Content Include="Help\Greeting.txt" />
+    <Content Include="Help\Grep.txt" />
+    <Content Include="Help\Help.txt" />
+    <Content Include="Help\Highlight.txt" />
+    <Content Include="Help\History.txt" />
+    <Content Include="Help\If.txt" />
+    <Content Include="Help\Ignore.txt" />
+    <Content Include="Help\Info.txt" />
+    <Content Include="Help\Keypad.txt" />
+    <Content Include="Help\Kill.txt" />
+    <Content Include="Help\Line.txt" />
+    <Content Include="Help\List.txt" />
+    <Content Include="Help\Log.txt" />
+    <Content Include="Help\Loop.txt" />
+    <Content Include="Help\Macro.txt" />
+    <Content Include="Help\Map.txt" />
+    <Content Include="Help\Math.txt" />
+    <Content Include="Help\Mathexp.txt" />
+    <Content Include="Help\Message.txt" />
+    <Content Include="Help\Name.txt" />
+    <Content Include="Help\Nop.txt" />
+    <Content Include="Help\Parse.txt" />
+    <Content Include="Help\Path.txt" />
+    <Content Include="Help\Pathdir.txt" />
+    <Content Include="Help\Prompt.txt" />
+    <Content Include="Help\Read.txt" />
+    <Content Include="Help\Regexp.txt" />
+    <Content Include="Help\Repeat.txt" />
+    <Content Include="Help\Replace.txt" />
+    <Content Include="Help\Return.txt" />
+    <Content Include="Help\Run.txt" />
+    <Content Include="Help\Scan.txt" />
+    <Content Include="Help\Script.txt" />
+    <Content Include="Help\Send.txt" />
+    <Content Include="Help\Session.txt" />
+    <Content Include="Help\Showme.txt" />
+    <Content Include="Help\Snoop.txt" />
+    <Content Include="Help\Speedwalk.txt" />
+    <Content Include="Help\Split.txt" />
+    <Content Include="Help\Substitute.txt" />
+    <Content Include="Help\Suspend.txt" />
+    <Content Include="Help\Switch.txt" />
+    <Content Include="Help\System.txt" />
+    <Content Include="Help\Tab.txt" />
+    <Content Include="Help\Textin.txt" />
+    <Content Include="Help\Ticker.txt" />
+    <Content Include="Help\UnTab.txt" />
+    <Content Include="Help\Variable.txt" />
+    <Content Include="Help\While.txt" />
+    <Content Include="Help\Wildcards.txt" />
+    <Content Include="Help\Write.txt" />
+    <Content Include="Help\Writebuffer.txt" />
+    <Content Include="Help\Zap.txt" />
+    <Content Include="Properties\sBIO2.ico" />
+    <Content Include="config\config.c" />
+    <Content Include="Telnet.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="VTAnsi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstanceTracker.resx">
+      <DependentUpon>InstanceTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstanceTracker2.resx">
+      <DependentUpon>InstanceTracker2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AssemblyInfo\AssemblyInfo\AssemblyInfo.csproj">
+      <Project>{958560db-a618-486d-8cf3-a6456c4482b1}</Project>
+      <Name>AssemblyInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bitfields\BitFields\BitFields.csproj">
+      <Project>{2b02918b-e2f4-448a-9b21-973f95dea9d2}</Project>
+      <Name>BitFields</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CSTypes\CSTypes\CSTypes.csproj">
+      <Project>{3beab33c-9894-419e-a196-2f76d0bfdb8f}</Project>
+      <Name>CSTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NDesk.Options\NDesk.Options\NDesk.Options.csproj">
+      <Project>{290f475f-6c57-4c26-8166-b49139e50d21}</Project>
+      <Name>NDesk.Options</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!---
+  <Import Project="$(MSBuildExtensionsPath)\Ilmerge.CSharp.targets" />
+  -->
+</Project>

@@ -1,0 +1,10 @@
+Replace
+
+Syntax: #replace {variable} {oldtext} {newtext}
+
+This command will search the variable for the given string in oldtext and replace it with the string given in newtext.
+
+If newtext is left blank the oldtext match will be removed.
+
+Example: #var {test} {bli bla blo};#replace {test} {bl} {tr}
+This would change the variable test from 'bli bla blo' to 'tri tra tro'

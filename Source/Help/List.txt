@@ -1,0 +1,61 @@
+List
+
+Syntax: #list {<variable>} {<option>} {<arguments>}
+
+Lists in TinTin# are associative arrays with a numeric index. The list command makes it easier to emulate array behavior by
+automatically renumbering items whenever one is removed or inserted.
+
+When the list command requires an index a value between 1 and the list's length should be provided. A negative value can be
+given as well, in which case -1 equals the last item in the list, -2 the second last, etc.
+
+You can directly display items in a list by using the index, for example: $var[1], $var[2], $var[-1], etc.
+
+To loop through all items in a list using the foreach command use $<list>[%*].
+
+#list {<list>} {add} {<argument1>} {<argument2>} {...}
+
+#list add will add an item to the given list for each argument provided.
+
+#list {<list>} {clear}
+
+#list clear will empty the given list variable. The command is equivalent to: #variable {<variable>} {}
+
+#list {<list>} {create} {<argument1>} {<argument2>} {...}
+
+#list create will clear the given list and will add an item for each additional argument provided.
+
+#list {<list>} {delete} {<index>} {[number]
+
+#list delete will remove the item at the given index. The number argument is the number of items to delete, if omitted 1
+item will be deleted.
+
+#list {<list>} {find} {<argument>} {<variable>}
+
+#list find allows searching for an item that matches the provided argument. If no match is found the destination variable
+is set to 0, otherwise the variable is set to contain the index of the matched item.
+
+#list {<list>} {get} {<indext>} {<variable>}
+
+#list get will retrieve the list's item at the provided index. If the index doesn't exist the destination variable is set
+to 0, otherwise the destination variable is set to contain the value of the found index. Alternatively you can use
+$list[<index>>] to retrieve the value using the interface for associative arrays.
+
+#list {<list>} {insert} {<index>} {<argument>}
+
+#list insert will insert the item at the given index. If the index is a positive number the item is created at the given
+index. If the index is a negative number the item is created at the next index. Hence using -1 will append a new item to
+the end of the list, and using 1 will prepend a new item to the beginning of the list.
+
+#list {<list>} {set} {<index>} {<argument>}
+
+#list set will change the value of the provided index to the given argument. Alternatively you can use:
+#variable {<list>[<index>]} {<argument>} to change the value using the interface for associative arrays.
+
+#list {<list>} {size} {<variable>}
+
+#list size will retrieve the number of items in the list and store it in the provided destination variable. Alternatively,
+you can use: &list[] to retrieve the number of items in a list using the interface for associative arrays.
+
+#list {<list>} {sort} {<argument>}
+
+#list sort will insert the provided argument in alphabetical order.
