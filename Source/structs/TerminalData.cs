@@ -6,7 +6,7 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct TerminalData {
     // ReSharper disable InconsistentNaming
     public int bot_row;

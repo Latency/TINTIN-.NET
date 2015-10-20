@@ -8,7 +8,7 @@
 
 using System;
 
-namespace TinTin.enums {
+namespace TinTin.Enums {
   // ReSharper disable InconsistentNaming
   // Bitvector
   [Flags]

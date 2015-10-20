@@ -6,7 +6,7 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.enums {
+namespace TinTin.Enums {
 #if WINDOWS
   // ReSharper disable once InconsistentNaming
   public enum VT100_Color {

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TinTin</RootNamespace>
     <AssemblyName>tt</AssemblyName>
@@ -14,7 +14,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,7 +22,8 @@
     <DefineConstants>TRACE;DEBUG;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,104 +40,185 @@
   <PropertyGroup>
     <ApplicationIcon>Properties\sBIO2.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ExceptionMessageBox">
+      <HintPath>..\packages\Microsoft.ExceptionMessageBox.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="ReflectSoftware.Insight, Version=5.5.2.1510, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReflectSoftware.Insight.5.5.2\lib\net45\ReflectSoftware.Insight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enums\enm_Chat.cs" />
-    <Compile Include="enums\enm_Chat_Flags.cs" />
-    <Compile Include="enums\enm_Commands.cs" />
-    <Compile Include="enums\enm_Command_Attributes.cs" />
-    <Compile Include="enums\enm_Exit_Flags.cs" />
-    <Compile Include="enums\enm_Map_Exits.cs" />
-    <Compile Include="enums\enm_Map_Flags.cs" />
-    <Compile Include="enums\enm_Map_Search.cs" />
-    <Compile Include="enums\enm_Map_Undo.cs" />
-    <Compile Include="enums\enm_Node_Flags.cs" />
-    <Compile Include="enums\enm_Operator.cs" />
-    <Compile Include="enums\enm_Room_Flags.cs" />
-    <Compile Include="enums\enm_Session_Flags.cs" />
-    <Compile Include="enums\enm_Status.cs" />
-    <Compile Include="enums\enm_Substitution_Flags.cs" />
-    <Compile Include="enums\enm_Telnet_Flags.cs" />
-    <Compile Include="enums\enm_Telnet_Confirmation.cs" />
-    <Compile Include="enums\enm_Lexagraphical.cs" />
-    <Compile Include="enums\enm_Arrows.cs" />
-    <Compile Include="enums\enm_OnOff.cs" />
-    <Compile Include="enums\enm_Timer.cs" />
-    <Compile Include="enums\enm_Tintin_Flags.cs" />
-    <Compile Include="enums\enm_VT100_Attributes.cs" />
-    <Compile Include="enums\enm_VT100_Color.cs" />
-    <Compile Include="ExceptionForm.Designer.cs">
-      <DependentUpon>ExceptionForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Commands\Alias.cs" />
+    <Compile Include="Commands\All.cs" />
+    <Compile Include="Commands\Bell.cs" />
+    <Compile Include="Commands\Break.cs" />
+    <Compile Include="Commands\Buffer.cs" />
+    <Compile Include="Commands\Case.cs" />
+    <Compile Include="Commands\Chat.cs" />
+    <Compile Include="Commands\Chat_Protocol.cs" />
+    <Compile Include="Commands\Class.cs" />
+    <Compile Include="Commands\Colors.cs" />
+    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Commands\Config.cs" />
+    <Compile Include="Commands\Continue.cs" />
+    <Compile Include="Commands\Cr.cs" />
+    <Compile Include="Commands\Cursor.cs" />
+    <Compile Include="Commands\Debug.cs" />
+    <Compile Include="Commands\Default.cs" />
+    <Compile Include="Commands\Delay.cs" />
+    <Compile Include="Commands\Echo.cs" />
+    <Compile Include="Commands\Else.cs" />
+    <Compile Include="Commands\Elseif.cs" />
+    <Compile Include="Commands\End.cs" />
+    <Compile Include="Commands\Escape_Codes.cs" />
+    <Compile Include="Commands\Event.cs" />
+    <Compile Include="Commands\Forall.cs" />
+    <Compile Include="Commands\Foreach.cs" />
+    <Compile Include="Commands\Format.cs" />
+    <Compile Include="Commands\Function.cs" />
+    <Compile Include="Commands\Greeting.cs" />
+    <Compile Include="Commands\Grep.cs" />
+    <Compile Include="Commands\Help.cs" />
+    <Compile Include="Commands\Highlight.cs" />
+    <Compile Include="Commands\History.cs" />
+    <Compile Include="Commands\Ignore.cs" />
+    <Compile Include="Commands\Info.cs" />
+    <Compile Include="Commands\Keypad.cs" />
+    <Compile Include="Commands\Kill.cs" />
+    <Compile Include="Commands\Line.cs" />
+    <Compile Include="Commands\List.cs" />
+    <Compile Include="Commands\Log.cs" />
+    <Compile Include="Commands\Loop.cs" />
+    <Compile Include="Commands\Macro.cs" />
+    <Compile Include="Commands\Map.cs" />
+    <Compile Include="Commands\Math.cs" />
+    <Compile Include="Commands\MathExp.cs" />
+    <Compile Include="Commands\Message.cs" />
+    <Compile Include="Commands\Name.cs" />
+    <Compile Include="Commands\Nop.cs" />
+    <Compile Include="Commands\OSInfo.cs" />
+    <Compile Include="Commands\Parse.cs" />
+    <Compile Include="Commands\Path.cs" />
+    <Compile Include="Commands\PathDir.cs" />
+    <Compile Include="Commands\Prompt.cs" />
+    <Compile Include="Commands\Read.cs" />
+    <Compile Include="Commands\RegExp.cs" />
+    <Compile Include="Commands\Repeat.cs" />
+    <Compile Include="Commands\Replace.cs" />
+    <Compile Include="Commands\Return.cs" />
+    <Compile Include="Commands\Run.cs" />
+    <Compile Include="Commands\Scan.cs" />
+    <Compile Include="Commands\Script.cs" />
+    <Compile Include="Commands\Send.cs" />
+    <Compile Include="Commands\Session.cs" />
+    <Compile Include="Commands\Showme.cs" />
+    <Compile Include="Commands\Snoop.cs" />
+    <Compile Include="Commands\Speedwalk.cs" />
+    <Compile Include="Commands\Split.cs" />
+    <Compile Include="Commands\Substitute.cs" />
+    <Compile Include="Commands\Suspend.cs" />
+    <Compile Include="Commands\Switch.cs" />
+    <Compile Include="Commands\System.cs" />
+    <Compile Include="Commands\Tab.cs" />
+    <Compile Include="Commands\Textin.cs" />
+    <Compile Include="Commands\Ticker.cs" />
+    <Compile Include="Commands\UnTab.cs" />
+    <Compile Include="Commands\Variable.cs" />
+    <Compile Include="Commands\While.cs" />
+    <Compile Include="Commands\Wildcards.cs" />
+    <Compile Include="Commands\WriteBuffer.cs" />
+    <Compile Include="Commands\Zap.cs" />
+    <Compile Include="Enums\enm_Chat.cs" />
+    <Compile Include="Enums\enm_Chat_Flags.cs" />
+    <Compile Include="Enums\enm_Commands.cs" />
+    <Compile Include="Enums\enm_Command_Attributes.cs" />
+    <Compile Include="Enums\enm_Exit_Flags.cs" />
+    <Compile Include="Enums\enm_Map_Exits.cs" />
+    <Compile Include="Enums\enm_Map_Flags.cs" />
+    <Compile Include="Enums\enm_Map_Search.cs" />
+    <Compile Include="Enums\enm_Map_Undo.cs" />
+    <Compile Include="Enums\enm_Node_Flags.cs" />
+    <Compile Include="Enums\enm_Operator.cs" />
+    <Compile Include="Enums\enm_Room_Flags.cs" />
+    <Compile Include="Enums\enm_Session_Flags.cs" />
+    <Compile Include="Enums\enm_Status.cs" />
+    <Compile Include="Enums\enm_Substitution_Flags.cs" />
+    <Compile Include="Enums\enm_Telnet_Flags.cs" />
+    <Compile Include="Enums\enm_Telnet_Confirmation.cs" />
+    <Compile Include="Enums\enm_Lexagraphical.cs" />
+    <Compile Include="Enums\enm_Arrows.cs" />
+    <Compile Include="Enums\enm_OnOff.cs" />
+    <Compile Include="Enums\enm_Timer.cs" />
+    <Compile Include="Enums\enm_Tintin_Flags.cs" />
+    <Compile Include="Enums\enm_VT100_Attributes.cs" />
+    <Compile Include="Enums\enm_VT100_Color.cs" />
+    <Compile Include="Commands\If.cs" />
+    <Compile Include="ExceptionMessageBox.cs" />
     <Compile Include="Interfaces\IFluentInterface.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="OSVersionInfoClass.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="ShellSwitchParser.cs" />
+    <Compile Include="Commands\Action.cs" />
+    <Compile Include="Commands\Gag.cs" />
+    <Compile Include="Commands\UnGag.cs" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Config\Color256.cs" />
+    <Compile Include="Commands\_Switchboard.cs" />
+    <Compile Include="Interfaces\ICommands.cs" />
+    <Compile Include="Print.cs" />
+    <Compile Include="Program.Console.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Program.Sinks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="CmdParser.cs" />
-    <Compile Include="commands\Action.cs" />
-    <Compile Include="commands\Gag.cs" />
-    <Compile Include="commands\UnGag.cs" />
-    <None Include="config\Color256.cs" />
-    <Compile Include="config\Configuration.cs" />
-    <Compile Include="commands\Switchboard.cs" />
-    <Compile Include="EventLogger.cs" />
-    <Compile Include="ExceptionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstanceTracker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstanceTracker.designer.cs">
-      <DependentUpon>InstanceTracker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InstanceTracker2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstanceTracker2.designer.cs">
-      <DependentUpon>InstanceTracker2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\ICommands.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
-    <Compile Include="structs\ExitData.cs" />
-    <Compile Include="structs\GridData.cs" />
-    <Compile Include="structs\LinkData.cs" />
-    <Compile Include="structs\ListNode.cs" />
-    <Compile Include="structs\ListRoot.cs" />
-    <Compile Include="structs\RoomData.cs" />
-    <Compile Include="structs\SessionData.cs" />
-    <Compile Include="structs\StrHashData.cs" />
-    <Compile Include="structs\TerminalData.cs" />
+    <Compile Include="Structs\ExitData.cs" />
+    <Compile Include="Structs\GridData.cs" />
+    <Compile Include="Structs\LinkData.cs" />
+    <Compile Include="Structs\ListNode.cs" />
+    <Compile Include="Structs\ListRoot.cs" />
+    <Compile Include="Structs\RoomData.cs" />
+    <Compile Include="Structs\SessionData.cs" />
+    <Compile Include="Structs\ShellData.cs" />
+    <Compile Include="Structs\StrHashData.cs" />
+    <Compile Include="Structs\TerminalData.cs" />
     <Compile Include="Timers.cs" />
     <Compile Include="Typedef.cs" />
-    <Compile Include="types\color_t.cs" />
-    <Compile Include="types\command_t.cs" />
-    <Compile Include="types\event_t.cs" />
-    <Compile Include="types\substutition_t.cs" />
-    <Compile Include="types\term_t.cs" />
-    <Compile Include="commands\Write.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.gitignore" />
-    <None Include="app.config" />
+    <Compile Include="Types\color_t.cs" />
+    <Compile Include="Types\command_t.cs" />
+    <Compile Include="Types\event_t.cs" />
+    <Compile Include="Types\substutition_t.cs" />
+    <Compile Include="Types\term_t.cs" />
+    <Compile Include="Commands\Write.cs" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="ReflectInsight.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +273,7 @@
     <Content Include="Help\Message.txt" />
     <Content Include="Help\Name.txt" />
     <Content Include="Help\Nop.txt" />
+    <Content Include="Help\OSInfo.txt" />
     <Content Include="Help\Parse.txt" />
     <Content Include="Help\Path.txt" />
     <Content Include="Help\Pathdir.txt" />
@@ -224,25 +307,10 @@
     <Content Include="Help\Writebuffer.txt" />
     <Content Include="Help\Zap.txt" />
     <Content Include="Properties\sBIO2.ico" />
-    <Content Include="config\config.c" />
-    <Content Include="Telnet.cs" />
+    <Content Include="Config\config.c" />
+    <Compile Include="Telnet.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="VTAnsi.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExceptionForm.resx">
-      <DependentUpon>ExceptionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstanceTracker.resx">
-      <DependentUpon>InstanceTracker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstanceTracker2.resx">
-      <DependentUpon>InstanceTracker2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AssemblyInfo\AssemblyInfo\AssemblyInfo.csproj">

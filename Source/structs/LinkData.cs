@@ -6,7 +6,7 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct LinkData {
     // ReSharper disable InconsistentNaming
     public string str1,

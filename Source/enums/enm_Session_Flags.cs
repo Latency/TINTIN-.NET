@@ -6,7 +6,7 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.enums {
+namespace TinTin.Enums {
 // ReSharper disable InconsistentNaming
   public enum Session_Flags {
     EchoCommand,

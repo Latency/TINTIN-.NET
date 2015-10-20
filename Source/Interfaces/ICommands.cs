@@ -6,6 +6,7 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Interfaces {
   internal interface ICommands {
     void Action(string str);
@@ -55,16 +56,17 @@ namespace TinTin.Interfaces {
     void Macro(string str);
     void Map(string str);
     void Math(string str);
-    void Mathexp(string str);
+    void MathExp(string str);
     void Message(string str);
     void Name(string str);
     void Nop(string str);
+    void OSInfo(string str);
     void Parse(string str);
     void Path(string str);
-    void Pathdir(string str);
+    void PathDir(string str);
     void Prompt(string str);
     void Read(string str);
-    void Regexp(string str);
+    void RegExp(string str);
     void Repeat(string str);
     void Replace(string str);
     void Return(string str);
@@ -90,7 +92,7 @@ namespace TinTin.Interfaces {
     void While(string str);
     void Wildcards(string str);
     void Write(string str);
-    void Writebuffer(string str);
+    void WriteBuffer(string str);
     void Zap(string str);
   }
 }

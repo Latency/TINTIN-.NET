@@ -71,6 +71,7 @@ TinTin# is a console client interpreter enhanced with features for various commu
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Message.txt">Message</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Name.txt">Name</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Nop.txt">Nop</a>
+  • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/OSInfo.txt">OSInfo</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Parse.txt">Parse</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Path.txt">Path</a>
   • <a href="https://github.com/Latency/TINTIN-.NET/blob/master/Source/Help/Pathdir.txt">Pathdir</a>

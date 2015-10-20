@@ -9,7 +9,7 @@
 using System;
 using System.ComponentModel;
 
-namespace TinTin.enums {
+namespace TinTin.Enums {
   // BitVector
   [Flags]
   // ReSharper disable InconsistentNaming

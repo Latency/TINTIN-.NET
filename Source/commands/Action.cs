@@ -6,9 +6,9 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.commands {
+namespace TinTin.Commands {
   public partial class Switchboard {
-    public static void Action(string s) {
+    public void Action(string s) {
       //char arg1 [BUFFER_SIZE],
       //arg2[BUFFER_SIZE],
       //arg3[BUFFER_SIZE];

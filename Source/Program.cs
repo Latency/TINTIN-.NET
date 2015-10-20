@@ -6,47 +6,74 @@
 // ****************************************************************************
 
 using System;
-using System.Threading;
 using System.Windows.Forms;
+using TinTin.Commands;
+using TinTin.Structs;
 
 namespace TinTin {
-  internal static class Program {
-    /// <summary>
-    ///   The main entry point for the application.
-    /// </summary>
-    /// <param name="args"></param>
-    [STAThread]
-    private static void Main(string[] args) {
-      Application.ThreadException += ExceptionSink;
-      Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException, true);
-      AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionEventSink;
+  internal static partial class Program {
+    private static ShellData _sdData = new ShellData();
 
-      var p = new CmdParser();
-      if (!p.Parse(args)) {
-#if DEBUG
-        if (!p.GUI) {
-          Console.Write(@"Press any key to continue...  ");
-          Console.ReadKey(false);
-        }
-#endif
+    /// <summary>
+    ///  The main entry point for the application.
+    /// </summary>
+    /// <remarks>Creates a console/application hybrid binary.</remarks>
+    /// <param name="args">Application input arguments and/or switch commands - (unused)</param>
+    /// <exception cref="InvalidOperationException">You cannot set the exception mode after the application has created its first window.</exception>
+    /// <exception cref="Exception">A delegate callback throws an exception. </exception>
+    /// <exception cref="ArgumentNullException"><paramref /> is null. </exception>
+    /// <exception cref="FormatException"><paramref /> is invalid.-or- The index of a format item is not zero or one. </exception>
+    /// <exception cref="AppDomainUnloadedException">The operation is attempted on an unloaded application domain. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"><paramref /> is less than zero. </exception>
+    /// <exception cref="OverflowException">The number of elements in <paramref /> is larger than <see cref="F:System.Int32.MaxValue" />.</exception>
+    [STAThread]
+    public static void Main(string[] args) {
+      #region Exception Sink Handlers
+      // ---------------------------------------------------------------------
+
+      // Add the event handler for handling UI thread exceptions to the event.
+      Application.ThreadException += ThreadException;
+      Application.ApplicationExit += (sender, eventArgs) => Terminal.Free();
+      OnError += LogException;
+
+      // Set the unhandled exception mode to force all Windows Forms errors to go through our handler.
+      Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+      // Add the event handler for handling non-UI thread exceptions to the event. 
+      AppDomain.CurrentDomain.UnhandledException += UnhandledException;
+
+      // Setup hybrid compatability for Console mode.
+      Terminal.Allocate();
+
+      // ---------------------------------------------------------------------
+      #endregion Exception Sink Handlers
+
+      var p = new ShellSwitchParser(ref _sdData);
+      if (!p.Parse(args))
+        return;
+
+      // Load configuration file data.
+      // TODO
+      // Display status
+      // TODO
+
+
+
+      var cmds = new Switchboard();
+
+      // Establish an event handler to process key press events.
+      Console.CancelKeyPress += CancelEventHandler;
+      while (true) {
+        // Start a console read operation.
+        var line = Console.ReadLine();
+        var kvp = cmds.ProcessCommand(line?.Trim());
+        kvp.Key?.DynamicInvoke(kvp.Value);
       }
     }
 
-    /// <summary>
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="args"></param>
-    public static void ExceptionSink(object sender, ThreadExceptionEventArgs args) {
-      InstanceTracker.GenerateExceptionFile("Exceptions.txt", args.Exception.ToString(), InstanceTracker.VersionString);
-    }
-
-
-    /// <summary>
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="args"></param>
-    public static void UnhandledExceptionEventSink(object sender, UnhandledExceptionEventArgs args) {
-      InstanceTracker.GenerateExceptionFile("Exceptions.txt", args.ExceptionObject.ToString(), InstanceTracker.VersionString);
+    internal static void CancelEventHandler(object sender, ConsoleCancelEventArgs args) {
+      Print("\nThe read operation has been interrupted.");
+      System.Threading.Thread.Sleep(1000);
     }
   }
 }

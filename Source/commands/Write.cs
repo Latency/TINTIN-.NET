@@ -1,24 +1,20 @@
-﻿// ****************************************************************************
-// *                                TinTin#                                   *
-// *                                                                          *
-// *                        written by peter unold 1992                       *
-// *                        modified by Bill Reiss 1993                       *
-// *                    converted by Latency McLaughlin 1999                  * 
-// *                     updated by Igor van den Hoven 2004                   *
-// *                    re-written by Latency McLaughlin 2013                 *
-// ****************************************************************************
+﻿// *****************************************************************************
+// File:      Write.cs
+// Solution:  TinTin.NET
+// Date:      10/19/2015
+// Author:    Latency McLaughlin
+// Copywrite: Bio-Hazard Industries - 1997-2015
+// *****************************************************************************
 
-using System;
 using System.IO;
-using TinTin.types;
 
-namespace TinTin.commands {
+namespace TinTin.Commands {
   // %LOCALAPPDATA%\Local\VirtualStore\Program Files\Wintin++
   public partial class Switchboard {
-    public void Write(string arg) {
+    public void Write(string s) {
       // Delete the file if it exists. 
-      if (File.Exists(arg))
-        File.Delete(arg);
+      if (File.Exists(s))
+        File.Delete(s);
 
       //try {
       //  using (var fs = File.CreateText(arg)) {

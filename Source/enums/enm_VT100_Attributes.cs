@@ -9,7 +9,7 @@
 
 using System.ComponentModel;
 
-namespace TinTin.enums {
+namespace TinTin.Enums {
 // ReSharper disable once InconsistentNaming
   public enum VT00_Attributes {
     Reset,

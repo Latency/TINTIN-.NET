@@ -5,12 +5,38 @@
     <Setting Name="PromptChar" Type="System.Char" Scope="User">
       <Value Profile="(Default)">#</Value>
     </Setting>
-    <Setting Name="MusicCollectionConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=DataSources\MusicCollection.mdb&lt;/ConnectionString&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=DataSources\MusicCollection.mdb</Value>
+    <Setting Name="COMMAND_SEPARATOR" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">;</Value>
+    </Setting>
+    <Setting Name="DEFAULT_CLOSE" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">}</Value>
+    </Setting>
+    <Setting Name="DEFAULT_OPEN" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">{</Value>
+    </Setting>
+    <Setting Name="ESCAPE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HISTORY_FILE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.tt_history</Value>
+    </Setting>
+    <Setting Name="LIST_MESSAGE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="MAX_STR_HASH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="PULSE_PER_SECOND" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="SCREEN_HEIGHT" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="SCREEN_WIDTH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
+    <Setting Name="STR_HASH_FLAG_NOGREP" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

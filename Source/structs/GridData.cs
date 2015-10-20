@@ -8,7 +8,7 @@
 
 using System.Windows.Media.Media3D;
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct GridData {
     // ReSharper disable InconsistentNaming
     public float length;

@@ -8,7 +8,7 @@
 
 using System.Collections.Generic;
 
-namespace TinTin.types {
+namespace TinTin.Types {
   // ReSharper disable once InconsistentNaming
   public class color_t : typedef<Dictionary<string, string>> {
     // Default Constructor

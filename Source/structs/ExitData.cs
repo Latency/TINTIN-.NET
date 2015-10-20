@@ -6,17 +6,16 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct ExitData {
     // ReSharper disable InconsistentNaming
     public string cmd,
-                  data;
+                  data,
+                  name;
 
     public int dir,
-               flags;
-
-    public string name;
-    public int vnum;
+               flags,
+               vnum;
     // ReSharper restore InconsistentNaming
   }
 }

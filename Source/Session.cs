@@ -6,8 +6,8 @@
 // Copywrite: Bio-Hazard Industries - 1997-2015
 // *****************************************************************************
 
-using TinTin.enums;
-using TinTin.structs;
+using TinTin.Enums;
+using TinTin.Structs;
 
 namespace TinTin {
   public class Session {

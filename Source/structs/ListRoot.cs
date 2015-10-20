@@ -8,7 +8,7 @@
 
 using System.Collections.Generic;
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct ListRoot {
     // ReSharper disable InconsistentNaming
     public int flags;

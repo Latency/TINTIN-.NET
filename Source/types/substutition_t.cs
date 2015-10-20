@@ -9,7 +9,7 @@
 using System.Collections.Generic;
 using BitFields;
 
-namespace TinTin.types {
+namespace TinTin.Types {
   // ReSharper disable once InconsistentNaming
   public class substitution_t : typedef<Dictionary<string, BitField>> {
     // Default Constructor

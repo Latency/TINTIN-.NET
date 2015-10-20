@@ -24,8 +24,8 @@ namespace TinTin {
     public static string VersionString = "0.01";
     public new static bool Enabled;
     private static long _timeValue;
-    private static readonly Hashtable _dataTable = new Hashtable();
-    private static readonly Hashtable _instancetable = new Hashtable();
+    private static readonly Hashtable DataTable = new Hashtable();
+    private static readonly Hashtable Instancetable = new Hashtable();
     private static InstanceTracker _tracker;
 
     public InstanceTracker() {
@@ -128,11 +128,11 @@ namespace TinTin {
     /// <summary>
     ///   Add one to the counter for the type specified by object o.
     /// </summary>
-    /// <param Name="o"></param>
+    /// <param name="o"></param>
     public static void Add(object o) {
       if (Enabled == false)
         return;
-      lock (_instancetable) {
+      lock (Instancetable) {
         var st = new StackTrace();
         StackFrame sf;
         var idx = 0;
@@ -159,13 +159,13 @@ namespace TinTin {
 
         var name = o.GetType().FullName;
 
-        if (_dataTable.ContainsKey(name) == false)
-          _dataTable[name] = new ArrayList();
+        if (DataTable.ContainsKey(name) == false)
+          DataTable[name] = new ArrayList();
         var iss = new InstanceStruct {
           WR = new WeakReference(o),
           StackList = sb.ToString()
         };
-        ((ArrayList) _dataTable[name]).Add(iss);
+        ((ArrayList) DataTable[name]).Add(iss);
 
         if (_tracker == null)
           return;
@@ -181,11 +181,11 @@ namespace TinTin {
     /// <summary>
     ///   Remove one to the counter for the type specified by object o.
     /// </summary>
-    /// <param Name="o"></param>
+    /// <param name="o"></param>
     public static void Remove(object o) {
       if (Enabled == false)
         return;
-      lock (_instancetable) {
+      lock (Instancetable) {
         if (_tracker == null)
           return;
         _tracker.UpdateDisplayEntry(o.GetType().FullName);
@@ -212,11 +212,11 @@ namespace TinTin {
     }
 
     private void UpdateDisplay() {
-      lock (_instancetable) {
+      lock (Instancetable) {
         instanceListView.Items.Clear();
-        foreach (string name in _instancetable.Keys) {
+        foreach (string name in Instancetable.Keys) {
           instanceListView.Items.Add(new ListViewItem(new[] {
-            _instancetable[name].ToString(),
+            Instancetable[name].ToString(),
             name
           }));
         }
@@ -229,14 +229,14 @@ namespace TinTin {
 
     private void UpdateDisplayEntry(string name) {
       Recalculate(name);
-      lock (_instancetable) {
+      lock (Instancetable) {
         foreach (var li in instanceListView.Items.Cast<ListViewItem>().Where(li => li.SubItems[1].Text == name)) {
-          li.SubItems[0].Text = _instancetable[name].ToString();
+          li.SubItems[0].Text = Instancetable[name].ToString();
           return;
         }
 
         instanceListView.Items.Add(new ListViewItem(new[] {
-          _instancetable[name].ToString(),
+          Instancetable[name].ToString(),
           name
         }));
       }
@@ -253,36 +253,36 @@ namespace TinTin {
     }
 
     private static void Recalculate(string name) {
-      lock (_instancetable) {
-        if (_dataTable.ContainsKey(name)) {
-          var a = (ArrayList) _dataTable[name];
+      lock (Instancetable) {
+        if (DataTable.ContainsKey(name)) {
+          var a = (ArrayList) DataTable[name];
           var removeList = new ArrayList();
           foreach (var iss in a.Cast<InstanceStruct>().Where(iss => iss.WR.IsAlive == false))
             removeList.Add(iss);
           foreach (InstanceStruct iss in removeList)
             a.Remove(iss);
-          _instancetable[name] = (long) a.Count;
+          Instancetable[name] = (long) a.Count;
         } else
-          _instancetable[name] = (long) 0;
+          Instancetable[name] = (long) 0;
       }
     }
 
     private static void Recalculate() {
-      lock (_instancetable) {
-        var en = _instancetable.GetEnumerator();
+      lock (Instancetable) {
+        var en = Instancetable.GetEnumerator();
         var keyList = new ArrayList();
         while (en.MoveNext())
           keyList.Add(en.Key);
         foreach (string objectName in keyList) {
-          if (!_dataTable.ContainsKey(objectName))
+          if (!DataTable.ContainsKey(objectName))
             continue;
-          var a = (ArrayList) _dataTable[objectName];
+          var a = (ArrayList) DataTable[objectName];
           var removeList = new ArrayList();
           foreach (var iss in a.Cast<InstanceStruct>().Where(iss => iss.WR.IsAlive == false))
             removeList.Add(iss);
           foreach (InstanceStruct iss in removeList)
             a.Remove(iss);
-          _instancetable[objectName] = (long) a.Count;
+          Instancetable[objectName] = (long) a.Count;
         }
       }
     }
@@ -299,7 +299,7 @@ namespace TinTin {
     private void DetailMenuItem_Click(object sender, EventArgs e) {
       var lvi = instanceListView.SelectedItems[0];
       var compName = lvi.SubItems[1].Text;
-      var a = (ArrayList) _dataTable[compName];
+      var a = (ArrayList) DataTable[compName];
       var dl = new ArrayList();
       foreach (var iss in a.Cast<InstanceStruct>().Where(iss => iss.WR.IsAlive))
         dl.Add(iss.StackList);
@@ -392,8 +392,9 @@ namespace TinTin {
       try {
         var fs = new FileStream(filename, FileMode.Append, FileAccess.Write);
         var s = new StringBuilder();
+        var t = "Please e-mail these exceptions to Latency McLaughlin, latency@bio-hazard.us";
         if (fs.Length == 0) {
-          s.Append("Please e-mail these exceptions to Ylian Saint-Hilaire, ylian.saint-hilaire@intel.com.")
+          s.Append(t)
            .Append("\r\n\r\n");
         }
         s.AppendFormat("********** {0}\r\n{1}\r\n\r\n", DateTime.Now, exception);
@@ -403,7 +404,7 @@ namespace TinTin {
         fs.Write(bytes, 0, bytes.Length);
         fs.Close();
         MessageBox.Show(
-                        $"Exception error logged in: {fs.Name}\r\n\r\n{"Please e-mail these exceptions to Ylian Saint-Hilaire, ylian.saint-hilaire@intel.com."}",
+                        $"Exception error logged in: {fs.Name}\r\n\r\n{t}",
                         @"Application Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
       } catch (Exception ex) {
         EventLogger.Log(ex);

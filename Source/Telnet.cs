@@ -1,36 +1,41 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
+// *****************************************************************************
+// File:      Telnet.cs
+// Solution:  TinTin.NET
+// Date:      10/14/2015
+// Author:    Latency McLaughlin
+// Copywrite: Bio-Hazard Industries - 1997-2015
+// *****************************************************************************
 
 namespace TinTin {
+  // ReSharper disable InconsistentNaming
   /// <summary>
-  ///  Telnet protocol.
+  ///   Telnet protocol.
   /// </summary>
   public enum TelProt {
-    xEOF = 236,
-    SUSP = 237,
-    ABORT = 238,
-    EOR = 239, // Used for prompt marking
-    SE = 240,
-    NOP = 241,
-    DMARK = 242,
-    BRK = 243,
-    IP = 244,
-    AO = 245,
-    AYT = 246,
-    EC = 247,
-    EL = 248,
-    GA = 249, // Used for prompt marking
-    SB = 250,
-    WILL = 251,
-    WONT = 252,
-    DO = 253,
-    DONT = 254,
-    IAC = 255,
+    xEOF,
+    SUSP,
+    ABORT,
+    EOR, // Used for prompt marking
+    SE,
+    NOP,
+    DMARK,
+    BRK,
+    IP,
+    AO,
+    AYT,
+    EC,
+    EL,
+    GA, // Used for prompt marking
+    SB,
+    WILL,
+    WONT,
+    DO,
+    DONT,
+    IAC
   }
 
   /// <summary>
-  ///  Telnet options
+  ///   Telnet options
   /// </summary>
   public enum TelOpt {
     BINARY,
@@ -62,7 +67,7 @@ namespace TinTin {
     TUID,
     OUTMRK,
     TTYLOC,
-    3270REGIME,
+    REGIME,
     X3PAD,
     NAWS, // Negotiate About Window Size
     TSPEED,
@@ -96,17 +101,19 @@ namespace TinTin {
     // 141 - 254 unassigned
     PRAGMA_HEARTBEAT = 140,
     GMCP = 201, // Generic Mud Communication Protocol
-    EXOPL = 255,
+    EXOPL = 255
   }
 
-//#define     TELCMD_OK(c)     ((c) >= xEOF)
-//#define     TELCMD(c)        telcmds[(c)-xEOF]
-//#define     TELOPT(c)       (telnet_table[(unsigned char) (c)].name)
+
+  //#define     TELCMD_OK(c)     ((c) >= xEOF)
+  //#define     TELCMD(c)        telcmds[(c)-xEOF]
+  //#define     TELOPT(c)       (telnet_table[(unsigned char) (c)].name)
 
 
-// Sub negotiation
-// [RFC2941]
-// 
+  /// <summary>
+  /// Sub negotiation
+  /// [RFC2941]
+  /// </summary>
   public enum Auth {
     IS,
     SEND,
@@ -115,10 +122,10 @@ namespace TinTin {
   }
 
 
-public enum ENV {
+  public enum ENV {
     VAR,
     VAL,
-    ESC,   // Not implemented in tintin
+    ESC, // Not implemented in tintin
     USR
   }
 
@@ -131,4 +138,5 @@ public enum ENV {
     ARRAY_CLOSE
   }
 
+  // ReSharper restore InconsistentNaming
 }

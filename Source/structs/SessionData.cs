@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using BitFields;
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct SessionData {
     // ReSharper disable InconsistentNaming
     public int auto_tab;

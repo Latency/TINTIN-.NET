@@ -9,7 +9,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TinTin.types {
+namespace TinTin.Types {
   // ReSharper disable once InconsistentNaming
   public class command_t : typedef<Session> {
     // Default Constructor

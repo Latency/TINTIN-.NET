@@ -7,11 +7,11 @@
 // *****************************************************************************
 
 
-namespace TinTin.commands {
+namespace TinTin.Commands {
   /// <summary>
   /// </summary>
   public partial class Switchboard {
-    public static void Gag(string s) {
+    public void Gag(string s) {
       //string arg1,
       //       cmd = MethodBase.GetCurrentMethod().Name.ToLower();
       //arg = sub_arg_in_braces(_session, arg, out arg1, 1, SUB_VAR | SUB_FUN);

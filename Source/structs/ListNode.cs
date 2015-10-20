@@ -8,7 +8,7 @@
 
 using System.Text.RegularExpressions;
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public struct ListNode {
     // ReSharper disable InconsistentNaming
     public long data;

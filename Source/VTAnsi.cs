@@ -4,9 +4,11 @@
  * Date:     05/15/12                          ©1998  -  All Rights Reserved *
  ****************************************************************************/
 // http://ascii-table.com/ansi-escape-sequences-vt-100.php
+
 using System;
 using System.Drawing;
-using TinTin.enums;
+using TinTin.Enums;
+using TinTin.Properties;
 
 
 namespace TinTin {
@@ -26,7 +28,7 @@ namespace TinTin {
     #region Constructors
     // -----------------------------------------------------------------------
 
-    public VT100() : this(80, 24) { }
+    public VT100() : this(Settings.Default.SCREEN_WIDTH, Settings.Default.SCREEN_HEIGHT) { }
 
     public VT100(int width, int height) {
       Size = new Size(width, height);
@@ -185,6 +187,22 @@ namespace TinTin {
     public static string Keypad_0 => Esc + "Op";
 
     public static string Keypad_1 => Esc + "Oq";
+
+    public static string Keypad_2 => Esc + "Or";
+
+    public static string Keypad_3 => Esc + "Os";
+
+    public static string Keypad_4 => Esc + "Ot";
+
+    public static string Keypad_5 => Esc + "Ou";
+
+    public static string Keypad_6 => Esc + "Ov";
+
+    public static string Keypad_7 => Esc + "Ow";
+
+    public static string Keypad_8 => Esc + "Ox";
+
+    public static string Keypad_9 => Esc + "Oy";
 
     // ReSharper restore InconsistentNaming
   }

@@ -1,0 +1,18 @@
+﻿OSInfo
+
+Syntax: #osinfo
+
+Gets the information of the current operating system.
+
+Example:
+
+#Operating System Information
+#----------------------------
+#Name = Microsoft Windows 10 Pro
+#BuildVersion = 10240
+#Edition =
+#Service Pack = None
+#Version = 10.0.10240.0
+#ProcessorBits = Bit64
+#OSBits = Bit64
+#ProgramBits = Bit64

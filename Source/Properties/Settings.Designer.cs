@@ -35,13 +35,135 @@ namespace TinTin.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=DataSources\\MusicCollection.mdb")]
-        public string MusicCollectionConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute(";")]
+        public char COMMAND_SEPARATOR {
             get {
-                return ((string)(this["MusicCollectionConnectionString"]));
+                return ((char)(this["COMMAND_SEPARATOR"]));
+            }
+            set {
+                this["COMMAND_SEPARATOR"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("}")]
+        public char DEFAULT_CLOSE {
+            get {
+                return ((char)(this["DEFAULT_CLOSE"]));
+            }
+            set {
+                this["DEFAULT_CLOSE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("{")]
+        public char DEFAULT_OPEN {
+            get {
+                return ((char)(this["DEFAULT_OPEN"]));
+            }
+            set {
+                this["DEFAULT_OPEN"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int ESCAPE {
+            get {
+                return ((int)(this["ESCAPE"]));
+            }
+            set {
+                this["ESCAPE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".tt_history")]
+        public string HISTORY_FILE {
+            get {
+                return ((string)(this["HISTORY_FILE"]));
+            }
+            set {
+                this["HISTORY_FILE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int LIST_MESSAGE {
+            get {
+                return ((int)(this["LIST_MESSAGE"]));
+            }
+            set {
+                this["LIST_MESSAGE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        public int MAX_STR_HASH {
+            get {
+                return ((int)(this["MAX_STR_HASH"]));
+            }
+            set {
+                this["MAX_STR_HASH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int PULSE_PER_SECOND {
+            get {
+                return ((int)(this["PULSE_PER_SECOND"]));
+            }
+            set {
+                this["PULSE_PER_SECOND"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public int SCREEN_HEIGHT {
+            get {
+                return ((int)(this["SCREEN_HEIGHT"]));
+            }
+            set {
+                this["SCREEN_HEIGHT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("80")]
+        public int SCREEN_WIDTH {
+            get {
+                return ((int)(this["SCREEN_WIDTH"]));
+            }
+            set {
+                this["SCREEN_WIDTH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int STR_HASH_FLAG_NOGREP {
+            get {
+                return ((int)(this["STR_HASH_FLAG_NOGREP"]));
+            }
+            set {
+                this["STR_HASH_FLAG_NOGREP"] = value;
             }
         }
     }

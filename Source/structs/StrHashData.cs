@@ -8,24 +8,24 @@
 
 using System.Collections.Generic;
 
-namespace TinTin.structs {
+namespace TinTin.Structs {
   public class StrHashData {
     public StrHashData() {
       node = new LinkedListNode<StrHashData>(this);
     }
 
-    public StrHashData next { get { return (node.Next != null ? node.Next.Value : null); } }
-
-    public StrHashData prev { get { return (node.Previous != null ? node.Previous.Value : null); } }
-
     // ReSharper disable InconsistentNaming
+
+    public StrHashData next => node.Next?.Value;
+    public StrHashData prev => node.Previous?.Value;
+
     private readonly LinkedListNode<StrHashData> node;
 
     public uint count;
 
-    public ushort flags;
-    public ushort hash;
-    public ushort lines;
+    public ushort flags,
+                  hash,
+                  lines;
 
     // ReSharper restore InconsistentNaming
   }
