@@ -1,10 +1,11 @@
-﻿// *****************************************************************************
-// File:      Platform.cs
-// Solution:  TinTin.NET
-// Date:      10/20/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       Platform.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/05/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 
@@ -28,150 +29,151 @@ namespace TinTin {
     public static bool IsLinux {
       get {
         var p = Environment.OSVersion.Platform;
-        return (p == PlatformID.Unix || p == PlatformID.MacOSX);
+        return p == PlatformID.Unix || p == PlatformID.MacOSX;
       }
     }
 
-    public static bool IsWindows => IsWin3_1 | IsWin3_11 | IsWin95 | IsWin98 | IsWinME | IsWinNT | IsWin2000 | IsWinXP | IsWinXP_64 | IsWin2003 | IsWinVista | IsWin2008 | IsWin7 | IsWin2008R2 | IsWin2012R1 | IsWin8 | IsWin2012R2 | IsWin8_1 | IsWin2016 | IsWin10;
+    public static bool IsWindows => IsWin3_1 | IsWin3_11 | IsWin95 | IsWin98 | IsWinME | IsWinNT | IsWin2000 | IsWinXP | IsWinXP_64 | IsWin2003 | IsWinVista | IsWin2008 | IsWin7 | IsWin2008R2 | IsWin2012R1 | IsWin8 |
+                                    IsWin2012R2 | IsWin8_1 | IsWin2016 | IsWin10;
 
     // ReSharper disable InconsistentNaming
     public static bool IsWin3_1 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 3 && ver.Minor == 1);
+        return ver.Major == 3 && ver.Minor == 1;
       }
     }
 
     public static bool IsWin3_11 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 3 && ver.Minor == 11);
+        return ver.Major == 3 && ver.Minor == 11;
       }
     }
 
     public static bool IsWin95 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 4 && ver.Minor == 0);
+        return ver.Major == 4 && ver.Minor == 0;
       }
     }
 
     public static bool IsWinNT {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 4 && ver.Minor == 0);
+        return ver.Major == 4 && ver.Minor == 0;
       }
     }
 
     public static bool IsWin98 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 4 && ver.Minor == 10);
+        return ver.Major == 4 && ver.Minor == 10;
       }
     }
 
     public static bool IsWinME {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 4 && ver.Minor == 90);
+        return ver.Major == 4 && ver.Minor == 90;
       }
     }
 
     public static bool IsWin2000 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 5 && ver.Minor == 0);
+        return ver.Major == 5 && ver.Minor == 0;
       }
     }
 
     public static bool IsWinXP {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 5 && ver.Minor == 1);
+        return ver.Major == 5 && ver.Minor == 1;
       }
     }
 
     public static bool IsWin2003 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 5 && ver.Minor == 2);
+        return ver.Major == 5 && ver.Minor == 2;
       }
     }
 
     public static bool IsWinXP_64 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 5 && ver.Minor == 2);
+        return ver.Major == 5 && ver.Minor == 2;
       }
     }
 
     public static bool IsWinVista {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 0);
+        return ver.Major == 6 && ver.Minor == 0;
       }
     }
 
     public static bool IsWin2008 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 0);
+        return ver.Major == 6 && ver.Minor == 0;
       }
     }
 
     public static bool IsWin7 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 1);
+        return ver.Major == 6 && ver.Minor == 1;
       }
     }
 
     public static bool IsWin2008R2 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 1);
+        return ver.Major == 6 && ver.Minor == 1;
       }
     }
 
     public static bool IsWin8 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 2);
+        return ver.Major == 6 && ver.Minor == 2;
       }
     }
 
     public static bool IsWin2012R1 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 2);
+        return ver.Major == 6 && ver.Minor == 2;
       }
     }
 
     public static bool IsWin8_1 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 3);
+        return ver.Major == 6 && ver.Minor == 3;
       }
     }
 
     public static bool IsWin2012R2 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 6 && ver.Minor == 3);
+        return ver.Major == 6 && ver.Minor == 3;
       }
     }
 
     public static bool IsWin2016 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 10 && ver.Minor == 0);
+        return ver.Major == 10 && ver.Minor == 0;
       }
     }
 
     public static bool IsWin10 {
       get {
         var ver = Environment.OSVersion.Version;
-        return (ver.Major == 10 && ver.Minor == 0);
+        return ver.Major == 10 && ver.Minor == 0;
       }
     }
 

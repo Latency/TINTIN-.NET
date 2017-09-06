@@ -12,7 +12,7 @@ using TinTin.Structs;
 
 namespace TinTin {
   internal static partial class Program {
-    private static ShellData _sdData = new ShellData();
+    private static ShellData _sdData;
 
     /// <summary>
     ///  The main entry point for the application.

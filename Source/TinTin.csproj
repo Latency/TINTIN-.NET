@@ -5,11 +5,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TinTin</RootNamespace>
     <AssemblyName>tt</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -51,10 +51,15 @@
     <Reference Include="Microsoft.ExceptionMessageBox">
       <HintPath>..\packages\Microsoft.ExceptionMessageBox.dll</HintPath>
     </Reference>
+    <Reference Include="NDesk.Options, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="ReflectSoftware.Insight, Version=5.5.2.1510, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReflectSoftware.Insight.5.5.2\lib\net45\ReflectSoftware.Insight.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ReflectSoftware.Insight, Version=5.7.1.1706, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReflectSoftware.Insight.5.7.1.1\lib\net45\ReflectSoftware.Insight.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -322,12 +327,8 @@
       <Name>BitFields</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CSTypes\CSTypes\CSTypes.csproj">
-      <Project>{3beab33c-9894-419e-a196-2f76d0bfdb8f}</Project>
+      <Project>{a78989f0-f6a9-4d06-996a-22950aa10dd3}</Project>
       <Name>CSTypes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\NDesk.Options\NDesk.Options\NDesk.Options.csproj">
-      <Project>{290f475f-6c57-4c26-8166-b49139e50d21}</Project>
-      <Name>NDesk.Options</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

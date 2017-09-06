@@ -1,26 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinTin", "Source\TinTin.csproj", "{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}"
 	ProjectSection(ProjectDependencies) = postProject
-		{3BEAB33C-9894-419E-A196-2F76D0BFDB8F} = {3BEAB33C-9894-419E-A196-2F76D0BFDB8F}
 		{2B02918B-E2F4-448A-9B21-973F95DEA9D2} = {2B02918B-E2F4-448A-9B21-973F95DEA9D2}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDesk.Options", "..\NDesk.Options\NDesk.Options\NDesk.Options.csproj", "{290F475F-6C57-4C26-8166-B49139E50D21}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyInfo", "..\AssemblyInfo\AssemblyInfo\AssemblyInfo.csproj", "{958560DB-A618-486D-8CF3-A6456C4482B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSTypes", "..\CSTypes\CSTypes\CSTypes.csproj", "{3BEAB33C-9894-419E-A196-2F76D0BFDB8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFields", "..\Bitfields\BitFields\BitFields.csproj", "{2B02918B-E2F4-448A-9B21-973F95DEA9D2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{958560DB-A618-486D-8CF3-A6456C4482B1} = {958560DB-A618-486D-8CF3-A6456C4482B1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T_CSTypes", "..\CSTypes\Tests\T_CSTypes.csproj", "{DCD47562-709B-4150-BC1A-0E8452BDB2F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSTypes", "..\CSTypes\CSTypes\CSTypes.csproj", "{A78989F0-F6A9-4D06-996A-22950AA10DD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,23 +26,21 @@ Global
 		{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{477D4CBA-E838-4D8E-A132-F1CBE0F7461A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{290F475F-6C57-4C26-8166-B49139E50D21}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{290F475F-6C57-4C26-8166-B49139E50D21}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{290F475F-6C57-4C26-8166-B49139E50D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{958560DB-A618-486D-8CF3-A6456C4482B1}.Debug|Any CPU.ActiveCfg = Release|Any CPU
 		{958560DB-A618-486D-8CF3-A6456C4482B1}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{958560DB-A618-486D-8CF3-A6456C4482B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BEAB33C-9894-419E-A196-2F76D0BFDB8F}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{3BEAB33C-9894-419E-A196-2F76D0BFDB8F}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{3BEAB33C-9894-419E-A196-2F76D0BFDB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B02918B-E2F4-448A-9B21-973F95DEA9D2}.Debug|Any CPU.ActiveCfg = Release|Any CPU
 		{2B02918B-E2F4-448A-9B21-973F95DEA9D2}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{2B02918B-E2F4-448A-9B21-973F95DEA9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCD47562-709B-4150-BC1A-0E8452BDB2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCD47562-709B-4150-BC1A-0E8452BDB2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCD47562-709B-4150-BC1A-0E8452BDB2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A78989F0-F6A9-4D06-996A-22950AA10DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78989F0-F6A9-4D06-996A-22950AA10DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78989F0-F6A9-4D06-996A-22950AA10DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78989F0-F6A9-4D06-996A-22950AA10DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A6A6C2D-63B3-4957-80F8-C69FB786D6D9}
 	EndGlobalSection
 EndGlobal
