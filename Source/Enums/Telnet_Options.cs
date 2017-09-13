@@ -39,7 +39,7 @@ namespace TinTin.Enums {
     TUID,
     OUTMRK,
     TTYLOC,
-    327OREGIME,
+    _327OREGIME,
     X3PAD,
     NAWS,         // Negotiate About Window Size
     TSPEED,

@@ -7,6 +7,7 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System.Text.RegularExpressions;
 using BitFields;
 
 namespace TinTin.Structs {

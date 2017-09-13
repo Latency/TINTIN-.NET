@@ -9,36 +9,20 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
+using System.Net.Security;
 using System.Text.RegularExpressions;
 using BitFields;
 
 namespace TinTin.Structs {
-  public struct Session {
-    private struct listroot {
-      listnode list[];
-      Session  session;
-      int      size,
-               used,
-               type,
-               update;
-      BitField flags;
-    }
-
-    private struct listnode {
-      LinkedList<listroot> root;
-      string               priority,
-                           group;
-      Regex                regex;
-      BitField             data,
-                           flags;
-    }
-
-
-    MapData map;
+  public class Session : LinkedList<Session> {
+    Regex                regex;
+    MapData              map;
+    DeflateStream        mccp;
     LinkedList<PortData> port;
-    LinkedList<>
     string[] buffer;
     string   name,
+             priority,
              group,
              session_host,
              session_ip,
@@ -47,10 +31,10 @@ namespace TinTin.Structs {
              read_buf,
              more_output,
              color;
-    Stream   logfile,
-             logline;
+    FileStream   logfile,
+                 logline;
     int      rows,
-             colos,
+             cols,
              top_row,
              bot_row,
              cur_row,
@@ -68,11 +52,17 @@ namespace TinTin.Structs {
              read_len,
              read_max,
              connect_error,
+             size,
+             used,
+             type,
+             update,
              auto_tab;
-    long long connect_retry,
-              check_output;
+    SslStream  ssl;
+    long     connect_retry,
+             check_output;
     BitField telopts,
-             telopts_flag[],
-             flags;
+             flags,
+             data;
+    BitField[] telopts_flag;
   }
 }

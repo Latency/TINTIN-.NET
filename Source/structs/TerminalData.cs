@@ -9,8 +9,17 @@
 
 namespace TinTin.Structs {
   public struct TerminalData {
-    // ReSharper disable InconsistentNaming
-    public int bot_row, cols, cur_col, cur_row, rows, sav_col, sav_row, scroll_base, scroll_line, scroll_max, scroll_row, top_row;
-    // ReSharper restore InconsistentNaming
+    int bot_row,
+        cols,
+        cur_col,
+        cur_row,
+        rows,
+        sav_col,
+        sav_row,
+        scroll_base,
+        scroll_line,
+        scroll_max,
+        scroll_row,
+        top_row;
   }
 }

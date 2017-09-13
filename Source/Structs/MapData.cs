@@ -33,6 +33,6 @@ namespace TinTin.Structs {
                    last_room;
     short          display_stamp,
                    nofollow;
-    string         legend[];
+    string[]         legend;
   }
 }

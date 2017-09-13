@@ -8,8 +8,11 @@
 //  *****************************************************************************
 
 // ReSharper disable ArrangeTypeMemberModifiers
+
+using System.Collections.Generic;
+
 namespace TinTin.Structs {
-  public struct LinkData {
+  public class LinkData : LinkedList<LinkData> {
     string str1,
            str2,
            str3;

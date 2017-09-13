@@ -10,17 +10,7 @@
 using System.Collections.Generic;
 
 namespace TinTin.Structs {
-  public class ExitData {
-    public ExitData() {
-      node = new LinkedListNode<ExitData>(this);
-    }
-
-    // ReSharper disable InconsistentNaming
-
-    public ExitData next => node.Next?.Value;
-    public ExitData prev => node.Previous?.Value;
-
-    private readonly LinkedListNode<ExitData> node;
+  public class ExitData : LinkedList<ExitData> {
     public string cmd,
                   data,
                   name;

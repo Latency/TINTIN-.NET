@@ -13,6 +13,7 @@ namespace TinTin.Enums {
     PollInput,
     PollSessions,
     PollChat,
+    PollPort,
     UpdateTicks,
     UpdateDelays,
     UpdatePackets,

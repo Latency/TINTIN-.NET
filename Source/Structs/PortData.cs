@@ -7,11 +7,12 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System.Collections.Generic;
 using BitFields;
 
 // ReSharper disable ArrangeTypeMemberModifiers
 namespace TinTin.Structs {
-  public struct PortData {
+  public class PortData : LinkedList<PortData> {
     string   name,
              ip,
              prefix,

@@ -48,8 +48,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AssemblyLoader, Version=1.1.6462.37647, Culture=neutral, PublicKeyToken=2ac72f26bae0cfb6, processorArchitecture=MSIL">
-      <HintPath>..\packages\AssemblyLoader.1.1.6462.37647\lib\net47\AssemblyLoader.dll</HintPath>
+    <Reference Include="AssemblyLoader, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2ac72f26bae0cfb6, processorArchitecture=MSIL">
+      <HintPath>..\packages\AssemblyLoader.1.1.0.0\lib\net47\AssemblyLoader.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ExceptionMessageBox">
       <HintPath>..\packages\Microsoft.ExceptionMessageBox.dll</HintPath>
@@ -74,6 +74,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\LinkedList.cs" />
     <Compile Include="CmdParser.cs" />
     <Compile Include="Commands\Alias.cs" />
     <Compile Include="Commands\All.cs" />
