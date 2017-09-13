@@ -1,0 +1,2 @@
+*.cs linguist-language=CSharp
+*.c linguist-vendored=false

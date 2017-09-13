@@ -235,16 +235,22 @@
     <Compile Include="Timers.cs" />
     <Compile Include="Typedef.cs" />
     <Compile Include="Types\array_t.cs" />
+    <Compile Include="Types\buffer_t.cs" />
     <Compile Include="Types\chat_t.cs" />
     <Compile Include="Types\class_t.cs" />
     <Compile Include="Types\color_t.cs" />
     <Compile Include="Types\command_t.cs" />
     <Compile Include="Types\config_t.cs" />
+    <Compile Include="Types\cursor_t.cs" />
     <Compile Include="Types\event_t.cs" />
+    <Compile Include="Types\history_t.cs" />
+    <Compile Include="Types\line_t.cs" />
     <Compile Include="Types\list_t.cs" />
     <Compile Include="Types\map_t.cs" />
+    <Compile Include="Types\path_t.cs" />
     <Compile Include="Types\port_t.cs" />
     <Compile Include="Types\substutition_t.cs" />
+    <Compile Include="Types\telopt_t.cs" />
     <Compile Include="Types\term_t.cs" />
     <Compile Include="Commands\Write.cs" />
     <None Include="packages.config" />
@@ -398,6 +404,7 @@
     <Content Include="Properties\sBIO2.ico" />
     <Compile Include="Telnet.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Types\timer_t.cs" />
     <Compile Include="VTAnsi.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -410,9 +417,7 @@
       <Name>CSTypes</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="C-1.5\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!---
   <Import Project="$(MSBuildExtensionsPath)\Ilmerge.CSharp.targets" />
