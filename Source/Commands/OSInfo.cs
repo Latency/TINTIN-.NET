@@ -1,14 +1,15 @@
-﻿// *****************************************************************************
-// File:      OSInfo.cs
-// Solution:  TinTin.NET
-// Date:      10/20/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       OSInfo.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System.Linq;
-using System.Text;
 using System.Management;
+using System.Text;
 
 namespace TinTin.Commands {
   public partial class Switchboard {
@@ -17,9 +18,8 @@ namespace TinTin.Commands {
       var sb = new StringBuilder();
       sb.AppendLine("Operating System Information");
       sb.AppendLine("----------------------------");
-      
-      var name = (from x in new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem").Get().OfType<ManagementObject>()
-                  select x.GetPropertyValue("Caption")).FirstOrDefault();
+
+      var name = (from x in new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem").Get().OfType<ManagementObject>() select x.GetPropertyValue("Caption")).FirstOrDefault();
 
       sb.AppendLine($"Name = {name?.ToString() ?? OSVersionInfo.Name}");
       sb.AppendLine($"BuildVersion = {OSVersionInfo.BuildVersion}");

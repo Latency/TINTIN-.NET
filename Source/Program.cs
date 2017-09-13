@@ -1,11 +1,14 @@
-﻿// ****************************************************************************
-// * Project:  TinTin
-// * File:     Program.cs
-// * Author:   Latency McLaughlin
-// * Date:     05/22/2014
-// ****************************************************************************
+﻿//  *****************************************************************************
+//  File:       Program.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
+using System.Threading;
 using System.Windows.Forms;
 using TinTin.Commands;
 using TinTin.Structs;
@@ -15,20 +18,14 @@ namespace TinTin {
     private static ShellData _sdData;
 
     /// <summary>
-    ///  The main entry point for the application.
+    ///   The main entry point for the application.
     /// </summary>
     /// <remarks>Creates a console/application hybrid binary.</remarks>
     /// <param name="args">Application input arguments and/or switch commands - (unused)</param>
-    /// <exception cref="InvalidOperationException">You cannot set the exception mode after the application has created its first window.</exception>
-    /// <exception cref="Exception">A delegate callback throws an exception. </exception>
-    /// <exception cref="ArgumentNullException"><paramref /> is null. </exception>
-    /// <exception cref="FormatException"><paramref /> is invalid.-or- The index of a format item is not zero or one. </exception>
-    /// <exception cref="AppDomainUnloadedException">The operation is attempted on an unloaded application domain. </exception>
-    /// <exception cref="ArgumentOutOfRangeException"><paramref /> is less than zero. </exception>
-    /// <exception cref="OverflowException">The number of elements in <paramref /> is larger than <see cref="F:System.Int32.MaxValue" />.</exception>
     [STAThread]
     public static void Main(string[] args) {
       #region Exception Sink Handlers
+
       // ---------------------------------------------------------------------
 
       // Add the event handler for handling UI thread exceptions to the event.
@@ -46,6 +43,7 @@ namespace TinTin {
       Terminal.Allocate();
 
       // ---------------------------------------------------------------------
+
       #endregion Exception Sink Handlers
 
       var p = new ShellSwitchParser(ref _sdData);
@@ -58,14 +56,13 @@ namespace TinTin {
       // TODO
 
 
-
       var cmds = new Switchboard();
 
       // Establish an event handler to process key press events.
       Console.CancelKeyPress += CancelEventHandler;
       while (true) {
         // Start a console read operation.
-        var line = Console.ReadLine();
+        var line = ReadLine.Read();
         var kvp = cmds.ProcessCommand(line?.Trim());
         kvp.Key?.DynamicInvoke(kvp.Value);
       }
@@ -73,7 +70,7 @@ namespace TinTin {
 
     internal static void CancelEventHandler(object sender, ConsoleCancelEventArgs args) {
       Print("\nThe read operation has been interrupted.");
-      System.Threading.Thread.Sleep(1000);
+      Thread.Sleep(1000);
     }
   }
 }

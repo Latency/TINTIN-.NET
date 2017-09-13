@@ -1,9 +1,11 @@
-﻿// ****************************************************************************
-// * Project:  TinTin
-// * File:     ShellSwitchParser.cs
-// * Author:   Latency McLaughlin
-// * Date:     05/22/2014
-// ****************************************************************************
+﻿//  *****************************************************************************
+//  File:       ShellSwitchParser.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace TinTin {
     private ShellData _sdData;
 
     /// <summary>
-    ///  Constructor
+    ///   Constructor
     /// </summary>
     /// <param name="sd"></param>
     public ShellSwitchParser(ref ShellData sd) {
@@ -29,7 +31,6 @@ namespace TinTin {
     }
 
     /// <summary>
-    /// 
     /// </summary>
     /// <param name="args"></param>
     /// <returns></returns>
@@ -47,9 +48,9 @@ namespace TinTin {
         sb.Append("Press any key to continue...");
         Program.Print(sb.ToString());
       };
-      
+
       // Piped argument for file loading.
-      Func<string, List<string>> fileLoader = delegate (string arg) {
+      Func<string, List<string>> fileLoader = delegate(string arg) {
         var files = arg.Split(';');
         if (files.Length > 0)
           _sdData.Files = new List<string>();
@@ -90,12 +91,22 @@ namespace TinTin {
       // ---------------------------------------------------------------------
       var showHelp = false;
       var p = new OptionSet {
-        {"f|files=", "Specifies input file(s) for loading.\r\n\tUse ';' for a delimiter", f => fileLoader(f)},
-        {"g|graphic", "Graphic mode.", v => _sdData.GUI = v != null},
-        {"p|path=", "A target directory path of a folder containing the script files to be processed.  Multiple paths are supported & overrides $file switch.", v => _sdData.Paths.Add(v)},
-        {"t|character=", "Changes the default prompt character.  [Default='" + Settings.Default.PromptChar + "']", v => { Settings.Default.PromptChar = v?[0] ?? Settings.Default.PromptChar; Settings.Default.Save(); } },
-        {"v|verbose", "Verbose mode.", v => _sdData.Verbosity = v != null},
-        {"?|h|help", "Usage on how to use this program.", h => showHelp = h != null}
+        {
+          "f|files=", "Specifies input file(s) for loading.\r\n\tUse ';' for a delimiter", f => fileLoader(f)
+        }, {
+          "g|graphic", "Graphic mode.", v => _sdData.GUI = v != null
+        }, {
+          "p|path=", "A target directory path of a folder containing the script files to be processed.  Multiple paths are supported & overrides $file switch.", v => _sdData.Paths.Add(v)
+        }, {
+          "t|character=", "Changes the default prompt character.  [Default='" + Settings.Default.PromptChar + "']", v => {
+            Settings.Default.PromptChar = v?[0] ?? Settings.Default.PromptChar;
+            Settings.Default.Save();
+          }
+        }, {
+          "v|verbose", "Verbose mode.", v => _sdData.Verbosity = v != null
+        }, {
+          "?|h|help", "Usage on how to use this program.", h => showHelp = h != null
+        }
       };
 
       var asm = Assembly.GetExecutingAssembly();
@@ -118,17 +129,12 @@ namespace TinTin {
         var buf = string.Empty;
         buf = extra.Aggregate(buf, (current, e) => current + (e + ' ')).Trim();
         ShowHelp(p);
-        writeLine(string.Format("{3}Invalid switch{0}:  `{1}' in \"{2}\"{3}",
-                  buf.Split(' ').Count() == 1 ? string.Empty : "es",
-                  buf,
-                  string.Join(" ", args),
-                  Environment.NewLine
-                 )
-        );
+        writeLine(string.Format("{3}Invalid switch{0}:  `{1}' in \"{2}\"{3}", buf.Split(' ').Count() == 1 ? string.Empty : "es", buf, string.Join(" ", args), Environment.NewLine));
         return false;
       }
 
       // ---------------------------------------------------------------------
+
       #endregion Options
 
       var x = 0;
@@ -140,7 +146,7 @@ namespace TinTin {
 
 
     /// <summary>
-    ///  ShowHelp
+    ///   ShowHelp
     /// </summary>
     /// <param name="p"></param>
     private static void ShowHelp(OptionSet p) {

@@ -382,3 +382,26 @@ TinTin# is a console client interpreter enhanced with features for various commu
      <td>Closes the active session. If no session is active it will terminate the program.</td>
    </tr>
 </table>
+
+## Shortcut Guide
+
+| Shortcut                       | Comment                           |
+| ------------------------------ | --------------------------------- |
+| `Ctrl`+`A` / `HOME`            | Beginning of line                 |
+| `Ctrl`+`B` / `←`               | Backward one character            |
+| `Ctrl`+`C`                     | Send EOF                          |
+| `Ctrl`+`E` / `END`             | End of line                       |
+| `Ctrl`+`F` / `→`               | Forward one character             |
+| `Ctrl`+`H` / `Backspace`       | Delete previous character         |
+| `Tab`                          | Command line completion           |
+| `Shift`+`Tab`                  | Backwards command line completion |
+| `Ctrl`+`J` / `Enter`           | Line feed                         |
+| `Ctrl`+`K`                     | Cut text to the end of line       |
+| `Ctrl`+`L`                     | Clear line                        |
+| `Ctrl`+`M`                     | Same as Enter key                 |
+| `Ctrl`+`N` / `↓`               | Forward in history                |
+| `Ctrl`+`P` / `↑`               | Backward in history               |
+| `Ctrl`+`U`                     | Cut text to the start of line     |
+| `Ctrl`+`W`                     | Cut previous word                 |
+| `Backspace`                    | Delete previous character         |
+| `Delete`                       | Delete succeeding character       |

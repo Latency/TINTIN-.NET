@@ -1,28 +1,16 @@
-﻿// *****************************************************************************
-// File:      TerminalData.cs
-// Solution:  TinTin.NET
-// Date:      10/13/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       TerminalData.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 namespace TinTin.Structs {
   public struct TerminalData {
     // ReSharper disable InconsistentNaming
-    public int bot_row;
-    public int cols;
-    public int cur_col;
-    public int cur_row;
-    public int rows;
-    public int sav_col;
-    public int sav_row;
-    public int scroll_base;
-    public int scroll_line;
-
-    public int scroll_max,
-               scroll_row;
-
-    public int top_row;
+    public int bot_row, cols, cur_col, cur_row, rows, sav_col, sav_row, scroll_base, scroll_line, scroll_max, scroll_row, top_row;
     // ReSharper restore InconsistentNaming
   }
 }

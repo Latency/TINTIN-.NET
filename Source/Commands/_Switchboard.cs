@@ -1,10 +1,11 @@
-﻿// *****************************************************************************
-// File:      _Switchboard.cs
-// Solution:  TinTin.NET
-// Date:      10/13/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       _Switchboard.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -18,13 +19,15 @@ namespace TinTin.Commands {
     // Constructor
     public Switchboard() {
       CMD = new Dictionary<string, Delegate>();
-      foreach (var m in typeof(ICommands).GetMethods().Where(x => !x.IsSpecialName)) {
+      foreach (var m in typeof(ICommands).GetMethods().Where(x => !x.IsSpecialName))
         CMD.Add(m.Name.ToLower(), Delegate.CreateDelegate(typeof(Action<string>), this, m));
-      }
     }
 
+    // ReSharper disable once InconsistentNaming
+    public Dictionary<string, Delegate> CMD { get; }
+
     /// <summary>
-    ///  ProcessCommand
+    ///   ProcessCommand
     /// </summary>
     /// <param name="line"></param>
     /// <returns></returns>
@@ -34,8 +37,5 @@ namespace TinTin.Commands {
       var ai = new ArgInterpreter(line.TrimStart(' ', Settings.Default.PromptChar), ArgTypes.Cut);
       return new KeyValuePair<Delegate, string>(CMD.Where(x => x.Key == ai.Tokens[0].ToLower()).Select(x => x.Value).FirstOrDefault(), ai.Tokens[1].Trim());
     }
-
-    // ReSharper disable once InconsistentNaming
-    public Dictionary<string, Delegate> CMD { get; }
   }
 }

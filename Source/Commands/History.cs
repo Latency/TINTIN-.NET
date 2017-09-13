@@ -1,13 +1,15 @@
-﻿// *****************************************************************************
-// File:      History.cs
-// Solution:  TinTin.NET
-// Date:      10/19/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       History.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 namespace TinTin.Commands {
   public partial class Switchboard {
-    public void History(string s) { }
+    public void History(string s) {
+    }
   }
 }

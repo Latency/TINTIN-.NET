@@ -1,10 +1,11 @@
-﻿// *****************************************************************************
-// File:      OSVersionInfoClass.cs
-// Solution:  TinTin.NET
-// Date:      10/20/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       OSVersionInfoClass.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 using System.Diagnostics;
@@ -25,7 +26,7 @@ namespace TinTin {
       get {
         var servicePack = string.Empty;
         var osVersionInfo = new OSVERSIONINFOEX {
-          dwOSVersionInfoSize = Marshal.SizeOf(typeof (OSVERSIONINFOEX))
+          dwOSVersionInfoSize = Marshal.SizeOf(typeof(OSVERSIONINFOEX))
         };
 
 
@@ -72,7 +73,7 @@ namespace TinTin {
 
         //var test = Environment.GetEnvironmentVariables();
 
-        switch (IntPtr.Size*8) {
+        switch (IntPtr.Size * 8) {
           case 64:
             pbits = SoftwareArchitecture.Bit64;
             break;
@@ -131,7 +132,7 @@ namespace TinTin {
       get {
         SoftwareArchitecture osbits;
 
-        switch (IntPtr.Size*8) {
+        switch (IntPtr.Size * 8) {
           case 64:
             osbits = SoftwareArchitecture.Bit64;
             break;
@@ -202,7 +203,7 @@ namespace TinTin {
 
         var osVersion = Environment.OSVersion;
         var osVersionInfo = new OSVERSIONINFOEX {
-          dwOSVersionInfoSize = Marshal.SizeOf(typeof (OSVERSIONINFOEX))
+          dwOSVersionInfoSize = Marshal.SizeOf(typeof(OSVERSIONINFOEX))
         };
 
         if (GetVersionEx(ref osVersionInfo)) {
@@ -230,9 +231,8 @@ namespace TinTin {
                 case VER_NT_WORKSTATION:
                   if ((suiteMask & VER_SUITE_PERSONAL) != 0)
                     edition = "Home";
-                  else {
+                  else
                     edition = GetSystemMetrics(86) == 0 ? "Professional" : "Tablet Edition";
-                  }
                   break;
                 case VER_NT_SERVER:
                   if (minorVersion == 0) {
@@ -266,9 +266,7 @@ namespace TinTin {
               break;
             case 6:
               int ed;
-              if (GetProductInfo(majorVersion, minorVersion,
-                                 osVersionInfo.wServicePackMajor, osVersionInfo.wServicePackMinor,
-                                 out ed)) {
+              if (GetProductInfo(majorVersion, minorVersion, osVersionInfo.wServicePackMajor, osVersionInfo.wServicePackMinor, out ed)) {
                 switch (ed) {
                   case PRODUCT_BUSINESS:
                     edition = "Business";
@@ -512,7 +510,7 @@ namespace TinTin {
 
         var osVersion = Environment.OSVersion;
         var osVersionInfo = new OSVERSIONINFOEX {
-          dwOSVersionInfoSize = Marshal.SizeOf(typeof (OSVERSIONINFOEX))
+          dwOSVersionInfoSize = Marshal.SizeOf(typeof(OSVERSIONINFOEX))
         };
 
         if (GetVersionEx(ref osVersionInfo)) {
@@ -631,12 +629,7 @@ namespace TinTin {
     #region PRODUCT INFO
 
     [DllImport("Kernel32.dll")]
-    internal static extern bool GetProductInfo(
-      int osMajorVersion,
-      int osMinorVersion,
-      int spMajorVersion,
-      int spMinorVersion,
-      out int edition);
+    internal static extern bool GetProductInfo(int osMajorVersion, int osMinorVersion, int spMajorVersion, int spMinorVersion, out int edition);
 
     #endregion PRODUCT INFO
 
@@ -675,7 +668,10 @@ namespace TinTin {
       public readonly int dwMinorVersion;
       public readonly int dwBuildNumber;
       public readonly int dwPlatformId;
-      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)] public readonly string szCSDVersion;
+
+      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+      public readonly string szCSDVersion;
+
       public readonly short wServicePackMajor;
       public readonly short wServicePackMinor;
       public readonly short wSuiteMask;
@@ -707,9 +703,14 @@ namespace TinTin {
 
     [StructLayout(LayoutKind.Explicit)]
     public struct _PROCESSOR_INFO_UNION {
-      [FieldOffset(0)] internal uint dwOemId;
-      [FieldOffset(0)] internal ushort wProcessorArchitecture;
-      [FieldOffset(2)] internal ushort wReserved;
+      [FieldOffset(0)]
+      internal uint dwOemId;
+
+      [FieldOffset(0)]
+      internal ushort wProcessorArchitecture;
+
+      [FieldOffset(2)]
+      internal ushort wReserved;
     }
 
     #endregion _PROCESSOR_INFO_UNION
@@ -783,9 +784,12 @@ namespace TinTin {
     private const int PRODUCT_SB_SOLUTION_SERVER_EM = 0x00000036;
     private const int PRODUCT_SERVER_FOR_SB_SOLUTIONS_EM = 0x00000037;
     private const int PRODUCT_SOLUTION_EMBEDDEDSERVER = 0x00000038;
+
     private const int PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE = 0x00000039;
+
     //private const int ???? = 0x0000003A;
     private const int PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT = 0x0000003B;
+
     private const int PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL = 0x0000003C;
     private const int PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC = 0x0000003D;
     private const int PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC = 0x0000003E;
@@ -797,6 +801,7 @@ namespace TinTin {
     private const int PRODUCT_HOME_PREMIUM_E = 0x00000044;
     private const int PRODUCT_PROFESSIONAL_E = 0x00000045;
     private const int PRODUCT_ENTERPRISE_E = 0x00000046;
+
     private const int PRODUCT_ULTIMATE_E = 0x00000047;
     //private const int PRODUCT_UNLICENSED = 0xABCDABCD;
 
@@ -890,7 +895,7 @@ namespace TinTin {
         var fnPtr = GetProcAddress(handle, "IsWow64Process");
 
         if (fnPtr != IntPtr.Zero)
-          return (IsWow64ProcessDelegate) Marshal.GetDelegateForFunctionPointer(fnPtr, typeof (IsWow64ProcessDelegate));
+          return (IsWow64ProcessDelegate) Marshal.GetDelegateForFunctionPointer(fnPtr, typeof(IsWow64ProcessDelegate));
       }
 
       return null;

@@ -1,10 +1,11 @@
-// *****************************************************************************
-// File:      Extensions.cs
-// Solution:  TinTin.NET
-// Date:      10/19/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+//  *****************************************************************************
+//  File:       Extensions.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 using System.Globalization;
@@ -33,7 +34,7 @@ namespace TinTin {
     /// <param name="enm"></param>
     /// <returns></returns>
     public static string Parse<T>(this T enm) where T : struct, IComparable, IFormattable, IConvertible {
-      return Enum.GetName(typeof (T), enm);
+      return Enum.GetName(typeof(T), enm);
     }
 
     /// <summary>
@@ -44,10 +45,10 @@ namespace TinTin {
     /// <param name="value"></param>
     /// <returns></returns>
     public static T GetEnumFromString<T>(this T enm, string value) where T : struct, IComparable, IFormattable, IConvertible {
-      if (!typeof (T).IsEnum)
+      if (!typeof(T).IsEnum)
         throw new ArgumentException("T must be an enumerated type");
 
-      foreach (var item in Enum.GetValues(typeof (T)).Cast<T>().Where(item => item.ToString(CultureInfo.InvariantCulture).ToLower().Equals(value.Trim().ToLower())))
+      foreach (var item in Enum.GetValues(typeof(T)).Cast<T>().Where(item => item.ToString(CultureInfo.InvariantCulture).ToLower().Equals(value.Trim().ToLower())))
         return item;
 
       return default(T);
@@ -60,7 +61,7 @@ namespace TinTin {
     /// <returns></returns>
     public static bool IsParseableAs(this string value, Type type) {
       var tryParseMethod = type.GetMethod("TryParse", BindingFlags.Static | BindingFlags.Public, Type.DefaultBinder, new[] {
-        typeof (string),
+        typeof(string),
         type.MakeByRefType()
       }, null);
       if (tryParseMethod == null)
@@ -94,15 +95,14 @@ namespace TinTin {
      */
     public static int ParseColor(this string str, out string temp) {
       // Main buffer.
-      temp = String.Empty;
+      temp = string.Empty;
       // Used for &+ &-
-      bool verbatim = false,
-           isColor = false;
+      bool verbatim = false, isColor = false;
       // Common variable
       var x = 0;
 
       while (str[x] != '\0') {
-        if (str[x] == '\\') {       // Toggle verbatim mode
+        if (str[x] == '\\') { // Toggle verbatim mode
           verbatim = !verbatim;
           if (str[++x] == '\\') {
             verbatim = !verbatim;
@@ -129,7 +129,7 @@ namespace TinTin {
               var idx = str.IndexOfAny("01234567".ToCharArray(), ++x, 1);
               if (idx != -1) {
                 temp += "\\e[";
-                temp += (bit == 2 ? "3" : (bit == 1 ? "4" : String.Empty));
+                temp += bit == 2 ? "3" : (bit == 1 ? "4" : string.Empty);
                 temp += str[idx];
                 temp += 'm';
                 isColor = true;
@@ -142,7 +142,7 @@ namespace TinTin {
             case '~':
               var nibble = str.Substring(++x, 3);
               ushort y;
-              if (!CSTypes.Types.IsNumber(nibble) || (y = Convert.ToUInt16(nibble)) > Char.MaxValue) {
+              if (!CSTypes.Types.IsNumber(nibble) || (y = Convert.ToUInt16(nibble)) > char.MaxValue) {
                 x -= 2;
                 temp += str[x];
               } else {

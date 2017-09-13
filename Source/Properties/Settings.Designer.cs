@@ -85,7 +85,7 @@ namespace TinTin.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".tt_history")]
+        [global::System.Configuration.DefaultSettingValueAttribute("history.txt")]
         public string HISTORY_FILE {
             get {
                 return ((string)(this["HISTORY_FILE"]));
@@ -164,6 +164,66 @@ namespace TinTin.Properties {
             }
             set {
                 this["STR_HASH_FLAG_NOGREP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("65536")]
+        public int STRING_SIZE {
+            get {
+                return ((int)(this["STRING_SIZE"]));
+            }
+            set {
+                this["STRING_SIZE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("32768")]
+        public int BUFFER_SIZE {
+            get {
+                return ((int)(this["BUFFER_SIZE"]));
+            }
+            set {
+                this["BUFFER_SIZE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int NUMBER_SIZE {
+            get {
+                return ((int)(this["NUMBER_SIZE"]));
+            }
+            set {
+                this["NUMBER_SIZE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int LEGEND_SIZE {
+            get {
+                return ((int)(this["LEGEND_SIZE"]));
+            }
+            set {
+                this["LEGEND_SIZE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int LIST_SIZE {
+            get {
+                return ((int)(this["LIST_SIZE"]));
+            }
+            set {
+                this["LIST_SIZE"] = value;
             }
         }
     }

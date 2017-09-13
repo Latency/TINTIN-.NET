@@ -48,6 +48,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AssemblyLoader, Version=1.1.6462.37647, Culture=neutral, PublicKeyToken=2ac72f26bae0cfb6, processorArchitecture=MSIL">
+      <HintPath>..\packages\AssemblyLoader.1.1.6462.37647\lib\net47\AssemblyLoader.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ExceptionMessageBox">
       <HintPath>..\packages\Microsoft.ExceptionMessageBox.dll</HintPath>
     </Reference>
@@ -58,6 +61,9 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="ReadLine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReadLine.1.2.0\lib\net45\ReadLine.dll</HintPath>
+    </Reference>
     <Reference Include="ReflectSoftware.Insight, Version=5.7.1.1706, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
       <HintPath>..\packages\ReflectSoftware.Insight.5.7.1.1\lib\net45\ReflectSoftware.Insight.dll</HintPath>
     </Reference>
@@ -68,6 +74,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CmdParser.cs" />
     <Compile Include="Commands\Alias.cs" />
     <Compile Include="Commands\All.cs" />
     <Compile Include="Commands\Bell.cs" />
@@ -148,30 +155,45 @@
     <Compile Include="Commands\Wildcards.cs" />
     <Compile Include="Commands\WriteBuffer.cs" />
     <Compile Include="Commands\Zap.cs" />
-    <Compile Include="Enums\enm_Chat.cs" />
-    <Compile Include="Enums\enm_Chat_Flags.cs" />
-    <Compile Include="Enums\enm_Commands.cs" />
-    <Compile Include="Enums\enm_Command_Attributes.cs" />
-    <Compile Include="Enums\enm_Exit_Flags.cs" />
-    <Compile Include="Enums\enm_Map_Exits.cs" />
-    <Compile Include="Enums\enm_Map_Flags.cs" />
-    <Compile Include="Enums\enm_Map_Search.cs" />
-    <Compile Include="Enums\enm_Map_Undo.cs" />
-    <Compile Include="Enums\enm_Node_Flags.cs" />
-    <Compile Include="Enums\enm_Operator.cs" />
-    <Compile Include="Enums\enm_Room_Flags.cs" />
-    <Compile Include="Enums\enm_Session_Flags.cs" />
-    <Compile Include="Enums\enm_Status.cs" />
-    <Compile Include="Enums\enm_Substitution_Flags.cs" />
-    <Compile Include="Enums\enm_Telnet_Flags.cs" />
-    <Compile Include="Enums\enm_Telnet_Confirmation.cs" />
-    <Compile Include="Enums\enm_Lexagraphical.cs" />
-    <Compile Include="Enums\enm_Arrows.cs" />
-    <Compile Include="Enums\enm_OnOff.cs" />
-    <Compile Include="Enums\enm_Timer.cs" />
-    <Compile Include="Enums\enm_Tintin_Flags.cs" />
-    <Compile Include="Enums\enm_VT100_Attributes.cs" />
-    <Compile Include="Enums\enm_VT100_Color.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Enums\Color.cs" />
+    <Compile Include="Enums\ENV.cs" />
+    <Compile Include="Enums\Get.cs" />
+    <Compile Include="Enums\List.cs" />
+    <Compile Include="Enums\List_Flag.cs" />
+    <Compile Include="Enums\Map_Dir.cs" />
+    <Compile Include="Enums\MSDP.cs" />
+    <Compile Include="Enums\MSSP.cs" />
+    <Compile Include="Enums\Pulse.cs" />
+    <Compile Include="Enums\Telnet_Options.cs" />
+    <Compile Include="Enums\Telnet_Protocol.cs" />
+    <Compile Include="Enums\Token_Type.cs" />
+    <Compile Include="Print.cs" />
+    <Compile Include="Enums\Chat.cs" />
+    <Compile Include="Enums\Chat_Flag.cs" />
+    <Compile Include="Enums\Commands.cs" />
+    <Compile Include="Enums\Command_Attributes.cs" />
+    <Compile Include="Enums\Exit_Flag.cs" />
+    <Compile Include="Enums\Map_Exit.cs" />
+    <Compile Include="Enums\Map_Flag.cs" />
+    <Compile Include="Enums\Map_Search.cs" />
+    <Compile Include="Enums\Map_Undo.cs" />
+    <Compile Include="Enums\Node_Flag.cs" />
+    <Compile Include="Enums\Operator.cs" />
+    <Compile Include="Enums\Room_Flag.cs" />
+    <Compile Include="Enums\Session_Flag.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\Substitution_Flag.cs" />
+    <Compile Include="Enums\Telnet_Flag.cs" />
+    <Compile Include="Enums\Telnet_Confirmation.cs" />
+    <Compile Include="Enums\Lexagraphical.cs" />
+    <Compile Include="Enums\Arrows.cs" />
+    <Compile Include="Enums\OnOff.cs" />
+    <Compile Include="Enums\Timer.cs" />
+    <Compile Include="Enums\Tintin_Flag.cs" />
+    <Compile Include="Enums\VT100_Attributes.cs" />
+    <Compile Include="Enums\VT100_Color.cs" />
     <Compile Include="Commands\If.cs" />
     <Compile Include="ExceptionMessageBox.cs" />
     <Compile Include="Interfaces\IFluentInterface.cs" />
@@ -186,7 +208,6 @@
     <None Include="Config\Color256.cs" />
     <Compile Include="Commands\_Switchboard.cs" />
     <Compile Include="Interfaces\ICommands.cs" />
-    <Compile Include="Print.cs" />
     <Compile Include="Program.Console.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Program.Sinks.cs" />
@@ -202,16 +223,27 @@
     <Compile Include="Structs\LinkData.cs" />
     <Compile Include="Structs\ListNode.cs" />
     <Compile Include="Structs\ListRoot.cs" />
+    <Compile Include="Structs\MapData.cs" />
+    <Compile Include="Structs\PortData.cs" />
     <Compile Include="Structs\RoomData.cs" />
+    <Compile Include="Structs\SearchData.cs" />
+    <Compile Include="Structs\Session.cs" />
     <Compile Include="Structs\SessionData.cs" />
     <Compile Include="Structs\ShellData.cs" />
     <Compile Include="Structs\StrHashData.cs" />
     <Compile Include="Structs\TerminalData.cs" />
     <Compile Include="Timers.cs" />
     <Compile Include="Typedef.cs" />
+    <Compile Include="Types\array_t.cs" />
+    <Compile Include="Types\chat_t.cs" />
+    <Compile Include="Types\class_t.cs" />
     <Compile Include="Types\color_t.cs" />
     <Compile Include="Types\command_t.cs" />
+    <Compile Include="Types\config_t.cs" />
     <Compile Include="Types\event_t.cs" />
+    <Compile Include="Types\list_t.cs" />
+    <Compile Include="Types\map_t.cs" />
+    <Compile Include="Types\port_t.cs" />
     <Compile Include="Types\substutition_t.cs" />
     <Compile Include="Types\term_t.cs" />
     <Compile Include="Commands\Write.cs" />
@@ -227,6 +259,58 @@
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="C-2.0\action.c" />
+    <Content Include="C-2.0\advertise.c" />
+    <Content Include="C-2.0\alias.c" />
+    <Content Include="C-2.0\buffer.c" />
+    <Content Include="C-2.0\chat.c" />
+    <Content Include="C-2.0\class.c" />
+    <Content Include="C-2.0\config.c" />
+    <Content Include="C-2.0\cursor.c" />
+    <Content Include="C-2.0\data.c" />
+    <Content Include="C-2.0\debug.c" />
+    <Content Include="C-2.0\event.c" />
+    <Content Include="C-2.0\files.c" />
+    <Content Include="C-2.0\forkpty.c" />
+    <Content Include="C-2.0\function.c" />
+    <Content Include="C-2.0\gag.c" />
+    <Content Include="C-2.0\help.c" />
+    <Content Include="C-2.0\highlight.c" />
+    <Content Include="C-2.0\history.c" />
+    <Content Include="C-2.0\input.c" />
+    <Content Include="C-2.0\line.c" />
+    <Content Include="C-2.0\list.c" />
+    <Content Include="C-2.0\log.c" />
+    <Content Include="C-2.0\macro.c" />
+    <Content Include="C-2.0\main.c" />
+    <Content Include="C-2.0\mapper.c" />
+    <Content Include="C-2.0\math.c" />
+    <Content Include="C-2.0\memory.c" />
+    <Content Include="C-2.0\misc.c" />
+    <Content Include="C-2.0\nest.c" />
+    <Content Include="C-2.0\net.c" />
+    <Content Include="C-2.0\parse.c" />
+    <Content Include="C-2.0\path.c" />
+    <Content Include="C-2.0\port.c" />
+    <Content Include="C-2.0\prompt.c" />
+    <Content Include="C-2.0\session.c" />
+    <Content Include="C-2.0\split.c" />
+    <Content Include="C-2.0\ssl.c" />
+    <Content Include="C-2.0\strhash.c" />
+    <Content Include="C-2.0\substitute.c" />
+    <Content Include="C-2.0\system.c" />
+    <Content Include="C-2.0\tab.c" />
+    <Content Include="C-2.0\tables.c" />
+    <Content Include="C-2.0\telopt.c" />
+    <Content Include="C-2.0\terminal.c" />
+    <Content Include="C-2.0\text.c" />
+    <Content Include="C-2.0\tick.c" />
+    <Content Include="C-2.0\tinexp.c" />
+    <Content Include="C-2.0\tokenize.c" />
+    <Content Include="C-2.0\update.c" />
+    <Content Include="C-2.0\utils.c" />
+    <Content Include="C-2.0\variable.c" />
+    <Content Include="C-2.0\vt102.c" />
     <Content Include="Help\Action.txt" />
     <Content Include="Help\Alias.txt" />
     <Content Include="Help\All.txt" />
@@ -312,16 +396,11 @@
     <Content Include="Help\Writebuffer.txt" />
     <Content Include="Help\Zap.txt" />
     <Content Include="Properties\sBIO2.ico" />
-    <Content Include="Config\config.c" />
     <Compile Include="Telnet.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="VTAnsi.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AssemblyInfo\AssemblyInfo\AssemblyInfo.csproj">
-      <Project>{958560db-a618-486d-8cf3-a6456c4482b1}</Project>
-      <Name>AssemblyInfo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Bitfields\BitFields\BitFields.csproj">
       <Project>{2b02918b-e2f4-448a-9b21-973f95dea9d2}</Project>
       <Name>BitFields</Name>
@@ -330,6 +409,9 @@
       <Project>{a78989f0-f6a9-4d06-996a-22950aa10dd3}</Project>
       <Name>CSTypes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="C-1.5\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!---

@@ -1,10 +1,11 @@
-// *****************************************************************************
-// File:      Telnet.cs
-// Solution:  TinTin.NET
-// Date:      10/14/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+//  *****************************************************************************
+//  File:       Telnet.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 namespace TinTin {
   // ReSharper disable InconsistentNaming
@@ -88,6 +89,7 @@ namespace TinTin {
     KERMIT,
     SEND_URL,
     FORWARD_X,
+
     // 50 - 137 unassigned
     MSDP = 69, // Mud Server Data Protocol
     MSSP = 70, // Mud Server Status Protocol
@@ -98,6 +100,7 @@ namespace TinTin {
     ZMP = 93, // Zenith Mud Protocol
     PRAGMA_LOGON = 138,
     SSPI__LOGON = 139,
+
     // 141 - 254 unassigned
     PRAGMA_HEARTBEAT = 140,
     GMCP = 201, // Generic Mud Communication Protocol
@@ -111,8 +114,8 @@ namespace TinTin {
 
 
   /// <summary>
-  /// Sub negotiation
-  /// [RFC2941]
+  ///   Sub negotiation
+  ///   [RFC2941]
   /// </summary>
   public enum Auth {
     IS,

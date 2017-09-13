@@ -1,0 +1,32 @@
+﻿//  *****************************************************************************
+//  File:       Commands.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
+
+namespace TinTin.Enums {
+  public enum Commands {
+    Action,
+    Alias,
+    Class,
+    Config,
+    Delay,
+    Event,
+    Function,
+    Gag,
+    Highlight,
+    History,
+    Macro,
+    Path,
+    Pathdir,
+    Prompt,
+    Substitute,
+    Tab,
+    Tabcycle,
+    Ticker,
+    Variable
+  }
+}

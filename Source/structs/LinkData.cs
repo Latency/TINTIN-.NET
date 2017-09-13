@@ -1,18 +1,17 @@
-﻿// *****************************************************************************
-// File:      LinkData.cs
-// Solution:  TinTin.NET
-// Date:      10/13/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       LinkData.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
+// ReSharper disable ArrangeTypeMemberModifiers
 namespace TinTin.Structs {
   public struct LinkData {
-    // ReSharper disable InconsistentNaming
-    public string str1,
-                  str2,
-                  str3;
-
-    // ReSharper restore InconsistentNaming
+    string str1,
+           str2,
+           str3;
   }
 }

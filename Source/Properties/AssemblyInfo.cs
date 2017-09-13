@@ -1,7 +1,15 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+﻿//  *****************************************************************************
+//  File:       AssemblyInfo.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
+
+using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -11,7 +19,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bio-Hazard Industries")]
 [assembly: AssemblyProduct("TinTin#")]
-[assembly: AssemblyCopyright("Copyright ©  1994-2015")]
+[assembly: AssemblyCopyright("Copyright ©  1998-2017")]
 [assembly: AssemblyTrademark("Latency McLaughlin")]
 [assembly: AssemblyCulture("")]
 
@@ -35,4 +43,4 @@ using System.Resources;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0.*")]
 [assembly: AssemblyFileVersion("3.0.0.1")]
-[assembly: NeutralResourcesLanguageAttribute("en-US")]
+[assembly: NeutralResourcesLanguage("en-US")]

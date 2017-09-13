@@ -1,14 +1,16 @@
-﻿// *****************************************************************************
-// File:      Timers.cs
-// Solution:  TinTin.NET
-// Date:      10/13/2015
-// Author:    Latency McLaughlin
-// Copywrite: Bio-Hazard Industries - 1997-2015
-// *****************************************************************************
+﻿//  *****************************************************************************
+//  File:       Timers.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
 
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Timer = System.Timers.Timer;
 
 namespace TinTin {
   public class Event {
@@ -17,15 +19,18 @@ namespace TinTin {
     public delegate void EventHandler(object o);
 
     private AutoResetEvent _a;
-    private System.Timers.Timer _t;
+    private Timer _t;
+
+
     // Constructor
     public Event(int pulse) {
-      _t = new System.Timers.Timer(pulse);
+      _t = new Timer(pulse);
       _a = new AutoResetEvent(false);
     }
 
     // Define an Event based on the above Delegate
     public event EventHandler Evt;
+
     // The method which fires the Event
     protected void OnEvent(object obj) {
       var e = (EventHandler) obj;
@@ -35,9 +40,9 @@ namespace TinTin {
   }
 
 
-  class StatusChecker {
-    private int _invokeCount;
+  internal class StatusChecker {
     private readonly int _maxCount;
+    private int _invokeCount;
 
     public StatusChecker(int count) {
       _invokeCount = 0;
@@ -46,8 +51,8 @@ namespace TinTin {
 
     // This method is called by the timer delegate.
     public void CheckStatus(object stateInfo) {
-      var autoEvent = (AutoResetEvent)stateInfo;
-      Console.WriteLine(@"{0} Checking status {1,2}.", DateTime.Now.ToString("h:mm:ss.fff"), ++_invokeCount);
+      var autoEvent = (AutoResetEvent) stateInfo;
+      Console.WriteLine(@"{0:h:mm:ss.fff} Checking status {1,2}.", DateTime.Now, ++_invokeCount);
 
       if (_invokeCount == _maxCount) {
         // Reset the counter and signal Main.
@@ -67,16 +72,27 @@ namespace TinTin {
     /// </summary>
     public TimerDelegates() {
       _timers = new Dictionary<string, Event> {
-        {"poll_input", new Event(1)},
-        {"poll_sessions", new Event(1)},
-        {"poll_chat", new Event(2)},
-        {"update_ticks", new Event(1)},
-        {"update_delays", new Event(1)},
-        {"update_packets", new Event(2)},
-        {"update_chat", new Event(2)},
-        {"update_terminal", new Event(1)},
-        {"update_memory", new Event(2)},
-        {"update_time", new Event(20)}
+        {
+          "poll_input", new Event(1)
+        }, {
+          "poll_sessions", new Event(1)
+        }, {
+          "poll_chat", new Event(2)
+        }, {
+          "update_ticks", new Event(1)
+        }, {
+          "update_delays", new Event(1)
+        }, {
+          "update_packets", new Event(2)
+        }, {
+          "update_chat", new Event(2)
+        }, {
+          "update_terminal", new Event(1)
+        }, {
+          "update_memory", new Event(2)
+        }, {
+          "update_time", new Event(20)
+        }
       };
 
       var autoEvent = new AutoResetEvent(false);
@@ -88,8 +104,8 @@ namespace TinTin {
       // Create a timer that signals the delegate to invoke 
       // CheckStatus after one second, and every 1/4 second 
       // thereafter.
-      Console.WriteLine(@"{0} Creating timer.", DateTime.Now.ToString("h:mm:ss.fff"));
-      var stateTimer = new Timer(timerDelegate, autoEvent, 1000, 250);
+      Console.WriteLine(@"{0:h:mm:ss.fff} Creating timer.", DateTime.Now);
+      var stateTimer = new System.Threading.Timer(timerDelegate, autoEvent, 1000, 250);
     }
 
     // ReSharper restore InconsistentNaming

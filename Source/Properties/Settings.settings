@@ -18,7 +18,7 @@
       <Value Profile="(Default)">27</Value>
     </Setting>
     <Setting Name="HISTORY_FILE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.tt_history</Value>
+      <Value Profile="(Default)">history.txt</Value>
     </Setting>
     <Setting Name="LIST_MESSAGE" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
@@ -37,6 +37,21 @@
     </Setting>
     <Setting Name="STR_HASH_FLAG_NOGREP" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="STRING_SIZE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">65536</Value>
+    </Setting>
+    <Setting Name="BUFFER_SIZE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">32768</Value>
+    </Setting>
+    <Setting Name="NUMBER_SIZE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="LEGEND_SIZE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="LIST_SIZE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

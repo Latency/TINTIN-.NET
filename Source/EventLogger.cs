@@ -36,6 +36,7 @@ namespace TinTin {
       try {
         if (!EventLog.SourceExists(sourceName))
           EventLog.CreateEventSource(sourceName, logName);
+
         _log = new EventLog(logName) {
           Source = sourceName
         };
@@ -123,7 +124,7 @@ namespace TinTin {
           i++;
         }
 
-        name += "\r\n\r\n Additional Info: " + additional + "\r\n" + message;
+        name += string.Format("{0}{0} Additional Info: {1}{0}{2}", Environment.NewLine, additional, message);
 
         if (Enabled) {
           if (_log != null) {
