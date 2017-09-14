@@ -7,21 +7,20 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
-using System.Text.RegularExpressions;
 using BitFields;
 
 namespace TinTin.Structs {
-  public struct SearchData {
-    int      vnum,
-             exit_size;
-    short    stamp;
-    string   name,
-             exit_list,
-             desc,
-             area,
-             note,
-             terrain;
-    BitField exit_dirs,
-             flag;
+  public class SearchData {
+    public int       vnum,
+                     exit_size;
+    public short     stamp;
+    public string    name,
+                     exit_list,
+                     desc,
+                     area,
+                     note,
+                     terrain;
+    public BitField  exit_dirs,
+                     flag;
   }
 }

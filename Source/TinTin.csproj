@@ -14,7 +14,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -51,9 +51,6 @@
     <Reference Include="AssemblyLoader, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2ac72f26bae0cfb6, processorArchitecture=MSIL">
       <HintPath>..\packages\AssemblyLoader.1.1.0.0\lib\net47\AssemblyLoader.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ExceptionMessageBox">
-      <HintPath>..\packages\Microsoft.ExceptionMessageBox.dll</HintPath>
-    </Reference>
     <Reference Include="NDesk.Options, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
     </Reference>
@@ -71,10 +68,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\LinkedList.cs" />
     <Compile Include="CmdParser.cs" />
     <Compile Include="Commands\Alias.cs" />
     <Compile Include="Commands\All.cs" />
@@ -158,6 +153,7 @@
     <Compile Include="Commands\Zap.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Delegates.cs" />
+    <Compile Include="Enums\Auth.cs" />
     <Compile Include="Enums\Color.cs" />
     <Compile Include="Enums\ENV.cs" />
     <Compile Include="Enums\Get.cs" />
@@ -170,7 +166,6 @@
     <Compile Include="Enums\Telnet_Options.cs" />
     <Compile Include="Enums\Telnet_Protocol.cs" />
     <Compile Include="Enums\Token_Type.cs" />
-    <Compile Include="Print.cs" />
     <Compile Include="Enums\Chat.cs" />
     <Compile Include="Enums\Chat_Flag.cs" />
     <Compile Include="Enums\Commands.cs" />
@@ -196,11 +191,10 @@
     <Compile Include="Enums\VT100_Attributes.cs" />
     <Compile Include="Enums\VT100_Color.cs" />
     <Compile Include="Commands\If.cs" />
-    <Compile Include="ExceptionMessageBox.cs" />
     <Compile Include="Interfaces\IFluentInterface.cs" />
     <Compile Include="OSVersionInfoClass.cs" />
     <Compile Include="Platform.cs" />
-    <Compile Include="ShellSwitchParser.cs" />
+    <Compile Include="Print.cs" />
     <Compile Include="Commands\Action.cs" />
     <Compile Include="Commands\Gag.cs" />
     <Compile Include="Commands\UnGag.cs" />
@@ -209,7 +203,6 @@
     <None Include="Config\Color256.cs" />
     <Compile Include="Commands\_Switchboard.cs" />
     <Compile Include="Interfaces\ICommands.cs" />
-    <Compile Include="Program.Console.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Program.Sinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,20 +212,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
+    <Compile Include="Structs\ChatData.cs" />
     <Compile Include="Structs\ExitData.cs" />
     <Compile Include="Structs\GridData.cs" />
     <Compile Include="Structs\LinkData.cs" />
     <Compile Include="Structs\ListNode.cs" />
-    <Compile Include="Structs\ListRoot.cs" />
     <Compile Include="Structs\MapData.cs" />
     <Compile Include="Structs\PortData.cs" />
     <Compile Include="Structs\RoomData.cs" />
     <Compile Include="Structs\SearchData.cs" />
     <Compile Include="Structs\Session.cs" />
-    <Compile Include="Structs\SessionData.cs" />
     <Compile Include="Structs\ShellData.cs" />
     <Compile Include="Structs\StrHashData.cs" />
     <Compile Include="Structs\TerminalData.cs" />
+    <Compile Include="Structs\TinTinData.cs" />
     <Compile Include="Timers.cs" />
     <Compile Include="Typedef.cs" />
     <Compile Include="Types\array_t.cs" />
@@ -351,7 +344,6 @@
     <Content Include="Help\Writebuffer.txt" />
     <Content Include="Help\Zap.txt" />
     <Content Include="Properties\sBIO2.ico" />
-    <Compile Include="Telnet.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Types\timer_t.cs" />
     <Compile Include="VTAnsi.cs" />

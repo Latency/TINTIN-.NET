@@ -10,9 +10,6 @@
 // ReSharper disable InconsistentNaming
 namespace TinTin.Enums {
   public enum ENV {
-    IS = 0,
-    SEND = 1,
-    INFO = 2,
     VAR = 0,
     VAL = 1,
     ESC = 2,    // Not implemented in TINTIN

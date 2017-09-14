@@ -7,6 +7,7 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System;
 using System.Linq;
 using System.Management;
 using System.Text;

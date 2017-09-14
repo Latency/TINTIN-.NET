@@ -13,14 +13,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Windows.Forms;
 using NDesk.Options;
 using TinTin.Properties;
 using TinTin.Structs;
 
 namespace TinTin {
   public class CmdParser {
-    private ShellData _sdData;
+    private readonly ShellData _sdData;
 
     /// <summary>
     ///   Constructor
@@ -31,40 +30,49 @@ namespace TinTin {
       _sdData.Paths = new List<string>();
     }
 
+
+    /// <summary>
+    ///  WriteLine
+    /// </summary>
+    /// <param name="format"></param>
+    private static void WriteLine(string format) {
+      //====================================================================
+      if (format.Length > 0)
+        // ReSharper disable once LocalizableElement
+        Program.Print("\r" + format.PadRight(Settings.Default.SCREEN_WIDTH, ' '));
+      else
+        // ReSharper disable once LocalizableElement
+        Program.Print("\r" + format.PadRight(Settings.Default.SCREEN_WIDTH, ' '));
+      //====================================================================
+      Program.Print(@"Press any key to continue...");
+    }
+
+
+    /// <summary>
+    ///   Piped argument for file loading.
+    /// </summary>
+    /// <param name="arg"></param>
+    private void FileLoader(string arg) {
+      var files = arg.Split(';');
+      if (files.Length > 0)
+        _sdData.Files = new List<string>();
+      foreach (var fileName in files)
+      {
+        if (!File.Exists(fileName))
+        {
+          WriteLine($"{AppDomain.CurrentDomain.FriendlyName}:  File name `{fileName}' could not be found or does not exist.");
+          Environment.Exit(1);
+        }
+        _sdData.Files.Add(fileName);
+      }
+    }
+
+
     /// <summary>
     /// </summary>
     /// <param name="args"></param>
     /// <returns></returns>
     public bool Parse(string[] args) {
-      Action<string> writeLine = format => {
-        Terminal.Allocate();
-        //====================================================================
-        if (format.Length > 0)
-          // ReSharper disable once LocalizableElement
-          Console.WriteLine("\r" + format.PadRight(Settings.Default.SCREEN_WIDTH, ' '));
-        else
-          // ReSharper disable once LocalizableElement
-          Console.Write("\r" + format.PadRight(Settings.Default.SCREEN_WIDTH, ' '));
-        //====================================================================
-        Console.Write(@"Press any key to continue...");
-        Terminal.Free();
-      };
-
-      // Piped argument for file loading.
-      Func<string, List<string>> fileLoader = delegate(string arg) {
-        var files = arg.Split(';');
-        if (files.Length > 0)
-          _sdData.Files = new List<string>();
-        foreach (var fileName in files) {
-          if (!File.Exists(fileName)) {
-            writeLine($"{AppDomain.CurrentDomain.FriendlyName}:  File name `{fileName}' could not be found or does not exist.");
-            Environment.Exit(1);
-          }
-          _sdData.Files.Add(fileName);
-        }
-        return _sdData.Files;
-      };
-
       //
       // Format the command line arguments to support piping.
       //
@@ -93,10 +101,10 @@ namespace TinTin {
       var showHelp = false;
       var p = new OptionSet {
         {
-          "f|files=", "Specifies input file(s) for loading.\r\n\tUse ';' for a delimiter", f => fileLoader(f)
+          "f|files=", "Specifies input file(s) for loading.\r\n\tUse ';' for a delimiter", FileLoader
         }, {
-          "g|graphic", "Graphic mode.", v => _sdData.GUI = v != null
-        }, {
+        //  "g|graphic", "Graphic mode.", v => _sdData.GUI = v != null
+        //}, {
           "p|path=", "A target directory path of a folder containing the script files to be processed.  Multiple paths are supported & overrides $file switch.", v => _sdData.Paths.Add(v)
         }, {
           "t|character=", "Changes the default prompt character.  [Default='" + Settings.Default.PromptChar + "']", v => {
@@ -117,13 +125,7 @@ namespace TinTin {
         extra = p.Parse(args);
       } catch (OptionException e) {
         var tryHelp = @"Try `" + Path.GetFileName(asm.Location) + @" --help' for more information.";
-        if (_sdData.GUI)
-          MessageBox.Show(e.Message + Environment.NewLine + Environment.NewLine + tryHelp, asm.Location, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        else {
-          Terminal.Allocate();
-          Console.WriteLine($"{AppDomain.CurrentDomain.FriendlyName}:  {e.Message}", Environment.NewLine, tryHelp);
-          Terminal.Free();
-        }
+        Console.WriteLine($"{AppDomain.CurrentDomain.FriendlyName}:  {e.Message}", Environment.NewLine, tryHelp);
         return false;
       }
 
@@ -136,7 +138,7 @@ namespace TinTin {
         var buf = string.Empty;
         buf = extra.Aggregate(buf, (current, e) => current + (e + ' ')).Trim();
         ShowHelp(p);
-        writeLine(string.Format("{3}Invalid switch{0}:  `{1}' in \"{2}\"{3}", buf.Split(' ').Count() == 1 ? string.Empty : "es", buf, string.Join(" ", args), Environment.NewLine));
+        WriteLine(string.Format("{3}Invalid switch{0}:  `{1}' in \"{2}\"{3}", buf.Split(' ').Length == 1 ? string.Empty : "es", buf, string.Join(" ", args), Environment.NewLine));
         return false;
       }
 
@@ -146,7 +148,7 @@ namespace TinTin {
 
       var x = 0;
       foreach (var path in _sdData.Paths.Where(path => _sdData.Verbosity))
-        Debug.WriteLine("{0}Using path {1}:  {2}", Settings.Default.PromptChar, ++x, path);
+        Debug.WriteLine($"{Settings.Default.PromptChar}Using path {++x}:  {path}");
 
       return true;
     }
@@ -156,23 +158,15 @@ namespace TinTin {
     ///   ShowHelp
     /// </summary>
     /// <param name="p"></param>
-    private void ShowHelp(OptionSet p) {
+    private static void ShowHelp(OptionSet p) {
       string message;
       using (TextWriter output = new StringWriter()) {
         p.WriteOptionDescriptions(output);
         message = $"\rUsage:  {Path.GetFileName(Assembly.GetExecutingAssembly().Location)}" + Environment.NewLine + "Options:" + output;
       }
 
-      if (!string.IsNullOrEmpty(message)) {
-        if (_sdData.GUI)
-          // May need to change this to a scrollable textbox pane.
-          MessageBox.Show(message, Assembly.GetExecutingAssembly().ProductTitle(), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        else {
-          Terminal.Allocate();
-          Console.WriteLine(message);
-          Terminal.Free();
-        }
-      }
+      if (!string.IsNullOrEmpty(message))
+          Program.Print(message);
     }
   }
 }

@@ -10,24 +10,25 @@
 using System.Collections.Generic;
 using BitFields;
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Structs {
   public struct RoomData {
-    LinkedList<ExitData>    exit_list;
-    string                  color,
-                            name,
-                            symbol,
-                            desc,
-                            area,
-                            note,
-                            terrain,
-                            data;
-    short                   search_stamp,
-                            display_stamp;
-    BitField                flags,
-                            exit_dirs;
-    float                   length,
-                            weight;
-    int                     vnum,
-                            exit_size;
+    public LinkedList<ExitData>     exit_list;
+    public string                   color,
+                                    name,
+                                    symbol,
+                                    desc,
+                                    area,
+                                    note,
+                                    terrain,
+                                    data;
+    public short                    search_stamp,
+                                    display_stamp;
+    public BitField                 flags,
+                                    exit_dirs;
+    public float                    weight;
+    public int                      length,
+                                    vnum,
+                                    exit_size;
   }
 }

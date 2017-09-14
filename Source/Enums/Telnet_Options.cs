@@ -39,7 +39,7 @@ namespace TinTin.Enums {
     TUID,
     OUTMRK,
     TTYLOC,
-    _327OREGIME,
+    REGIME,
     X3PAD,
     NAWS,         // Negotiate About Window Size
     TSPEED,
@@ -50,7 +50,16 @@ namespace TinTin.Enums {
     AUTH,
     ENCRYPT,
     NEW_ENVIRON,
+    TN3270E,
+    XAUTH,
+    CHARSET,
+    TREMOTESERIAL,
+    CPCO,
+    SUPECHO,
     STARTTLS,
+    KERMIT,
+    SEND_URL,
+    FORWARD_X,
     MSDP = 69,    // Mud Server Data Protocol
     MSSP,         // Mud Server Status Protocol
     MCCP1 = 85,
@@ -58,6 +67,9 @@ namespace TinTin.Enums {
     MSP = 90,     // Mud Sound Protocol
     MXP,          // Mud eXtension Protocol
     ZMP = 93,     // Zenith Mud Protocol
+    PRAGMA_LOGON = 138,
+    SSPI_LOGON,
+    PRAGMA_HEARTBEAT,
     GMCP = 201,   // Generic Mud Communication Protocol
     EXOPL = 255
   }

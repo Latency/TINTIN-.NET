@@ -13,13 +13,13 @@ using BitFields;
 // ReSharper disable ArrangeTypeMemberModifiers
 namespace TinTin.Structs {
   public class PortData : LinkedList<PortData> {
-    string   name,
-             ip,
-             prefix,
-             color,
-             group;
-    int      port,
-             fd;
-    BitField flags;
+    public string    name,
+                     ip,
+                     prefix,
+                     color,
+                     group;
+    public int       port,
+                     fd;
+    public BitField  flags;
   }
 }

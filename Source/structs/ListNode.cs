@@ -8,17 +8,15 @@
 //  *****************************************************************************
 
 using System.Text.RegularExpressions;
+using BitFields;
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Structs {
-  public struct ListNode {
-    // ReSharper disable InconsistentNaming
-    public long data;
-
-    public short flags;
-    public string group;
-    public string pr;
-
-    public Regex regex;
-    // ReSharper restore InconsistentNaming
+  public class ListNode {
+    public long     data;
+    public BitField flags;
+    public string   group,
+                    pr;
+    public Regex    regex;
   }
 }

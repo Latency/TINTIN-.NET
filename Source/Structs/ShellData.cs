@@ -10,8 +10,10 @@
 using System.Collections.Generic;
 
 namespace TinTin.Structs {
-  public struct ShellData {
-    public List<string> Paths, Files;
-    public bool GUI, Verbosity;
+  public class ShellData {
+    public List<string>  Paths,
+                         Files;
+    public bool          GUI,
+                         Verbosity;
   }
 }

@@ -52,7 +52,7 @@ namespace TinTin {
     // This method is called by the timer delegate.
     public void CheckStatus(object stateInfo) {
       var autoEvent = (AutoResetEvent) stateInfo;
-      Console.WriteLine(@"{0:h:mm:ss.fff} Checking status {1,2}.", DateTime.Now, ++_invokeCount);
+      Program.Print($"{DateTime.Now:h:mm:ss.fff} Checking status {++_invokeCount,2}.");
 
       if (_invokeCount == _maxCount) {
         // Reset the counter and signal Main.
@@ -104,7 +104,7 @@ namespace TinTin {
       // Create a timer that signals the delegate to invoke 
       // CheckStatus after one second, and every 1/4 second 
       // thereafter.
-      Console.WriteLine(@"{0:h:mm:ss.fff} Creating timer.", DateTime.Now);
+      Program.Print($"{DateTime.Now:h:mm:ss.fff} Creating timer.");
       var stateTimer = new System.Threading.Timer(timerDelegate, autoEvent, 1000, 250);
     }
 

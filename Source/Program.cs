@@ -8,15 +8,11 @@
 //  *****************************************************************************
 
 using System;
-using System.Threading;
-using System.Windows.Forms;
 using TinTin.Commands;
 using TinTin.Structs;
 
 namespace TinTin {
   internal static partial class Program {
-    private static ShellData _sdData;
-
     /// <summary>
     ///   The main entry point for the application.
     /// </summary>
@@ -28,25 +24,20 @@ namespace TinTin {
 
       // ---------------------------------------------------------------------
 
-      // Add the event handler for handling UI thread exceptions to the event.
-      Application.ThreadException += ThreadException;
-      Application.ApplicationExit += (sender, eventArgs) => Terminal.Free();
       OnError += LogException;
-
-      // Set the unhandled exception mode to force all Windows Forms errors to go through our handler.
-      Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 
       // Add the event handler for handling non-UI thread exceptions to the event. 
       AppDomain.CurrentDomain.UnhandledException += UnhandledException;
 
       // Setup hybrid compatability for Console mode.
-      Terminal.Allocate();
+      //Terminal.Allocate();
 
       // ---------------------------------------------------------------------
 
       #endregion Exception Sink Handlers
 
-      var p = new ShellSwitchParser(ref _sdData);
+      var sData = new ShellData();
+      var p = new CmdParser(ref sData);
       if (!p.Parse(args))
         return;
 
@@ -59,6 +50,8 @@ namespace TinTin {
       var cmds = new Switchboard();
 
       // Establish an event handler to process key press events.
+
+
       Console.CancelKeyPress += CancelEventHandler;
       while (true) {
         // Start a console read operation.
@@ -68,9 +61,10 @@ namespace TinTin {
       }
     }
 
-    internal static void CancelEventHandler(object sender, ConsoleCancelEventArgs args) {
-      Print("\nThe read operation has been interrupted.");
-      Thread.Sleep(1000);
+
+    internal static void CancelEventHandler(object sender, ConsoleCancelEventArgs args){
+      Print($"The application was interrupted.  (Ctrl+{(args.SpecialKey == ConsoleSpecialKey.ControlC ? "C" : "Break")})");
+      Environment.Exit(0);
     }
   }
 }

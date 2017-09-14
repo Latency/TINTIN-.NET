@@ -7,14 +7,13 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
-// ReSharper disable ArrangeTypeMemberModifiers
-
 using System.Collections.Generic;
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Structs {
   public class LinkData : LinkedList<LinkData> {
-    string str1,
-           str2,
-           str3;
+    public string  str1,
+                   str2,
+                   str3;
   }
 }

@@ -9,14 +9,11 @@
 
 using System.Windows.Media.Media3D;
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Structs {
-  public struct GridData {
-    // ReSharper disable InconsistentNaming
+  public class GridData {
     public float length;
-
     public Point3D point;
-
     public int vnum;
-    // ReSharper restore InconsistentNaming
   }
 }

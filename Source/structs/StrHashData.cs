@@ -8,26 +8,14 @@
 //  *****************************************************************************
 
 using System.Collections.Generic;
+using BitFields;
 
+// ReSharper disable InconsistentNaming
 namespace TinTin.Structs {
-  public class StrHashData {
-    public StrHashData() {
-      node = new LinkedListNode<StrHashData>(this);
-    }
-
-    // ReSharper disable InconsistentNaming
-
-    public StrHashData next => node.Next?.Value;
-    public StrHashData prev => node.Previous?.Value;
-
-    private readonly LinkedListNode<StrHashData> node;
-
-    public uint count;
-
-    public ushort flags,
-                  hash,
-                  lines;
-
-    // ReSharper restore InconsistentNaming
+  public class StrHashData : LinkedList<StrHashData> {
+    public uint     count;
+    public ushort   hash,
+                    lines;
+    public BitField flags;
   }
 }

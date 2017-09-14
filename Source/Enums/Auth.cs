@@ -1,5 +1,5 @@
 ﻿//  *****************************************************************************
-//  File:       ListRoot.cs
+//  File:       Auth.cs
 //  Solution:   TinTin.NET
 //  Project:    TinTin
 //  Date:       09/13/2017
@@ -7,16 +7,16 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
-using System.Collections.Generic;
-
-namespace TinTin.Structs {
-  public struct ListRoot {
-    // ReSharper disable InconsistentNaming
-    public List<ListNode> list;
-
-    public Session ses;
-
-    public int flags, size, type, update, used;
-    // ReSharper restore InconsistentNaming
+// ReSharper disable InconsistentNaming
+namespace TinTin.Enums {
+  /// <summary>
+  ///   Sub negotiation
+  ///   [RFC2941]
+  /// </summary>
+  public enum Auth {
+    IS,
+    SEND,
+    REPLY,
+    NAME
   }
 }
