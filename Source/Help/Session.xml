@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Session" Modified="9/16/2017" />
+  <Syntax>{name} {address} {port}</Syntax>
+  <Description>
+Will start a session with the given name, connecting to the specified address and port.
+
+Example: #ses twinkie neverneverland.bla 1234
+Ofcourse you'd have to fill in something else if you actually want to go somewhere. The Mud connector offers a large
+searchable list of muds.
+
+Other options are #session + and - to go to the next or previous session. This only works if you are multiplaying.
+#session &lt;number&gt; activates the session corresponding to the given number.
+</Description>
+</Help>

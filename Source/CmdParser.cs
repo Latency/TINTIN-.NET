@@ -107,8 +107,8 @@ namespace TinTin {
         //}, {
           "p|path=", "A target directory path of a folder containing the script files to be processed.  Multiple paths are supported & overrides $file switch.", v => _sdData.Paths.Add(v)
         }, {
-          "t|character=", "Changes the default prompt character.  [Default='" + Settings.Default.PromptChar + "']", v => {
-            Settings.Default.PromptChar = v?[0] ?? Settings.Default.PromptChar;
+          "t|character=", "Changes the default prompt character.  [Default='" + Settings.Default.TINTIN_CHAR + "']", v => {
+            Settings.Default.TINTIN_CHAR = v?[0] ?? Settings.Default.TINTIN_CHAR;
             Settings.Default.Save();
           }
         }, {
@@ -148,7 +148,7 @@ namespace TinTin {
 
       var x = 0;
       foreach (var path in _sdData.Paths.Where(path => _sdData.Verbosity))
-        Debug.WriteLine($"{Settings.Default.PromptChar}Using path {++x}:  {path}");
+        Debug.WriteLine($"{Settings.Default.TINTIN_CHAR}Using path {++x}:  {path}");
 
       return true;
     }

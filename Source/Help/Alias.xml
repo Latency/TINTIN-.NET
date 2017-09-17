@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Alias" Modified="9/16/2017" />
+  <Syntax>{name} {commands}</Syntax>
+  <Description>
+    The #alias command can be used to shorten up long or oftenly used commands. The %1-99 variables are substituted from the
+    arguments when using an alias and represent the 1st till 99th word which can be used in the commands part of the alias.
+
+    If %0 is used it will contain all arguments, if the commands part only exists of a single word, variables are automatically
+    attached to the end.
+  </Description>
+  <Notes>
+    You can remove aliases with the #unalias command.
+    To remove an alias with %* as a name, use #unalias {%%*}.
+
+    A better method would be to wrap the action inside a class and kill that class when no longer needed.  This will prevent erasing
+    all aliases in in the event of a set alias with %* as its name.
+  </Notes>
+  <Example Usage="#alias {k} {kill %1;kick}">
+    Typing 'k orc' would result in attacking the orc followed by a kick.
+
+    You can create more complex aliases by using variables in the name section of the alias, which will override the default
+    variable handling.
+  </Example>
+  <Example Usage="#alias {k %1 with %2} {wield %2;attack %1;slash %1 with %2;whirl %2;strike %1 with %2}">
+    Using the above alias you would type something like:  'k blue smurf with battle axe'
+
+    To have an alias that match with all user input, use %* as name.
+  </Example>
+  <Example Usage="#alias {%*} {#showme You wrote: %0}" />
+</Help>

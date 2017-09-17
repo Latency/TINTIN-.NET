@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="While" Modified="9/16/2017" />
+  <Syntax>{variable} {commands}</Syntax>
+  <Description>
+The while command works like the while command in c. The while loops will stop once the condition equals 0.
+
+Example: #while {$cnt &gt; 0} {#math cnt $cnt - 1}
+</Description>
+</Help>

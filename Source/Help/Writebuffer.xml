@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Writebuffer" Modified="9/16/2017" />
+  <Syntax>{filename}</Syntax>
+  <Description>
+This will write your scrollback buffer to file. The data type is the same as the log file data setting in your configuration
+menu.
+</Description>
+</Help>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Substitute" Modified="9/16/2017" />
+  <Syntax>{message} {newmessage} {priority}</Syntax>
+  <Description>
+The #substitute command allows you to change mud output. The %1-99 variables are substituted from the message and can be used
+in the newmessage part of the substitute. The %0 variable shouldn't be used in the message part. The priority part is
+optional and determines the priority of the substitute, it defaults to 5.
+
+See the action entry for more information about the available regular expression options. You can add tintin color codes in
+the newmessage part to change the color of the message, default all the previous color codes of the mud message are stripped.
+See Colors for more information.
+
+Example: #substitute {%1 tells you '%2'} {&lt;128&gt;%1 &lt;138&gt;tells you '&lt;128&gt;%2&lt;138&gt;'}
+Add this substitution and give yourself a tell to see the result.
+
+Notice: You can remove substitutions with the #unsubstitute command.
+</Description>
+</Help>

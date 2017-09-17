@@ -26,12 +26,12 @@ namespace TinTin.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#")]
-        public char PromptChar {
+        public char TINTIN_CHAR {
             get {
-                return ((char)(this["PromptChar"]));
+                return ((char)(this["TINTIN_CHAR"]));
             }
             set {
-                this["PromptChar"] = value;
+                this["TINTIN_CHAR"] = value;
             }
         }
         

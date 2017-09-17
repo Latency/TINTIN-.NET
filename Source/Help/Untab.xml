@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Untab" Modified="9/16/2017" />
+  <Syntax>{completionword}</Syntax>
+  <Description>
+The untab command will remove the completionword from your tab completion list.
+
+Example: #untab muhahaha
+</Description>
+</Help>

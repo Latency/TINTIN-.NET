@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Loop" Modified="9/16/2017" />
+  <Syntax>{min} {max} {variable} {commands}</Syntax>
+  <Description>
+The loop command works like a simplified for loop in c. The min and max arguments should be numbers. The command will
+increment or decrement (depending on the numbers) untill the second number is reached. For every in/de-cremention the
+commands part will be executed. The value of the in/de-cremention counter will be stored in the variable and can be used in
+the commands part.
+
+Example: #loop 1 10 cnt {say $cnt}
+This equals: say 1;say 2;say 3 ... say 9;say 10
+</Description>
+</Help>

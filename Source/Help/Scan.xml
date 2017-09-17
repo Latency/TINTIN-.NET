@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Scan" Modified="9/16/2017" />
+  <Syntax></Syntax>
+  <Description>
+The scan command reads in a filename and sending it to the screen as if it was mud output. This is useful for converting ansi
+files to html and reading log files.
+</Description>
+</Help>

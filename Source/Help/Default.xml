@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Default" Modified="9/16/2017" />
+  <Syntax>{commands}</Syntax>
+  <Description>
+The default command can only be used within the switch command. When the conditional argument of none of the case commands
+matches the switch command's conditional statement the default command is executed.
+
+Example: #switch {1d4} {#case 1 cackle;#case 2 smile;#default giggle}
+</Description>
+</Help>

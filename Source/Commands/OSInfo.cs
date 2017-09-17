@@ -7,13 +7,12 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
-using System;
 using System.Linq;
 using System.Management;
 using System.Text;
 
 namespace TinTin.Commands {
-  public partial class Switchboard {
+  internal sealed partial class Switchboard {
     // ReSharper disable once InconsistentNaming
     public void OSInfo(string s) {
       var sb = new StringBuilder();

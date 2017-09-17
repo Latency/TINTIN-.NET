@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Case" Modified="9/16/2017" />
+  <Syntax>{conditional} {arguments}</Syntax>
+  <Description>
+    The case command must be used within the switch command. When the conditional argument of
+    the case command matches the conditional argument of the switch command the body of the
+    case is executed.
+  </Description>
+  <Example Usage="#switch {1d4} {#case 1 cackle;#case 2 smile;#default giggle}" />
+</Help>

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 
 namespace TinTin.Commands {
-  public partial class Switchboard {
+  internal sealed partial class Switchboard {
     public void Commands(string s) {
       var sb = new StringBuilder();
       sb.AppendLine("Command Listings");

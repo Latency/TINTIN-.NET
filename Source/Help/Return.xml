@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Return" Modified="9/16/2017" />
+  <Syntax>{text}</Syntax>
+  <Description>
+The return command can be used to break out of a trigger that is being executed.
+
+In a #function you can use #return with an argument to both break out of the function and set the result variable.
+</Description>
+</Help>

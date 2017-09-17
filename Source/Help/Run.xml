@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Run" Modified="9/16/2017" />
+  <Syntax>{session name} {shell commands}</Syntax>
+  <Description>
+The run command runs a shell command interactively. When the shell command terminates so will the session much like a normal
+session.
+
+You can run any shell command, wether that be ssh, telnet, python, php, perl or ruby.
+
+Example: #run myserver ssh myname@myserver.com
+This would create a ssh session to a *nix server with full tintin scripting capabilities.
+
+Example: #run python python;#act {^cmd %1} {%1};print "cmd #showme &lt;118&gt;Hello World!"
+This would start a python shell, create a trigger to execute any text preceded by 'cmd ', and print a red colored line.
+
+Notice: You can also use the #script and #system commands to execute shell commands.
+</Description>
+</Help>

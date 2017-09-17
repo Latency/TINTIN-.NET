@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Commands" Modified="9/16/2017" />
+  <Syntax>{abbreviation}</Syntax>
+  <Description>
+Without an argument this command will show all commands, otherwise it will show all commands matching the abbreviation.
+
+Command Syntax
+
+All TinTin# commands start with a '#' unless you redefine it with the #config command. If you load a script file with the
+#read command the first character of the file will be set as the command character. All TinTin# commands can be abbreviated.
+
+Commands Seperator
+
+You can separate commands with the ';' character. If you want to use this character as mud output precede it with the escape
+character '\'. To escape an entire line start the line the escape character '\'. To have all input send to the server as is
+(except for aliases) use: #config {verbatim} {on}.
+
+Example: smile;say hello \;)
+This would makes you smile, followed by say hello ;)
+</Description>
+</Help>

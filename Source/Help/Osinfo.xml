@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Osinfo" Modified="9/16/2017" />
+  <Syntax></Syntax>
+  <Description>
+Gets the information of the current operating system.
+
+Example:
+
+#Operating System Information
+#----------------------------
+#Name = Microsoft Windows 10 Pro
+#BuildVersion = 10240
+#Edition =
+#Service Pack = None
+#Version = 10.0.10240.0
+#ProcessorBits = Bit64
+#OSBits = Bit64
+#ProgramBits = Bit64
+</Description>
+</Help>

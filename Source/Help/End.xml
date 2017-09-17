@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="End" Modified="9/16/2017" />
+  <Syntax></Syntax>
+  <Description>
+Terminates tintin and return to unix. On most systems, ctrl-c has the same result. In tintin pressing ctrl-d on an empty line
+will call #end as well.
+</Description>
+</Help>

@@ -55,6 +55,5 @@ Actions can be triggered by the showme command.
 
 Notice: You can remove actions with the #unaction command.
 
-To remove action with %* as message, use #unaction {%%*}. Yet, better method would be wrapping the action inside class, and
-then kill that class when you no longer need the action. That way you prevent wiping all actions in case you haven't set
-action with %* as message.
+To remove an action with %* as a message, use the '#unaction {%%*}'.  A better method would be to wrap the action inside a class and
+kill that class when no longer needed.  This will prevent erasing all actions in in the event of a set action with %* as its message.

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Send" Modified="9/16/2017" />
+  <Syntax>{text}</Syntax>
+  <Description>
+Sends the text directly to the MUD, useful if you want to start with an escape code.
+</Description>
+</Help>

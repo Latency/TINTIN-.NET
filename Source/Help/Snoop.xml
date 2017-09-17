@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Snoop" Modified="9/16/2017" />
+  <Syntax>{sessionname}</Syntax>
+  <Description>
+If you have background sessions this command allows you to spy on them, and see all mud text they receive.
+</Description>
+</Help>

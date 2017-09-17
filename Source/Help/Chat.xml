@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Chat" Modified="9/16/2017" />
+  <Syntax>{command} {argument}</Syntax>
+  <Description>
+    The #chat command is used to create peer to peer connections to other mud clients, 
+    typically for the purpose of chatting and sending files.
+    
+    This is a decentralized chat system, meaning you have to exchange ip addresses and
+    port numbers with other users in order to connect to them.
+  </Description>
+  <Example Usage="#chat {initialize} {port}">
+    Launches a private chat server.
+    The port number is optional.   (default 4050)
+
+    People can connect to your chat server instance by specifying your ip address and port number.
+  </Example>
+  <Example Usage="#chat {name} {your name}">
+    By default, your name is set to TinTin.  However, most servers will reject you if there is already someone with that name already connected.
+    That chat name can include color codes.
+    Some names aren't accepted by tt++ chat servers, like the name 'all', and names longer than 20 characters.
+  </Example>
+  <Example Usage="#chat {call} {ip address} {port}">
+    Is used to connect to another chat server.
+    The port number is optional.   (default 4050)
+  </Example>
+  <Example Usage="#chat {color} {color names}">
+    The default chat color is bold red\.
+    This can be changed with the '#chat color' command.
+    
+    Example: #chat color bold yellow
+    Example using a 256 color code:  #chat color &lt;cde&gt;
+  </Example>
+  <Example Usage="#chat {message} {user|all} {text}">
+    This is the main command used for communication.
+    If you use '#chat message all', the message is marked as public and send to everyone you are connected to.
+  </Example>
+  <Example Usage="#chat {emote} {user|all} {text}">
+    This command works exactly like #chat message, except in appearance as all it does is prepend your name to the message.
+  </Example>
+  <Example Usage="#chat {paste} {user|all} {text}">
+    This command allows pasting, appending input that is followed in quick succession to the message.
+    Keep in mind that most mud clients won't properly receive messages that are longer than 40 lines.
+  </Example>
+  <Example Usage="#chat {reply} {text}">
+    Replies to the last person you received a private message from.
+  </Example>
+  <Example Usage="#chat {send} {user|all}">
+    Sends a raw data string to another person and subsequently requires knowledge of the Mud Master Chat Protocol (MMCP) in order to use it.
+  </Example>
+  <Example Usage="#chat dnd">
+    DND stands for 'do not disturb' and toggles your DND state.
+    When enabled, all new incoming connections are automatically closed.
+  </Example>
+  <Example Usage="#chat {ip} {address}">
+    Sets your ip address, which isn't set by default, and is sent when connecting to another mud client.
+    TinTin# ignores the reported ip of other MUD clients and grabs the socket address.
+    Other MUD clients might need it set.
+  </Example>
+  <Example Usage="#chat {who}">
+    Shows all people you are connected to.
+    The first column shows a reference number for the connection, which can be used instead of the connection's name when sending someone a message.
+    The second column shows the connection's name.
+    The third column shows flags set for the connection, (P)rivate, (I)gnore, (S)erve, (F)orward to user, and (f)orward from user.
+    The following columns show ip, port, and MUD client name.
+  </Example>
+  <Example Usage="#chat {info}">
+    Shows your name, ip address, port, download dir, reply, and DND status.
+  </Example>
+  <Example Usage="#chat {ignore} {user}">
+    Ignores the specified user, who won't be notified that you're ignoring them.
+  </Example>
+  <Example Usage="#chat {private} {user|all}">
+    Disables the peek and request command for the given connection.
+  </Example>
+  <Example Usage="#chat {public} {user|all}">
+    Is the opposite of the private command.
+    Allows the peek and request command to work for a given connection.
+    New connections are public by default.
+  </Example>
+  <Example Usage="#chat {peek} {user}">
+    Shows the given user's public connections.
+  </Example>
+  <Example Usage="#chat {request} {user}">
+    Obtains the specified user's public connections and automatically connect to them, if not already.
+  </Example>
+  <Example Usage="#chat {ping} {user}">
+    Displays the ping request time round-trip, in milli seconds.
+  </Example>
+  <Example Usage="#chat {zap} {user|all}">
+    Closes the connection to the specified user or all users.
+  </Example>
+  <Example Usager="#chat {forward} {user}">
+    Forwards all chat messages to the specified user as snoop data.
+    To avoid infinite loops, forwarding to a user is disabled when receiving snoop data from that user.
+  </Example>
+  <Example Usage="#chat {forwardall} {user}">
+    Forwards everything that is saved in the scrollback buffer to the specified user as snoop data.
+  </Example>
+  <Example Usage="#chat {serve} {user}">
+    Forwards all public chat messages to the specified user plus all public chat messages from that user to everyone you are connected to.
+    To avoid infinite loops the messages are forwarded as private messages.
+  </Example>
+  <Example Usage="#chat {group} {user} {name}">
+    Assigns the specified user to a group.
+    You can use a group name with the emote, message, and send commands.
+    If you use '#chat group' without an argument, it will behave like '#chat who', showing a list of all users and their group name.
+  </Example>
+  <Example Usage="#chat {sendfile} {user} {filename}">
+    Sends a file to the given user.
+    They must accept it before transfer begins.
+  </Example>
+  <Example Usage="#chat {accept} {user}">
+    Accepts a file transfer after the user has offered to send a file.
+  </Example>
+  <Example Usage="#chat {decline} {user}">
+    Declines a file transfer after the user has offered to send a file.
+  </Example>
+  <Example Usage="#chat {cancel} {user}">
+    Cancels a file transfer after it has been started.
+  </Example>
+  <Example Usage="#chat {filestat} {user}">
+    Shows information about a file transfer currently in progress.
+  </Example>
+  <Example Usage="#chat {downloaddir} {directory}">
+    Sets the directory path location where new downloads are to be placed.
+  </Example>
+</Help>

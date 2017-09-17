@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TinTin.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="PromptChar" Type="System.Char" Scope="User">
+    <Setting Name="TINTIN_CHAR" Type="System.Char" Scope="User">
       <Value Profile="(Default)">#</Value>
     </Setting>
     <Setting Name="COMMAND_SEPARATOR" Type="System.Char" Scope="User">

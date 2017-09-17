@@ -38,7 +38,6 @@ namespace TinTin.Interfaces {
     void Foreach(string str);
     void Format(string str);
     void Function(string str);
-    void Gag(string str);
     void Greeting(string str);
     void Grep(string str);
     void Help(string str);
@@ -86,7 +85,6 @@ namespace TinTin.Interfaces {
     void Tab(string str);
     void Textin(string str);
     void Ticker(string str);
-    void UnGag(string str);
     void UnTab(string str);
     void Variable(string str);
     void While(string str);

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Keypad" Modified="9/16/2017" />
+  <Syntax>A             Configuration B             Configuration C</Syntax>
+  <Description>  +-----+-----+-----+-----+   +-----+-----+-----+-----+   +-----+-----+-----+-----+
+  |Num  |/    |*    |-    |   |Num  |/    |*    |-    |   |Num  |nkp/ |nkp* |nkp- |
+  +-----+-----+-----+-----+   +-----+-----+-----+-----+   +-----+-----+-----+-----+
+  |7    |8    |9    |     |   |Home |Up   |PgUp |     |   |nkp7 |nkp8 |nkp9 |     |
+  +-----+-----+-----+     |   +-----+-----+-----+     |   +-----+-----+-----+     |
+  |4    |5    |6    |+    |   |Left |Centr|Right|+    |   |nkp4 |nkp5 |nkp6 |nkp+ |
+  +-----+-----+-----+-----+   +-----+-----+-----+-----+   +-----+-----+-----+-----+
+  |1    |2    |3    |     |   |End  |Down |PgDn |     |   |nkp1 |nkp2 |nkp3 |     |
+  +-----+-----+-----+     |   +-----+-----+-----+     |   +-----+-----+-----+     |
+  |0          |.    |Enter|   |Ins        |Del  |Enter|   |nkp0       |nkp. |nkpEn|
+  +-----------+-----+-----+   +-----------+-----+-----+   +-----------+-----+-----+
+
+With keypad mode disabled numlock on will give you configuration A, and numlock off will give you configuration B.
+With keypad mode enabled you'll get configuration C.
+
+Terminals that support keypad mode:
+Linux Console, PuTTY, Eterm, aterm.
+
+Terminals that do not support keypad mode:
+RXVT on Cygwin, Windows Console, Gnome Terminal, Konsole.
+
+Peculiar Terminals:
+RXVT requires turning off numlock to enable configuration C.
+
+Xterm may require disabling Alt/NumLock Modifiers (num-lock) in the ctrl-leftclick menu. Or edit ~/.Xresources and add
+XTerm*VT100.numLock:false
+
+Mac OS X Terminal:
+Requires enabling "strict vt100 keypad behavior" in Terminal -&gt; Window Settings -&gt; Emulation.
+</Description>
+</Help>

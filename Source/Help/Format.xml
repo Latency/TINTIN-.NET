@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Format" Modified="9/16/2017" />
+  <Syntax>{variablename} {format} {argument1} {argument2} {etc}</Syntax>
+  <Description>
+This command allows you to format text very much like the sprintf function in C. The result will be stored in the variable
+given. The format part can contain text and argument variables. You can give up to 20 arguments in the arguments part. Also
+see the linux man file on sprintf.
+
+Parameter     Name          Description
+%+9s          String        Pre pad string with 9 spaces
+%-9s          String        Post pad string with 9 spaces
+%.9s          String        Print at most 9 characters
+%a            Number        Print corresponding ascii character
+%c            Color         Turn argument into a color code
+%d            Decimal       Print a number with integer formatting
+%h            Header        Turn argument into a header
+%l            Lowercase     Lowercase the argument
+%m            Mathexp       Perform Mathematics on the argument
+%n            Name          Capitalize the first letter
+%p            String        Strip leading and trailing spaces
+%r            Reverse       Reverse the argument
+%s            String        Normal string argument
+%t            Format        Use strftime format in argument to create a time stamp.
+%u            Uppercase     Capitalize the entire argument
+%w            Wordwrap      Wordwrap the argument as a list
+%C            Columns       Print the screen width
+%G            Grouping      Perform thousand grouping on the argument
+%L            Length        Print the length of the argument
+%R            Rows          Print the screen height
+%T            Epochtime     Print the number of seconds since epoch
+%U            Epochtime     Print the number of micro seconds since epoch
+
+Example: 
+
+#alias {time}
+{
+  #format line {%cThe time is: %t} {light green} {%Y-%m-%d %T};
+  #showme {$line}
+}
+</Description>
+</Help>

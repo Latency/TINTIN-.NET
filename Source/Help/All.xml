@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="All" Modified="9/16/2017" />
+  <Syntax>{commands}</Syntax>
+  <Description>
+    If you have multiple sessions in one terminal you can use #all to execute the command with all sessions.
+  </Description>
+  <Example Usage="#all quit">
+    Would make all sessions quit.
+  </Example>
+</Help>

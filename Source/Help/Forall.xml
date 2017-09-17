@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Forall" Modified="9/16/2017" />
+  <Syntax>{list} {commands}</Syntax>
+  <Description>
+List elements must either be separated by braces or semicolons.
+
+Example: #forall {a;b;c;d} {say &amp;0}
+Example: #forall {{a}{b}{c}{d}} {say &amp;0}
+Both equal: say a;say b;say c;say d
+</Description>
+</Help>

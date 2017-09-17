@@ -8,7 +8,7 @@
 //  *****************************************************************************
 
 namespace TinTin.Commands {
-  public partial class Switchboard {
+  internal sealed partial class Switchboard {
     public void Action(string s) {
       //char arg1 [BUFFER_SIZE],
       //arg2[BUFFER_SIZE],

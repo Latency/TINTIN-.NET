@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Read" Modified="9/16/2017" />
+  <Syntax>{filename}</Syntax>
+  <Description>
+This command will read in a command file.
+
+Example: #read autolevel.tin
+This would read in a file of your making containing aliasses, actions, tickers, etc, to engage in some auto leveling.
+</Description>
+</Help>

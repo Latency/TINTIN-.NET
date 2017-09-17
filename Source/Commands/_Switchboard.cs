@@ -15,7 +15,7 @@ using TinTin.Interfaces;
 using TinTin.Properties;
 
 namespace TinTin.Commands {
-  public partial class Switchboard : ICommands {
+  internal sealed partial class Switchboard : ICommands {
     // Constructor
     public Switchboard() {
       CMD = new Dictionary<string, Delegate>();
@@ -31,11 +31,15 @@ namespace TinTin.Commands {
     /// </summary>
     /// <param name="line"></param>
     /// <returns></returns>
-    public KeyValuePair<Delegate, string> ProcessCommand(string line) {
-      if (string.IsNullOrEmpty(line) || line[0] != Settings.Default.PromptChar)
-        return default(KeyValuePair<Delegate, string>);
-      var ai = new ArgInterpreter(line.TrimStart(' ', Settings.Default.PromptChar), ArgTypes.Cut);
-      return new KeyValuePair<Delegate, string>(CMD.Where(x => x.Key == ai.Tokens[0].ToLower()).Select(x => x.Value).FirstOrDefault(), ai.Tokens[1].Trim());
+    public KeyValuePair<string, Delegate> ProcessCommand(string line) {
+      if (string.IsNullOrEmpty(line) || line[0] != Settings.Default.TINTIN_CHAR)
+        return default(KeyValuePair<string, Delegate>);
+      // Strip the TINTIN_CHAR from the line,.
+      // Cut the command out of the parameter list.
+      // Re-assign the <i>kvp.Key</i> to the parameter list.
+      // Assign the delegate mapping to the <i>kvp.Key</i> to the <i>kvp.Value</i>.
+      var ai = new ArgInterpreter(line.TrimStart(' ', Settings.Default.TINTIN_CHAR), ArgTypes.Cut);
+      return new KeyValuePair<string, Delegate>(ai.Tokens[1].Trim(), CMD.Where(x => x.Key == ai.Tokens[0].ToLower()).Select(x => x.Value).FirstOrDefault());
     }
   }
 }

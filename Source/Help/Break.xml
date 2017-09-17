@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Break" Modified="9/16/2017" />
+  <Syntax></Syntax>
+  <Description>
+    The break command can be used to break out of the #foreach, #loop, #parse, #switch, and #while commands.
+  </Description>
+  <Example Usage="#math cnt 0;#while {1} {#math cnt $cnt + 1;#if {$cnt == 20} {#break}}" />
+</Help>

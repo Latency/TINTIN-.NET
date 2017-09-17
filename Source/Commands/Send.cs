@@ -8,7 +8,7 @@
 //  *****************************************************************************
 
 namespace TinTin.Commands {
-  public partial class Switchboard {
+  internal sealed partial class Switchboard {
     public void Send(string s) {
     }
   }

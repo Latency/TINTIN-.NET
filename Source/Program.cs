@@ -29,9 +29,6 @@ namespace TinTin {
       // Add the event handler for handling non-UI thread exceptions to the event. 
       AppDomain.CurrentDomain.UnhandledException += UnhandledException;
 
-      // Setup hybrid compatability for Console mode.
-      //Terminal.Allocate();
-
       // ---------------------------------------------------------------------
 
       #endregion Exception Sink Handlers
@@ -51,13 +48,12 @@ namespace TinTin {
 
       // Establish an event handler to process key press events.
 
-
       Console.CancelKeyPress += CancelEventHandler;
       while (true) {
         // Start a console read operation.
-        var line = ReadLine.Read();
-        var kvp = cmds.ProcessCommand(line?.Trim());
-        kvp.Key?.DynamicInvoke(kvp.Value);
+        var line = ReadLine.Read()?.Trim();
+        var kvp = cmds.ProcessCommand(line);
+        kvp.Value?.DynamicInvoke(kvp.Key);
       }
     }
 

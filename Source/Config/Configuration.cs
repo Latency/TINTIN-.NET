@@ -8,8 +8,6 @@
 //  *****************************************************************************
 
 namespace TinTin.config {
-  public static class Configuration {
-    // ReSharper disable once InconsistentNaming
-    public const char TTChar = '#';
+  internal static class Configuration {
   }
 }

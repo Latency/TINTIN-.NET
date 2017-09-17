@@ -9,23 +9,22 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using TinTin.Properties;
 
 namespace TinTin {
   internal static partial class Program {
     internal static void Print(string s) {
-      // Terminal.Allocate();
+      var buf = new StringBuilder();
 
       s.Split(new[] {
         "\r\n",
         "\n\r",
         "\n"
-      }, StringSplitOptions.RemoveEmptyEntries).Aggregate(string.Empty, (x, line) => {
-        Console.WriteLine($"{Settings.Default.PromptChar}{line}");
-        return null;
+      }, StringSplitOptions.RemoveEmptyEntries).Aggregate(string.Empty, (x, line) => buf.AppendLine($"{Settings.Default.TINTIN_CHAR}{line}").ToString(), x => {
+        Console.Write(buf);
+        return buf;
       });
-
-      // Terminal.Free();
     }
   }
 }

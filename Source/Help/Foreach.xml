@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Foreach" Modified="9/16/2017" />
+  <Syntax>{list} {variable} {commands}</Syntax>
+  <Description>
+The foreach command works like a simplified loop. Each word in the list will be stored in the variable at execution time and
+can be used in the commands part.
+
+Items in the provided list must either be separated by using semi-colons, or by encasing them in braces.
+
+Example: #foreach {Bob;Jim;Tom} {name} {say Hello $name!}
+Example: #foreach {{Bob}{Jim}{Tom}} {name} {say Hello $name!}
+Both equal: say Hello Bob!;say Hello Jim!;say Hello Tom!
+
+To loop through all items in a list (or a nested variable) using the foreach command use $&lt;list&gt;[%*].
+
+Example: #foreach {$variable[%*]} {name} {say Hello $name!}
+</Description>
+</Help>

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace TinTin.Commands {
   // %LOCALAPPDATA%\Local\VirtualStore\Program Files\Wintin++
-  public partial class Switchboard {
+  internal sealed partial class Switchboard {
     public void Write(string s) {
       // Delete the file if it exists. 
       if (File.Exists(s))

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Repeat" Modified="9/16/2017" />
+  <Syntax>{commands}</Syntax>
+  <Description>
+Sometimes you want to repeat the same command multiple times. This is the easiest way to accomplish that.
+
+Example: #10 buy bread
+This will make you execute 'buy bread' 10 times.
+</Description>
+</Help>
