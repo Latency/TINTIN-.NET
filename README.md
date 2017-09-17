@@ -1,6 +1,8 @@
 ﻿<b>TinTin#</b>
 <hr>
-TinTin# is a console client interpreter enhanced with features for various communication protocols such as telnet/ssh/etc.<br>
+TinTin# is a terminal screen-scraping thin-client interpreter enhanced with features for various communication protocols such as telnet/ssh/etc.<br>
+Serves as a functional macro pre-processor and proprietary interpreter based scripting language.
+Includes Peer-To-Peer chat relay.
 <hr>
 <H1>This project is currently under construction!</H1>
 <hr>
