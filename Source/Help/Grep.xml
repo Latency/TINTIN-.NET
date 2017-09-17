@@ -3,12 +3,16 @@
   <Command Name="Grep" Modified="9/16/2017" />
   <Syntax>{pagenumber} {keywords}</Syntax>
   <Description>
-This command searches for the given keywords in your scroll back buffer. The page number is optional. It will print 1 page of
-matches. If you want to grep further back use pagenumber 1, then 2, etc. You can use regexp to get better results. Also
-remember the search is case sensative.
-
-Example: #grep tells you
-
-This would show all the mud output received containting the sub string 'tells you'.
-</Description>
+    This command searches for the given keywords in your scroll back buffer.
+    The page number is optional.
+    
+    It will print 1 page of matches.
+    If you want to grep further back, use pagenumber 1, then 2, etc.
+    
+    Regexp are also supported to get better results.
+    Search is case sensative.
+  </Description>
+  <Example Usage="#grep tells you">
+    Shows all the output received, containting the sub string 'tells you'.
+  </Example>
 </Help>

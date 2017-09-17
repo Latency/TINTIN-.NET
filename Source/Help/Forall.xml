@@ -3,10 +3,10 @@
   <Command Name="Forall" Modified="9/16/2017" />
   <Syntax>{list} {commands}</Syntax>
   <Description>
-List elements must either be separated by braces or semicolons.
-
-Example: #forall {a;b;c;d} {say &amp;0}
-Example: #forall {{a}{b}{c}{d}} {say &amp;0}
-Both equal: say a;say b;say c;say d
-</Description>
+    List elements and must be separated by either braces or semicolons.
+  </Description>
+  <Example Usage="#forall {a;b;c;d} {say &amp;0}"/>
+  <Example Usage="#forall {{a}{b}{c}{d}} {say &amp;0}">
+    Equivalent:  say a;say b;say c;say d
+  </Example>
 </Help>

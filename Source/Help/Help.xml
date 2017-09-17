@@ -3,15 +3,14 @@
   <Command Name="Help" Modified="9/16/2017" />
   <Syntax>{subject}</Syntax>
   <Description>
-The help command will show some basic help on the subject using the build in help documentation. Without an argument it shows
-all available help topics.
-
-The help command is more up to date than the online manual.
-
-Example: #help alias
-Would show the help file for aliasses.
-
-Example: #help %*
-Would show all help files.
-</Description>
+    Show some basic help on the subject using the built-in help documentation.
+    
+    Without an argument it shows all available help topics.
+  </Description>
+  <Example Usage="#help alias">
+    Shows the help file for all aliasses.
+  </Example>
+  <Example Usage="#help %*">
+    Show all help related topics.
+  </Example>
 </Help>

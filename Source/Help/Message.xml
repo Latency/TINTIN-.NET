@@ -3,11 +3,13 @@
   <Command Name="Message" Modified="9/16/2017" />
   <Syntax>{listname} {argument}</Syntax>
   <Description>
-Without an argument message will show the lists you can toggle. If no argument is given it will toggle the specified list
-flag. You can more specificly change the message flag using ON or OFF as the argument.
-
-Example: #message variable off
-Variables will no longer create a message when they are created or removed, useful if you use on of those scripts from the
-example file.
-</Description>
+    Without an argument shows the lists able to be toggled.
+    If an argument is specified, it will toggle the specified list flag. 
+    
+    You can more specificly change the message flag using 'ON' or 'OFF' as the argument.
+  </Description>
+  <Example Usage="#message variable off">
+    Variables will no longer create a message when they are created or removed.
+    Useful when using on scripts from the examples.
+  </Example>
 </Help>

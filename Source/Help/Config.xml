@@ -3,19 +3,22 @@
   <Command Name="Config" Modified="9/16/2017" />
   <Syntax>{option} {argument}</Syntax>
   <Description>
-When TinTin# starts up it will generate a config file, it can be modified with the config command. Typing config without an
-argument will show the current configuration, and these can be written to file with the #write command.
-
-The following configuration options are not enabled by default:
-
-#CONFIG {COLOR PATCH}  {ON|OFF} Fixes color code usage on some muds, most notably Achaea, default off.
-
-#config {CONVERT META} {ON|OFF} Convert meta characters, default off.
-
-#config {DEBUG TELNET} {ON|OFF} Show telnet negotations, default off.
-
-#CONFIG {MCCP}         {ON|OFF} Enable or disable MCCP support, default on.
-
-#CONFIG {LOG LEVEL}  {LOW|HIGH} The low setting logs mud output before triggers, default high.
-</Description>
+    When TinTin# starts up it will generate a config file, it can be modified with the config command. Typing config without an
+    argument will show the current configuration, and these can be written to file with the #write command.
+  </Description>
+  <Example Usage="#CONFIG {COLOR PATCH}  {ON|OFF}" Default="off">
+    Fixes color code usage on some muds, most notably Achaea.
+  </Example>
+  <Example Usage="#config {CONVERT META} {ON|OFF}" Default="off">
+    Convert meta characters.
+  </Example>
+  <Example Usage="#config {DEBUG TELNET} {ON|OFF}" Default="off">
+    Show telnet negotations.
+  </Example>
+  <Example Usage="#config {MCCP}" Default="on">
+    Toggles MCCP support.
+  </Example>
+  <Example Usage="#config {LOG LEVEL} {LOW|HIGH}" Default="High">
+    The low setting logs mud output before triggers.
+  </Example>
 </Help>

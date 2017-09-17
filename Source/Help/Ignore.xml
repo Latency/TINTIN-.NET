@@ -3,10 +3,13 @@
   <Command Name="Ignore" Modified="9/16/2017" />
   <Syntax>{listname} {argument}</Syntax>
   <Description>
-Without an argument ignore will show the lists you can ignore. If one argument is given it will toggle the specified list
-flag. You can more specificly change the ignore flag using ON or OFF as the argument.
+    Without an argument, shows the lists able to be ignored.
+    If one argument is specified, it will toggle the specified list flag.
 
-Example: #ignore actions off
-Actions will no longer trigger, useful if you want to temporarily disable all triggers.
-</Description>
+    Ignore flags can be toggled using ON or OFF as the argument.
+  </Description>
+  <Example Usage="#ignore actions off">
+   Actions will no longer trigger.
+   Useful if wanting to temporarily disable all triggers.
+  </Example>
 </Help>

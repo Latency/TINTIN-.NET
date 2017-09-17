@@ -3,7 +3,15 @@
   <Command Name="End" Modified="9/16/2017" />
   <Syntax></Syntax>
   <Description>
-Terminates tintin and return to unix. On most systems, ctrl-c has the same result. In tintin pressing ctrl-d on an empty line
-will call #end as well.
-</Description>
+    Terminates the application.
+    
+    Built-In Supporting All Operating Systems:
+    Ctrl+D
+    
+    Windows:
+    Ctrl+Break | Ctrl+C
+    
+    UNIX:
+    Ctrl+C
+  </Description>
 </Help>

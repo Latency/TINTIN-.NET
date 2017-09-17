@@ -3,6 +3,6 @@
   <Command Name="Info" Modified="9/16/2017" />
   <Syntax></Syntax>
   <Description>
-The info command will display the amount of nodes per list type, as well as the ignore, message, and debug status of each list.
-</Description>
+    Displays the amount of nodes per list type, as well as the ignore, message, and debug status of each list.
+  </Description>
 </Help>

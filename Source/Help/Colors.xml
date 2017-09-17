@@ -1,36 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
   <Command Name="Colors" Modified="9/16/2017" />
-  <Syntax>with a, b, c being parameters</Syntax>
+  <Syntax>{a} {b} {c}</Syntax>
   <Description>
-Parameter 'a': VT100 code
+    Parameter 'a': VT100 code
 
-0 - Reset all parameters to default
-1 - Bold
-2 - Dim
-4 - Underscore
-5 - Blink
-7 - Reverse (back and foreground colors are reversed)
-8 - Skip
+    0 - Reset all parameters to default
+    1 - Bold
+    2 - Dim
+    4 - Underscore
+    5 - Blink
+    7 - Reverse (back and foreground colors are reversed)
+    8 - Skip
 
-Parameter 'b':  Foreground color
-Parameter 'c':  Background color
+    Parameter 'b':  Foreground color
+    Parameter 'c':  Background color
 
-0 - Black       5 - Magenta
-1 - Red         6 - Cyan
-2 - Green       7 - White
-3 - Yellow      8 - Skip
-4 - Blue        9 - Default
+    0 - Black       5 - Magenta
+    1 - Red         6 - Cyan
+    2 - Green       7 - White
+    3 - Yellow      8 - Skip
+    4 - Blue        9 - Default
 
-Xterm 256 Colors
+    Xterm 256 Colors
 
-For xterm 256 colors support use &lt;aaa&gt; to &lt;fff&gt; for RGB foreground colors and &lt;AAA&gt; to &lt;FFF&gt; for RGB background colors.
+    For xterm 256 colors support use &lt;aaa&gt; to &lt;fff&gt; for RGB foreground colors and &lt;AAA&gt; to &lt;FFF&gt; for RGB background colors.
 
-For the grayscale foreground colors use &lt;g00&gt; to &lt;g23&gt; and for grayscale background colors use &lt;G00&gt; to &lt;G23&gt;.
-
-Example: #showme &lt;034&gt;T&lt;025&gt;i&lt;016&gt;n&lt;007&gt;T&lt;043&gt;i&lt;052&gt;n&lt;061&gt;+&lt;070&gt;+&lt;088&gt;
-
-Example: #showme &lt;fca&gt; orange &lt;cfa&gt; lime &lt;caf&gt; indigo &lt;acf&gt; azure &lt;fac&gt; crimson
-Your terminal must support xterm 256 colors.
-</Description>
+    For the grayscale foreground colors use &lt;g00&gt; to &lt;g23&gt; and for grayscale background colors use &lt;G00&gt; to &lt;G23&gt;.
+  </Description>
+  <Example Usage="#showme &lt;034&gt;T&lt;025&gt;i&lt;016&gt;n&lt;007&gt;T&lt;043&gt;i&lt;052&gt;n&lt;061&gt;+&lt;070&gt;+&lt;088&gt;" />
+  <Example Usage="#showme &lt;fca&gt; orange &lt;cfa&gt; lime &lt;caf&gt; indigo &lt;acf&gt; azure &lt;fac&gt; crimson">
+    Your terminal must support xterm 256 colors.
+  </Example>
 </Help>

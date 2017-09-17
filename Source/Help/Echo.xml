@@ -2,15 +2,15 @@
 <Help>
   <Command Name="Echo" Modified="9/16/2017" />
   <Syntax>{format} {arguments}</Syntax>
+  <Syntax>{{format} {row}} {arguments}</Syntax>
   <Description>
-Syntax: #echo {{format} {row}} {arguments}
+    Displays text on the screen with formatting options identical to the #format command.
+    It does not trigger actions, unlike the showme command.
+    
+    Like the #showme command you add a second argument to the format, which specifies the
+    screen row the line should be printed on, identical to the #prompt command.
 
-Echo displays text on the screen with formatting options identical to the #format command. The echo command does not trigger
-actions, unlike the showme command. Like the #showme command you add a second argument to the format, which specifies the
-screen row the line should be printed on, identical to the #prompt command.
-
-See the help file on the format and prompt commands for more information.
-
-Example: #echo {The current date is %t.} {%Y-%m-%d %H:%M:%S}
-</Description>
+    See the help file on the format and prompt commands for more information.
+  </Description>
+  <Example Usage="#echo {The current date is %t.} {%Y-%m-%d %H:%M:%S}" />
 </Help>

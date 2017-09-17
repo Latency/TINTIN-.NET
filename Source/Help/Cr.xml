@@ -3,13 +3,17 @@
   <Command Name="Cr" Modified="9/16/2017" />
   <Syntax></Syntax>
   <Description>
-This command sends a carriage return to the mud. It's obsolete and should be avoided. Useful if you have the repeat enter
-config option enabled and need an enter without repeating your last command. Alternatively you can use #send without an
-argument, or two consecutive command separators ;; to insert an enter. If you want to send multiple returns on a server,
-it's best to use #send { \n \n } (three enters total) since some treat consecutive returns as a single return.
-
-Example: #ticker {idle} {#cr} {300}
-This will send a carriage return to the mud every 300 seconds (5 minuts) which will stop most muds and networks from
-disconnecting you for inactivity.
-</Description>
+    This command sends a carriage return to the mud.
+    
+    It's obsolete and should be avoided.  It is useful if you have the repeat enter config option
+    enabled and need an enter without repeating your last command. Alternatively you can use #send without an
+    argument, or two consecutive command separators ;; to insert an enter.
+    
+    If you want to send multiple returns on a server, it's best to use #send { \n \n } (three enters total)
+    since some treat consecutive returns as a single return.
+  </Description>
+  <Example Usage="#ticker {idle} {#cr} {300}">
+    Sends a carriage return to the mud every 300 seconds (5 minuts), which will stop most muds and networks from
+    disconnecting the connection due to inactivity.
+  </Example>
 </Help>

@@ -3,9 +3,9 @@
   <Command Name="Greeting" Modified="9/16/2017" />
   <Syntax>greeting</Syntax>
   <Description>
-Will, plain and simply, show you the greeting-message which is displayed every time you start the client
-(and which contains the client version number). Useful if you wish to see it, and it is no longer available in the buffer.
-
-It is not really a command, as you can only summon it thru #help.
-</Description>
+    Shows the greeting-message being displayed every time the client loads.
+    This typically contains the version number which is useful at times.
+    
+    It is no longer available in the buffer.
+  </Description>
 </Help>

@@ -11,27 +11,25 @@ The result variable is also used in the echo command, so you should be careful w
 use a function by calling it with: @&lt;functionname&gt;{&lt;arguments&gt;} the arguments are stored in %0 to %99, with %0 holding all
 arguments, %1 the first, %2 the second, etc. The arguments are separated by encasing the arguments in braces, or using
 semicolons.
-
-Example: 
-
-#function {time}
-{
-  #if {"%0" == ""}
-  {
-    #format {epoch} {%T}
-  };
-  #else
-  {
-    #var epoch %0
-  };
-  #format {result} {%t} {{%T}{$epoch}
-}
-The if check in the function will check if an argument has been passed, if so the argument (assumed to be a timestamp) is
-stored in $epoch, if not the current number of seconds since 1970 is retrieved with #format {epoch} %T. Next $epoch is used
-to store the current time in $result. Using: #showme @time{} will display the current military time.
-
-See the scripts section for more examples.
-
-Notice: You can remove functions with the #unfunction command.
 </Description>
+  <Example Usage="#function {time}
+    {
+      #if {%0==string.Empty} {
+        #format {epoch} {%T}
+      };
+      #else {
+        #var epoch %0
+      };
+      #format {result} {%t} {{%T}{$epoch}
+    }">
+    The #if conditional in the function, will check if an argument has been passed.
+    If so, the argument which is assumed to be a timestamp, is stored in $epoch.
+    If not, the current number of seconds since 1970 is retrieved with '#format {epoch} %T'.
+    Next, $epoch is used to store the current time in $result.
+
+    Using:  '#showme @time{}' will display the current military time.
+  </Example>
+  <Notes>
+    The '#unfunction' command removes functions.
+  </Notes>
 </Help>

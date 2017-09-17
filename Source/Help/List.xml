@@ -3,62 +3,60 @@
   <Command Name="List" Modified="9/16/2017" />
   <Syntax>{&lt;variable&gt;} {&lt;option&gt;} {&lt;arguments&gt;}</Syntax>
   <Description>
-Lists in TinTin# are associative arrays with a numeric index. The list command makes it easier to emulate array behavior by
-automatically renumbering items whenever one is removed or inserted.
+    Lists are container collections that handle collisions and are highly scaleable.
+    Indexing is similar to a HashTable.
 
-When the list command requires an index a value between 1 and the list's length should be provided. A negative value can be
-given as well, in which case -1 equals the last item in the list, -2 the second last, etc.
-
-You can directly display items in a list by using the index, for example: $var[1], $var[2], $var[-1], etc.
-
-To loop through all items in a list using the foreach command use $&lt;list&gt;[%*].
-
-#list {&lt;list&gt;} {add} {&lt;argument1&gt;} {&lt;argument2&gt;} {...}
-
-#list add will add an item to the given list for each argument provided.
-
-#list {&lt;list&gt;} {clear}
-
-#list clear will empty the given list variable. The command is equivalent to: #variable {&lt;variable&gt;} {}
-
-#list {&lt;list&gt;} {create} {&lt;argument1&gt;} {&lt;argument2&gt;} {...}
-
-#list create will clear the given list and will add an item for each additional argument provided.
-
-#list {&lt;list&gt;} {delete} {&lt;index&gt;} {[number]
-
-#list delete will remove the item at the given index. The number argument is the number of items to delete, if omitted 1
-item will be deleted.
-
-#list {&lt;list&gt;} {find} {&lt;argument&gt;} {&lt;variable&gt;}
-
-#list find allows searching for an item that matches the provided argument. If no match is found the destination variable
-is set to 0, otherwise the variable is set to contain the index of the matched item.
-
-#list {&lt;list&gt;} {get} {&lt;indext&gt;} {&lt;variable&gt;}
-
-#list get will retrieve the list's item at the provided index. If the index doesn't exist the destination variable is set
-to 0, otherwise the destination variable is set to contain the value of the found index. Alternatively you can use
-$list[&lt;index&gt;&gt;] to retrieve the value using the interface for associative arrays.
-
-#list {&lt;list&gt;} {insert} {&lt;index&gt;} {&lt;argument&gt;}
-
-#list insert will insert the item at the given index. If the index is a positive number the item is created at the given
-index. If the index is a negative number the item is created at the next index. Hence using -1 will append a new item to
-the end of the list, and using 1 will prepend a new item to the beginning of the list.
-
-#list {&lt;list&gt;} {set} {&lt;index&gt;} {&lt;argument&gt;}
-
-#list set will change the value of the provided index to the given argument. Alternatively you can use:
-#variable {&lt;list&gt;[&lt;index&gt;]} {&lt;argument&gt;} to change the value using the interface for associative arrays.
-
-#list {&lt;list&gt;} {size} {&lt;variable&gt;}
-
-#list size will retrieve the number of items in the list and store it in the provided destination variable. Alternatively,
-you can use: &amp;list[] to retrieve the number of items in a list using the interface for associative arrays.
-
-#list {&lt;list&gt;} {sort} {&lt;argument&gt;}
-
-#list sort will insert the provided argument in alphabetical order.
-</Description>
+    Collections contain an index a value between 0 and the collection's length-1; where length is greater than 0.
+    Indexes may also contain the 'key' for lookup; where key is a string literal.
+  </Description>
+  <Example Usage="$var[1], $var[2], $var[-1]">
+    Display items in a list by using its index.
+  </Example>
+  <Example Usage="#foreach command use $&lt;list&gt;[%*]">
+    Loop through all items in a collection.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {add} {&lt;argument1&gt;} {&lt;argument2&gt;} {...}">
+    Adds an item to the given list for each argument provided.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {clear}">
+    Empties the specified 'list' variable.
+    Equivalent:  #variable {&lt;variable&gt;} {}
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {create} {&lt;argument1&gt;} {&lt;argument2&gt;} {...}">
+    Clears the given list and adds an item for each additional argument provided.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {delete} {&lt;index&gt;} {[number=1]}">
+    Removes the item at the specified index.
+    The 'number' argument is the number of items to delete.
+    If omitted, 1 is used by default.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {find} {&lt;argument&gt;} {&lt;variable&gt;}">
+    Allows searching for an item that matches the provided argument.
+    If no match is found, the destination variable is set to 0.
+    Otherwise, the variable is set to contain the index of the matched item.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {get} {&lt;indext&gt;} {&lt;variable&gt;}">
+    Retrieves the list's item at the specified index.
+    If the index doesn't exist, the destination variable is set to 0.
+    Otherwise, the destination variable is set to contain the value of the found index.
+    
+    Alternatively you can use '$list[&lt;index&gt;&gt;]' to retrieve the value using the interface for associative arrays.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {insert} {&lt;index&gt;} {&lt;argument&gt;}">
+    Inserts the item at the specified index.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {set} {&lt;index&gt;} {&lt;argument&gt;}">
+    Changes the value of the provided index to the specified argument.
+    
+    Alternatively you can use: '#variable {&lt;list&gt;[&lt;index&gt;]} {&lt;argument&gt;}'
+    to change the value using the interface for associative arrays.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {size} {&lt;variable&gt;}">
+    Retrieves the number of items in the collection and stores it in the specified destination variable.
+    
+    Alternatively you can use:  '&amp;list[]' to retrieve the number of items in the collection using the interface for associative arrays.
+  </Example>
+  <Example Usage="#list {&lt;list&gt;} {sort} {&lt;argument&gt;}">
+    Inserts the specified argument in alphabetical/numerical order.
+  </Example>
 </Help>

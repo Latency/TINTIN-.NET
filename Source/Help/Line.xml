@@ -3,39 +3,32 @@
   <Command Name="Line" Modified="9/16/2017" />
   <Syntax>{option} {argument}</Syntax>
   <Description>
-The line command provides various line based operations.
+    Provides various line based operations.
+  </Description>
+  <Example Usage="#line {gag}">
+    When called the next to be displayed line will be gagged.
 
-#line {gag}
+    As actions trigger before the line they trigger on is displayed, using '#line gag' within an action will cause the triggering line not to be displayed.
+  </Example>
+  <Example Usage="#line {log} {&lt;filename&gt;} {[text]}">
+    Logs the given text to the given filename.
 
-When called the next to be displayed line will be gagged. As actions trigger before the line they trigger on is displayed,
-using #line gag within an action will cause the triggering line not to be displayed.
+    If no text argument is given, the next to be displayed line will be logged to the given file.
+    If any color codes are used in the text argument, they'll be translated to ANSI color codes.
 
-#line {log} {&lt;filename&gt;} {[text]}
-
-#line log logs the given text to the given filename. If no text argument is given, the next to be displayed line will be
-logged to the given file. If any TinTin# color codes are used in the text argument they'll be translated to ANSI color codes.
-The logging format will be either HTML, RAW, or PLAIN depending on the #config {LOG} setting.
-
-#line {logverbatim} {&lt;filename&gt;} {[text]}
-
-#line logverbatim works exactly like #line log, except that color codes, variables, and functions in the text argument won't
-be substituted.
-
-Example: 
-
-#var ignore_list {{Bubba}{1}{Pamela}{1}};
-
-#act {%1 tells you '%2'}
-{
-  #if {&amp;ignore_list[%1]}
-  {
- 	#line gag
-  }
-  {
-    #line logverbatim tells.log
-  }
-}
-The above example will log all tells to the tells.log file, unless the sender is on the ignore list, in which case the tell
-is gagged.
-</Description>
+    The logging format will be either HTML, RAW, or PLAIN depending on the #config {LOG} setting.
+  </Example>
+  <Example Usage="#line {logverbatim} {&lt;filename&gt;} {[text]}">
+    Works exactly like #line log, except that color codes, variables, and functions in the text argument won't be substituted.
+  </Example>
+  <Example Usage="#var ignore_list {{Bubba}{1}{Pamela}{1}};" />
+  <Example Usage="
+    #act {%1 tells you '%2'} {
+      #if {&amp;ignore_list[%1]} {
+        #line gag
+      }
+      #line logverbatim tells.log
+    }">
+    Logs all tells to the tells.log file, unless the sender is on the ignore list, in which case the tell is gagged.
+  </Example>
 </Help>

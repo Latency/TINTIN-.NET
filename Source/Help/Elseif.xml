@@ -3,9 +3,8 @@
   <Command Name="Elseif" Modified="9/16/2017" />
   <Syntax>{commands}</Syntax>
   <Description>
-The elseif statement should follow an #IF or #ELSEIF statement and is only called when the statement is true and the
-proceeding #IF and #ELSEIF statements are false.
-
-Example: #if {1d3 == 1} {smirk};#elseif {1d2 == 1} {snicker};#else {laugh}
-</Description>
+    Follows an #IF or #ELSEIF statement and is only called when the statement is true and the
+    proceeding #IF and #ELSEIF statements are false.
+  </Description>
+  <Example Usage="#if {1d3 == 1} {smirk};#elseif {1d2 == 1} {snicker};#else {laugh}"/>
 </Help>

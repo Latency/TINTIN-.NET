@@ -2,27 +2,22 @@
 <Help>
   <Command Name="Class" Modified="9/16/2017" />
   <Syntax>{name} {open|close|read filename|write filename|kill}</Syntax>
-  <Description>
-#class {&lt;classname&gt;} {open}
-
-The {open} option will open a class and automatically close the previously opened class (if any), all triggers added
-afterwards will be assigned to this class until it is closed.
-
-#class {&lt;classname&gt;} {close}
-
-The {close} option will close the currently opened class.
-
-#class {&lt;classname&gt;} {read} {&lt;filename&gt;}
-
-The {read} option will open the provided class, read the given file, and close the class after reading.
-
-#class {&lt;classname&gt;} {write} {&lt;filename&gt;}
-
-The {write} option will write all triggers of the given class to file. This option can be used to store data by assigning
-variables to belong to a specific class.
-
-#class {&lt;classname&gt;} {kill}
-
-The {kill} option will delete all triggers of the given class.
-</Description>
+  <Description />
+  <Example Usage="#class {&lt;classname&gt;} {open}">
+    Opens a class and automatically close the previously opened class (if any), all triggers added
+    afterwards will be assigned to this class until it is closed.
+  </Example>
+  <Example Usage="#class {&lt;classname&gt;} {close}">
+    Closes the currently opened class.
+  </Example>
+  <Example Usage="#class {&lt;classname&gt;} {read} {&lt;filename&gt;}">
+    The {read} option will open the provided class, read the given file, and close the class after reading.
+  </Example>
+  <Example Usage="#class {&lt;classname&gt;} {write} {&lt;filename&gt;}">
+    Writes all triggers of the given class to file.
+    This option can be used to store data by assigning variables to belong to a specific class.
+  </Example>
+  <Example Usage="#class {&lt;classname&gt;} {kill}">
+    Deletes all triggers of the given class.
+  </Example>
 </Help>
