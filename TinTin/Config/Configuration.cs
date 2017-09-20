@@ -1,0 +1,13 @@
+﻿//  *****************************************************************************
+//  File:       Configuration.cs
+//  Solution:   TinTin.NET
+//  Project:    TinTin
+//  Date:       09/13/2017
+//  Author:     Latency McLaughlin
+//  Copywrite:  Bio-Hazard Industries - 1998-2017
+//  *****************************************************************************
+
+namespace TinTin.Config {
+  internal static class Configuration {
+  }
+}

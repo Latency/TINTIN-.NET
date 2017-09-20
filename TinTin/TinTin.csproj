@@ -1,0 +1,235 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>TinTin.Program</StartupObject>
+    <RootNamespace>TinTin</RootNamespace>
+    <AssemblyName>TinTin</AssemblyName>
+    <Authors>Latency McLaughlin</Authors>
+    <Company>Bio-Hazard Industries</Company>
+    <Product>TinTin#</Product>
+    <Copyright>Copyright ©  1998-2017</Copyright>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <FileVersion>3.0.0</FileVersion>
+    <Description>A .NET Core client interpreter for screen scraping network communications.</Description>
+    <PackageProjectUrl>http://latency.github.io/TINTIN-.NET/</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.gnu.org/licenses/gpl-3.0.en.html</PackageLicenseUrl>
+    <PackageIconUrl>http://bio-hazard.us/ico/kitty.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Latency/TinTin-.NET/</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>TinTin# TinTin++ C# Client TCP Telnet SSH MUD</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageId>TinTin#</PackageId>
+    <Version>3.0.0</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>snKey.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <ApplicationIcon>sBIO2.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Help\Action.txt" />
+    <None Remove="Help\Alias.txt" />
+    <None Remove="Help\All.txt" />
+    <None Remove="Help\Bell.txt" />
+    <None Remove="Help\Break.txt" />
+    <None Remove="Help\Buffer.txt" />
+    <None Remove="Help\Case.txt" />
+    <None Remove="Help\Chat.txt" />
+    <None Remove="Help\Chat_Protocol.txt" />
+    <None Remove="Help\Class.txt" />
+    <None Remove="Help\Colors.txt" />
+    <None Remove="Help\Commands.txt" />
+    <None Remove="Help\Config.txt" />
+    <None Remove="Help\Continue.txt" />
+    <None Remove="Help\Cr.txt" />
+    <None Remove="Help\Cursor.txt" />
+    <None Remove="Help\Debug.txt" />
+    <None Remove="Help\Default.txt" />
+    <None Remove="Help\Delay.txt" />
+    <None Remove="Help\Echo.txt" />
+    <None Remove="Help\Else.txt" />
+    <None Remove="Help\Elseif.txt" />
+    <None Remove="Help\End.txt" />
+    <None Remove="Help\Escape_Codes.txt" />
+    <None Remove="Help\Event.txt" />
+    <None Remove="Help\Forall.txt" />
+    <None Remove="Help\Foreach.txt" />
+    <None Remove="Help\Format.txt" />
+    <None Remove="Help\Function.txt" />
+    <None Remove="Help\Greeting.txt" />
+    <None Remove="Help\Grep.txt" />
+    <None Remove="Help\Help.txt" />
+    <None Remove="Help\Highlight.txt" />
+    <None Remove="Help\History.txt" />
+    <None Remove="Help\If.txt" />
+    <None Remove="Help\Ignore.txt" />
+    <None Remove="Help\Info.txt" />
+    <None Remove="Help\Keypad.txt" />
+    <None Remove="Help\Kill.txt" />
+    <None Remove="Help\Line.txt" />
+    <None Remove="Help\List.txt" />
+    <None Remove="Help\Log.txt" />
+    <None Remove="Help\Loop.txt" />
+    <None Remove="Help\Macro.txt" />
+    <None Remove="Help\Map.txt" />
+    <None Remove="Help\Math.txt" />
+    <None Remove="Help\Mathexp.txt" />
+    <None Remove="Help\Message.txt" />
+    <None Remove="Help\Name.txt" />
+    <None Remove="Help\Nop.txt" />
+    <None Remove="Help\OSInfo.txt" />
+    <None Remove="Help\Parse.txt" />
+    <None Remove="Help\Path.txt" />
+    <None Remove="Help\Pathdir.txt" />
+    <None Remove="Help\Prompt.txt" />
+    <None Remove="Help\Read.txt" />
+    <None Remove="Help\Regexp.txt" />
+    <None Remove="Help\Repeat.txt" />
+    <None Remove="Help\Replace.txt" />
+    <None Remove="Help\Return.txt" />
+    <None Remove="Help\Run.txt" />
+    <None Remove="Help\Scan.txt" />
+    <None Remove="Help\Script.txt" />
+    <None Remove="Help\Send.txt" />
+    <None Remove="Help\Session.txt" />
+    <None Remove="Help\Showme.txt" />
+    <None Remove="Help\Snoop.txt" />
+    <None Remove="Help\Speedwalk.txt" />
+    <None Remove="Help\Split.txt" />
+    <None Remove="Help\Substitute.txt" />
+    <None Remove="Help\Suspend.txt" />
+    <None Remove="Help\Switch.txt" />
+    <None Remove="Help\System.txt" />
+    <None Remove="Help\Tab.txt" />
+    <None Remove="Help\Textin.txt" />
+    <None Remove="Help\Ticker.txt" />
+    <None Remove="Help\UnTab.txt" />
+    <None Remove="Help\Variable.txt" />
+    <None Remove="Help\While.txt" />
+    <None Remove="Help\Wildcards.txt" />
+    <None Remove="Help\Write.txt" />
+    <None Remove="Help\Writebuffer.txt" />
+    <None Remove="Help\Zap.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Help\Action.xml" />
+    <EmbeddedResource Include="Help\Alias.xml" />
+    <EmbeddedResource Include="Help\All.xml" />
+    <EmbeddedResource Include="Help\Bell.xml" />
+    <EmbeddedResource Include="Help\Break.xml" />
+    <EmbeddedResource Include="Help\Buffer.xml" />
+    <EmbeddedResource Include="Help\Case.xml" />
+    <EmbeddedResource Include="Help\Chat.xml" />
+    <EmbeddedResource Include="Help\Chat_Protocol.xml" />
+    <EmbeddedResource Include="Help\Class.xml" />
+    <EmbeddedResource Include="Help\Colors.xml" />
+    <EmbeddedResource Include="Help\Commands.xml" />
+    <EmbeddedResource Include="Help\Config.xml" />
+    <EmbeddedResource Include="Help\Continue.xml" />
+    <EmbeddedResource Include="Help\Cr.xml" />
+    <EmbeddedResource Include="Help\Cursor.xml" />
+    <EmbeddedResource Include="Help\Debug.xml" />
+    <EmbeddedResource Include="Help\Default.xml" />
+    <EmbeddedResource Include="Help\Delay.xml" />
+    <EmbeddedResource Include="Help\Echo.xml" />
+    <EmbeddedResource Include="Help\Else.xml" />
+    <EmbeddedResource Include="Help\Elseif.xml" />
+    <EmbeddedResource Include="Help\End.xml" />
+    <EmbeddedResource Include="Help\Escape_Codes.xml" />
+    <EmbeddedResource Include="Help\Event.xml" />
+    <EmbeddedResource Include="Help\Forall.xml" />
+    <EmbeddedResource Include="Help\Foreach.xml" />
+    <EmbeddedResource Include="Help\Format.xml" />
+    <EmbeddedResource Include="Help\Function.xml" />
+    <EmbeddedResource Include="Help\Greeting.xml" />
+    <EmbeddedResource Include="Help\Grep.xml" />
+    <EmbeddedResource Include="Help\Help.xml" />
+    <EmbeddedResource Include="Help\Highlight.xml" />
+    <EmbeddedResource Include="Help\History.xml" />
+    <EmbeddedResource Include="Help\If.xml" />
+    <EmbeddedResource Include="Help\Ignore.xml" />
+    <EmbeddedResource Include="Help\Info.xml" />
+    <EmbeddedResource Include="Help\Keypad.xml" />
+    <EmbeddedResource Include="Help\Kill.xml" />
+    <EmbeddedResource Include="Help\Line.xml" />
+    <EmbeddedResource Include="Help\List.xml" />
+    <EmbeddedResource Include="Help\Log.xml" />
+    <EmbeddedResource Include="Help\Loop.xml" />
+    <EmbeddedResource Include="Help\Macro.xml" />
+    <EmbeddedResource Include="Help\Map.xml" />
+    <EmbeddedResource Include="Help\Math.xml" />
+    <EmbeddedResource Include="Help\Mathexp.xml" />
+    <EmbeddedResource Include="Help\Message.xml" />
+    <EmbeddedResource Include="Help\Name.xml" />
+    <EmbeddedResource Include="Help\Nop.xml" />
+    <EmbeddedResource Include="Help\Osinfo.xml" />
+    <EmbeddedResource Include="Help\Parse.xml" />
+    <EmbeddedResource Include="Help\Path.xml" />
+    <EmbeddedResource Include="Help\Pathdir.xml" />
+    <EmbeddedResource Include="Help\Prompt.xml" />
+    <EmbeddedResource Include="Help\Read.xml" />
+    <EmbeddedResource Include="Help\Regexp.xml" />
+    <EmbeddedResource Include="Help\Repeat.xml" />
+    <EmbeddedResource Include="Help\Replace.xml" />
+    <EmbeddedResource Include="Help\Return.xml" />
+    <EmbeddedResource Include="Help\Run.xml" />
+    <EmbeddedResource Include="Help\Scan.xml" />
+    <EmbeddedResource Include="Help\Script.xml" />
+    <EmbeddedResource Include="Help\Send.xml" />
+    <EmbeddedResource Include="Help\Session.xml" />
+    <EmbeddedResource Include="Help\Showme.xml" />
+    <EmbeddedResource Include="Help\Snoop.xml" />
+    <EmbeddedResource Include="Help\Speedwalk.xml" />
+    <EmbeddedResource Include="Help\Split.xml" />
+    <EmbeddedResource Include="Help\Substitute.xml" />
+    <EmbeddedResource Include="Help\Suspend.xml" />
+    <EmbeddedResource Include="Help\Switch.xml" />
+    <EmbeddedResource Include="Help\System.xml" />
+    <EmbeddedResource Include="Help\Tab.xml" />
+    <EmbeddedResource Include="Help\Textin.xml" />
+    <EmbeddedResource Include="Help\Ticker.xml" />
+    <EmbeddedResource Include="Help\Untab.xml" />
+    <EmbeddedResource Include="Help\Variable.xml" />
+    <EmbeddedResource Include="Help\While.xml" />
+    <EmbeddedResource Include="Help\Wildcards.xml" />
+    <EmbeddedResource Include="Help\Write.xml" />
+    <EmbeddedResource Include="Help\Writebuffer.xml" />
+    <EmbeddedResource Include="Help\Zap.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Config\Color256.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BitField.Extensions" Version="1.0.1" />
+    <PackageReference Include="NDesk.Options" Version="0.2.1" />
+    <PackageReference Include="ReadLine" Version="1.2.0" />
+    <PackageReference Include="ReflectSoftware.Insight" Version="5.7.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CSTypes">
+      <HintPath>..\..\CSTypes\CSTypes\bin\Debug\netcoreapp2.0\CSTypes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
