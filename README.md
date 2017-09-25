@@ -1,7 +1,10 @@
 ﻿# TinTin#
-### A terminal screen-scraping client enhanced with features for various communication protocols such as telnet/ssh/etc.
-### Serves as a macro pre-processor and proprietary interpreter based scripting language.
-### Includes Peer-To-Peer chat relay.
+
+---
+
+ A terminal screen-scraping client enhanced with features for various communication protocols such as telnet/ssh/etc.
+ Serves as a macro pre-processor and proprietary interpreter based scripting language.
+ Includes Peer-To-Peer chat relay.
 
 ## This project is currently under construction!
 
@@ -473,9 +476,10 @@ friend-to-friend messaging, logging in HTML, and a TELNET event handler.
 
 This library can be installed using NuGet:
 
-Enter the details:
+<pre>
 Name:    TinTin#
 Source:  nuget.org
+</pre>
 
 <h2><a name="license">License</a></h2>
 
