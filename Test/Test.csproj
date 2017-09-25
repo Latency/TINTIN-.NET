@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>Test.Program1</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,12 @@
     <Reference Include="CSTypes">
       <HintPath>..\..\CSTypes\CSTypes\bin\Debug\netcoreapp2.0\CSTypes.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReflectInsight.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

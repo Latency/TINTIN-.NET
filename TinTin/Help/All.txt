@@ -1,8 +1,0 @@
-All
-
-Syntax: #all {commands}
-
-If you have multiple sessions in one terminal you can use #all to execute the command with all sessions.
-
-Example: #all quit
-Would make all sessions quit.

@@ -3,6 +3,6 @@
   <Command Name="Zap" Modified="9/16/2017" />
   <Syntax></Syntax>
   <Description>
-Will close the current active session. If no session is active it will close TinTin#.
-</Description>
+    Will close the current active session. If no session is active it will close TinTin#.
+  </Description>
 </Help>

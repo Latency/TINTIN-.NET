@@ -12,9 +12,11 @@ using TinTin.Commands;
 using TinTin.Entities;
 
 namespace TinTin {
-  internal static partial class Program {
-    internal static TinTinData Shell;
-    internal static TerminalData Terminal;
+  public static partial class Program {
+    public static TinTinData TinTin = new TinTinData();
+    internal static TerminalData Terminal = new TerminalData();
+    internal static ShellData Shell = new ShellData();
+
 
     /// <summary>
     ///   The main entry point for the application.
@@ -23,34 +25,17 @@ namespace TinTin {
     /// <param name="args">Application input arguments and/or switch commands - (unused)</param>
     [STAThread]
     public static void Main(string[] args) {
-      #region Exception Sink Handlers
-
-      // ---------------------------------------------------------------------
-
-      OnError += LogException;
-
-      // Add the event handler for handling non-UI thread exceptions to the event. 
-      AppDomain.CurrentDomain.UnhandledException += UnhandledException;
-
-      // ---------------------------------------------------------------------
-
-      #endregion Exception Sink Handlers
-
-      var sData = new ShellData();
-      var p = new CmdParser(ref sData);
-      if (!p.Parse(args))
+      if (!Parse(args))
         return;
-
-      // Load configuration file data.
-      Shell = new TinTinData();
-      Terminal = new TerminalData();
-
+      
       // Display status
       // TODO
 
+      // Load help.
+      var help = Help.Instance;
 
       // Load commands.
-      var cmds = new Switchboard();
+      var cmds = Switchboard.Instance;
 
       // Establish an event handler to process key press events.
 
@@ -61,6 +46,11 @@ namespace TinTin {
         var kvp = cmds.ProcessCommand(line);
         kvp.Value?.DynamicInvoke(kvp.Key);
       }
+    }
+
+
+    internal static void Exit(int retval) {
+      Environment.Exit(retval);
     }
 
 

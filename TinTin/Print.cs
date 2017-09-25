@@ -10,10 +10,9 @@
 using System;
 using System.Linq;
 using System.Text;
-using TinTin.Properties;
 
 namespace TinTin {
-  internal static partial class Program {
+  public static partial class Program {
     internal static void Print(string s) {
       var buf = new StringBuilder();
 
@@ -21,7 +20,7 @@ namespace TinTin {
         "\r\n",
         "\n\r",
         "\n"
-      }, StringSplitOptions.RemoveEmptyEntries).Aggregate(string.Empty, (x, line) => buf.AppendLine($"{Shell.tintin_char}{line}").ToString(), x => {
+      }, StringSplitOptions.RemoveEmptyEntries).Aggregate(string.Empty, (x, line) => buf.AppendLine($"{TinTin.tintin_char}{line}").ToString(), x => {
         Console.Write(buf);
         return buf;
       });

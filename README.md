@@ -1,11 +1,72 @@
-﻿<b>TinTin#</b>
+﻿# TinTin#
+### A terminal screen-scraping client enhanced with features for various communication protocols such as telnet/ssh/etc.
+### Serves as a macro pre-processor and proprietary interpreter based scripting language.
+### Includes Peer-To-Peer chat relay.
+
+## This project is currently under construction!
+
+---
+
+* CREATED BY: Latency McLaughlin
+* FRAMEWORK:  .NET Core 2.0
+* SUPPORTS:   Visual Studio, DotGNU, Rider, MonoDevelop, etc.
+* UPDATED:    10/9/2017
+* TAGS:       C# .NET TinTin TinTin++ TinTin# Client Interpreter
+* VERSION:    v3.0.0
+
 <hr>
-A terminal screen-scraping client enhanced with features for various communication protocols such as telnet/ssh/etc.<br>
-Serves as a macro pre-processor and proprietary interpreter based scripting language.
-Includes Peer-To-Peer chat relay.
+
+## Navigation
+* <a href="#introduction">Introduction</a>
+* <a href="#history">History</a>
+* <a href="#about">About</a>
+* <a href="#usage">Usage</a>
+* <a href="#installation">Installation</a>
+* <a href="#license">License</a>
+
 <hr>
-<H1>This project is currently under construction!</H1>
-<hr>
+
+<h2><a name="introduction">Introduction</a></h2>
+
+TinTin++ is a MUD client primarily written for Unix-like systems and is now available for multi-platform use.
+It is one of the oldest MUD clients in existence and a successor of the TINTIN(++) client.
+
+According to its author, TINTIN stands for "The kIckiN Tickin dIkumud clieNt".
+
+<h2><a name="history">History</a></h2>
+
+TINTIN originated as a single file containing 700 lines of C code, allowing triggers and aliases, that was posted on Usenet by Peter Unold on April 1, 1992.
+On October 6 1992 Peter Unold made his final release, TINTIN III, which was a much more matured and feature rich program.
+
+In 1993 the development of TINTIN was continued by Bill Reiss who announced the release of TinTin++ v1.0 on July 3, 1993.
+On April 25, 1994 TinTin++ 1.5 was announced, which was a joint effort by Bill Reiss, David A. Wagner, Rob Ellsworth, and Jeremy C. Jack.
+
+After the 1.5 release in 1994 active development came to a halt. TinTin++ 1.5 had gained significant popularity however, and being public domain this resulted
+in many derivative works like zMUD, yTin, Lyntin, Pueblo, WinTin95, and GGMud.
+
+In 1998 development was continued briefly by Rob Elsworth who incorporated several patches by Sverre Normann before handing over development to Davin Chan who
+re-licensed the software to GNU GPL on July 12th, 2001 in his final release of TinTin++ 1.86b.
+
+In 2004 development was continued by Igor van den Hoven.
+
+In 2017 development was continued by Latency McLaughlin and had ported it to .NET Core in C# as a universal platform for all and a complete re-write and overhaul
+consoladating several systems and making things easier to use.
+
+<h2><a name="about">About</a></h2>
+
+TinTin# is a console telnet client enhanced with features that work particularly well for playing MUDs,
+though it allows connecting to Linux and Bulletin Board System servers as well.
+
+To enhance game play on MUDs, the client can create a split screen arrangement, which divides the interface
+into input, output, and status areas. Input handling is enhanced with readline-like input editing, macro,
+and alias support. Text received from the server can be highlighted or set to execute triggers written in
+the TINTIN scripting language, which resembles the C/C++/C#/Java programming languages.
+
+TinTin# has various other features that are commonly found in modern MUD clients, such as automapping, MCCP,
+friend-to-friend messaging, logging in HTML, and a TELNET event handler.
+
+<h2><a name="usage">Usage</a></h2>
+
 <b>Supported Protocols</b>
 <table>
    <tr>
@@ -407,3 +468,20 @@ Includes Peer-To-Peer chat relay.
 | `Ctrl`+`W`                     | Cut previous word                 |
 | `Backspace`                    | Delete previous character         |
 | `Delete`                       | Delete succeeding character       |
+
+<h2><a name="installation">Installation</a></h2>
+
+This library can be installed using NuGet:
+
+Enter the details:
+Name:    TinTin#
+Source:  nuget.org
+
+<h2><a name="license">License</a></h2>
+
+[GNU LESSER GENERAL PUBLIC LICENSE] - Version 3, 29 June 2007
+
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job.)
+
+   [GNU LESSER GENERAL PUBLIC LICENSE]: <http://www.gnu.org/licenses/lgpl-3.0.en.html>

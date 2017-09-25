@@ -1,8 +1,0 @@
-Write
-
-Syntax: #write {filename}
-
-This command will write all your tintin lists to file.
-
-Example: #write bla.tin
-Would write your tintin aliasses, actions, etc to bla.tin

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Alias" Modified="9/16/2017" />
+  <Command Name="Alias" Modified="2017-09-16" />
   <Syntax>{name} {commands}</Syntax>
   <Description>
     The #alias command can be used to shorten up long or oftenly used commands. The %1-99 variables are substituted from the
@@ -9,13 +9,6 @@
     If %0 is used it will contain all arguments, if the commands part only exists of a single word, variables are automatically
     attached to the end.
   </Description>
-  <Notes>
-    You can remove aliases with the #unalias command.
-    To remove an alias with %* as a name, use #unalias {%%*}.
-
-    A better method would be to wrap the action inside a class and kill that class when no longer needed.  This will prevent erasing
-    all aliases in in the event of a set alias with %* as its name.
-  </Notes>
   <Example Usage="#alias {k} {kill %1;kick}">
     Typing 'k orc' would result in attacking the orc followed by a kick.
 
@@ -28,4 +21,11 @@
     To have an alias that match with all user input, use %* as name.
   </Example>
   <Example Usage="#alias {%*} {#showme You wrote: %0}" />
+  <Notes>
+    You can remove aliases with the #unalias command.
+    To remove an alias with %* as a name, use #unalias {%%*}.
+
+    A better method would be to wrap the action inside a class and kill that class when no longer needed.  This will prevent erasing
+    all aliases in in the event of a set alias with %* as its name.
+  </Notes>
 </Help>

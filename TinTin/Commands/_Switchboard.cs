@@ -16,8 +16,12 @@ using TinTin.Properties;
 
 namespace TinTin.Commands {
   internal sealed partial class Switchboard : ICommands {
+    private static Switchboard _instance;
+
+    public static Switchboard Instance => _instance ?? (_instance = new Switchboard());
+
     // Constructor
-    public Switchboard() {
+    private Switchboard() {
       CMD = new Dictionary<string, Delegate>();
       foreach (var m in typeof(ICommands).GetMethods().Where(x => !x.IsSpecialName))
         CMD.Add(m.Name.ToLower(), Delegate.CreateDelegate(typeof(Action<string>), this, m));

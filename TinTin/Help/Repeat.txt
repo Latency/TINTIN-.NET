@@ -1,8 +1,0 @@
-Repeat
-
-Syntax: #[number] {commands}
-
-Sometimes you want to repeat the same command multiple times. This is the easiest way to accomplish that.
-
-Example: #10 buy bread
-This will make you execute 'buy bread' 10 times.

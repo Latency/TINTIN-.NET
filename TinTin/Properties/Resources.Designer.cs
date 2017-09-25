@@ -106,6 +106,15 @@ namespace TinTin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TinTin.Help.Help.xsd.
+        /// </summary>
+        internal static string HELP_SCHEMA {
+            get {
+                return ResourceManager.GetString("HELP_SCHEMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to history.txt.
         /// </summary>
         internal static string HISTORY_FILE {

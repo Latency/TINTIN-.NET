@@ -132,6 +132,9 @@
   <data name="ESCAPE" xml:space="preserve">
     <value>27</value>
   </data>
+  <data name="HELP_SCHEMA" xml:space="preserve">
+    <value>TinTin.Help.Help.xsd</value>
+  </data>
   <data name="HISTORY_FILE" xml:space="preserve">
     <value>history.txt</value>
   </data>

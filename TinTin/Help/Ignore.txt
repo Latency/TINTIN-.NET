@@ -1,9 +1,0 @@
-Ignore
-
-Syntax: #ignore {listname} {argument}
-
-Without an argument ignore will show the lists you can ignore. If one argument is given it will toggle the specified list
-flag. You can more specificly change the ignore flag using ON or OFF as the argument.
-
-Example: #ignore actions off
-Actions will no longer trigger, useful if you want to temporarily disable all triggers.

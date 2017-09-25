@@ -1,5 +1,0 @@
-Info
-
-Syntax: #info
-
-The info command will display the amount of nodes per list type, as well as the ignore, message, and debug status of each list.

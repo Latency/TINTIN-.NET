@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Action" Modified="9/16/2017" />
+  <Command Name="Action" Modified="2017-09-16" />
   <Syntax>{message} {commands} {priority}</Syntax>
   <Description>
     The #action command can be used to respond with one or several commands to a specific message send by the mud. The %1-99
@@ -43,13 +43,6 @@
       %i match becomes case insensitive.
       %I match becomes case sensitive (default).
   </Description>
-  <Notes>
-    An action can be removed by using the '#unaction' command.
-    To remove an action with %* as a message, use the '#unaction {%%*}'.
-
-    A better method would be to wrap the action inside a class and
-    kill that class when no longer needed.  This will prevent erasing all actions in in the event of a set action with %* as its message.
-  </Notes>
   <Example Usage="#action {%1 tells you '%2'} {tell %1 I'm afk.}">
     When using non numeric variables, the matched text is available at the last used numeric variable + 1.
   </Example>
@@ -60,4 +53,11 @@
   <Example Usage="#action {~^\e[1;37m%1} {#showme {--Shown in bold white: %1}}">
     Actions can be triggered by the showme command.
   </Example>
+  <Notes>
+    An action can be removed by using the '#unaction' command.
+    To remove an action with %* as a message, use the '#unaction {%%*}'.
+
+    A better method would be to wrap the action inside a class and
+    kill that class when no longer needed.  This will prevent erasing all actions in in the event of a set action with %* as its message.
+  </Notes>
 </Help>

@@ -15,5 +15,14 @@ namespace TinTin.Entities {
                          Files;
     public bool          GUI,
                          Verbosity;
+
+
+    /// <summary>
+    ///  Constructor
+    /// </summary>
+    public ShellData() {
+      Paths = new List<string>();
+      Files = new List<string>();
+    }
   }
 }

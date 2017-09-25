@@ -8,14 +8,16 @@
 //  *****************************************************************************
 
 using NUnit.Framework;
+using TinTin;
 
-namespace Tests {
+
+namespace Test {
   [TestFixture]
-  public class TestClass {
+  public class Tests {
     [Test]
-    public void TestMethod() {
-      // TODO: Add your test code here
-      Assert.Pass("Your first passing test");
+    public void HelpTest() {
+      var help = Help.Instance;
+      var cnt = Program.TinTin.help.Count;
     }
   }
 }

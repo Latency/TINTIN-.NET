@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 using BitFields;
 using TinTin.Enums;
 
@@ -57,15 +58,19 @@ namespace TinTin.Entities {
                         total_io_exec,
                         total_io_delay;
     public BitField     flags;
-    public List<TimeSpan>[] timer;
-    public List<string> vars,
-                        cmds;
-    public List<int>    args;
+    public List<List<TimeSpan>> timer = new List<List<TimeSpan>>();
+
+    public List<string> vars = new List<string>();
+
+    public List<XmlDocument> help = new List<XmlDocument>();
+
+    public List<string> cmds = new List<string>();
+
+    public List<int>    args = new List<int>();
 
     public TinTinData() {
-      for (var x = 0; x < 5; x++) {
-        timer[x] = new List<TimeSpan>(Enum.GetNames(typeof(Timer)).Length);
-      }
+      for (var x = 0; x < 5; x++)
+        timer.Add(new List<TimeSpan>(Enum.GetNames(typeof(Timer)).Length));
     }
   }
 }

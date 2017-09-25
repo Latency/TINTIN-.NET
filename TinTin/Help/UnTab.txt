@@ -1,7 +1,0 @@
-UnTab
-
-Syntax: #untab {completionword}
-
-The untab command will remove the completionword from your tab completion list.
-
-Example: #untab muhahaha

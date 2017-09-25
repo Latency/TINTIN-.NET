@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿5<?xml version="1.0" encoding="utf-8"?>
 <Help>
   <Command Name="Write" Modified="9/16/2017" />
   <Syntax>{filename}</Syntax>
   <Description>
-This command will write all your tintin lists to file.
-
-Example: #write bla.tin
-Would write your tintin aliasses, actions, etc to bla.tin
-</Description>
+    This command will write all your tintin lists to file.
+  </Description>
+  <Example Usage="#write bla.tin">
+    Would write aliasses, actions, etc. to "bla.tin"
+  </Example>
 </Help>

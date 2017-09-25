@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Help">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Command">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="Name" type="xsd:string" />
+                <xsd:attribute name="Modified" type="xsd:date" />
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Syntax" type="xsd:string" />
+        <xsd:element name="Description" type="xsd:string" />
+        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="Example">
+            <xsd:complexType>
+              <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                  <xsd:attribute name="Usage" type="xsd:string" />
+                </xsd:extension>
+              </xsd:simpleContent>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:element name="Notes" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

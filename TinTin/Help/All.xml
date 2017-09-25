@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="All" Modified="9/16/2017" />
+  <Command Name="All" Modified="2017-09-16" />
   <Syntax>{commands}</Syntax>
   <Description>
     If you have multiple sessions in one terminal you can use #all to execute the command with all sessions.

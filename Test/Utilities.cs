@@ -15,7 +15,7 @@ using System.Text;
 using System.Xml.Linq;
 using CSTypes;
 
-namespace Tests {
+namespace Test {
   internal static class Utilities {
     /// <summary>
     ///  Used for converting Help\*.txt files into *.xml files.

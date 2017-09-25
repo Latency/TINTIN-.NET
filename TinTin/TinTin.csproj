@@ -61,6 +61,7 @@
     <None Remove="Help\Greeting.txt" />
     <None Remove="Help\Grep.txt" />
     <None Remove="Help\Help.txt" />
+    <None Remove="Help\Help.xsd" />
     <None Remove="Help\Highlight.txt" />
     <None Remove="Help\History.txt" />
     <None Remove="Help\If.txt" />
@@ -147,6 +148,7 @@
     <EmbeddedResource Include="Help\Greeting.xml" />
     <EmbeddedResource Include="Help\Grep.xml" />
     <EmbeddedResource Include="Help\Help.xml" />
+    <EmbeddedResource Include="Help\Help.xsd" />
     <EmbeddedResource Include="Help\Highlight.xml" />
     <EmbeddedResource Include="Help\History.xml" />
     <EmbeddedResource Include="Help\If.xml" />
@@ -205,10 +207,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="BitField.Extensions" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.0" />
     <PackageReference Include="NDesk.Options" Version="0.2.1" />
     <PackageReference Include="ReadLine" Version="1.2.0" />
-    <PackageReference Include="ReflectSoftware.Insight" Version="5.7.1.1" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -230,6 +237,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReflectInsight.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
