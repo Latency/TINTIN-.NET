@@ -24,7 +24,6 @@ namespace TinTin {
     /// </summary>
     static Program() {
       #region Exception Sink Handlers
-
       // ---------------------------------------------------------------------
 
       OnError += LogException;
@@ -33,8 +32,10 @@ namespace TinTin {
       AppDomain.CurrentDomain.UnhandledException += UnhandledException;
 
       // ---------------------------------------------------------------------
-
       #endregion Exception Sink Handlers
+
+      #region Logging
+      // ---------------------------------------------------------------------
 
       var services = new ServiceCollection();
       services.AddLogging();
@@ -55,6 +56,9 @@ namespace TinTin {
       loggerFactory.AddConsole().AddSerilog();
 
       Log = loggerFactory.CreateLogger(Assembly.GetExecutingAssembly().FullName);
+
+      // ---------------------------------------------------------------------
+      #endregion Logging
     }
 
     public static ILogger Log { get; }
@@ -95,19 +99,6 @@ namespace TinTin {
       }
       // Remote logging and system messaging trigger.
       OnError?.Invoke(exception, new EventArgs());
-    }
-
-
-    /// <summary>
-    ///   Abort
-    /// </summary>
-    /// <param name="message"></param>
-    /// <param name="innerException"></param>
-    internal static void Abort(string message, Exception innerException = null) {
-      Log.LogInformation(message);
-      ExceptionSinkTrigger(innerException);
-      Console.ReadKey();
-      Environment.Exit(1);
     }
 
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Math" Modified="9/16/2017" />
+  <Command Name="Math" Modified="2017-09-16" />
   <Syntax>{variable} {mathematical expression}</Syntax>
   <Description>
     Allows you to do calculations and store the result in the specified variable.

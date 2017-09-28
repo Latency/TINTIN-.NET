@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Event" Modified="9/16/2017" />
+  <Command Name="Event" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Syntax>{event name}</Syntax>
   <Syntax>{event name} {argument}</Syntax>

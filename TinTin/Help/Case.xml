@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Case" Modified="9/16/2017" />
+  <Command Name="Case" Modified="2017-09-16" />
   <Syntax>{conditional} {arguments}</Syntax>
   <Description>
     The case command must be used within the switch command. When the conditional argument of

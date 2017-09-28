@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Config" Modified="9/16/2017" />
+  <Command Name="Config" Modified="2017-09-16" />
   <Syntax>{option} {argument}</Syntax>
   <Description>
-    When TinTin# starts up it will generate a config file, it can be modified with the config command. Typing config without an
-    argument will show the current configuration, and these can be written to file with the #write command.
+    When TinTin# starts up it will generate a config file, it can be modified with the config command.
+    
+    Typing '#config' without an argument will show the current configuration.
+    These can be written to file with the '#write' command.
   </Description>
   <Example Usage="#CONFIG {COLOR PATCH}  {ON|OFF}" Default="off">
     Fixes color code usage on some muds, most notably Achaea.

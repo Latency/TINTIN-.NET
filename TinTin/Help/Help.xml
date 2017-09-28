@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Help" Modified="9/16/2017" />
+  <Command Name="Help" Modified="2017-09-16" />
   <Syntax>{subject}</Syntax>
   <Description>
     Show some basic help on the subject using the built-in help documentation.

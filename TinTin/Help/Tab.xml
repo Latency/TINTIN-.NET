@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Tab" Modified="9/16/2017" />
+  <Command Name="Tab" Modified="2017-09-16" />
   <Syntax>{completionword}</Syntax>
   <Description>
-The tab command will add the completionword to your tab completion list. When pressing the 'tab' key tintin will search
-through your tab list for the best match. Useful for long commands.
+    The tab command will add the completionword to your tab completion list.
+    When pressing the 'tab' key, a search is conducted through the tab list in efforts of finding the best match.
+    
+    Useful for long commands.
 
-If you hit tab with no tabs defined tintin will use your scrollback buffer to look for matches.
-
-Example: #tab muhahaha
-Typing mu, followed by pressing tab would make this diabolic command appear.
-
-Notice: You can remove tabs with the untab command.
-</Description>
+    If tab is pressed, with no tabs defined, a scrollback buffer will be used to look for matches.
+  </Description>
+  <Example Usage="#tab muhahaha">
+    Typing mu, followed by pressing tab would make this diabolic command appear.
+  </Example>
+  <Notes>
+    Remove tabs with the untab command.
+  </Notes>
 </Help>

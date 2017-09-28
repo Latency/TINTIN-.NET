@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Chat" Modified="9/16/2017" />
+  <Command Name="Chat" Modified="2017-09-16" />
   <Syntax>{command} {argument}</Syntax>
   <Description>
     The #chat command is used to create peer to peer connections to other mud clients, 
@@ -90,7 +90,7 @@
   <Example Usage="#chat {zap} {user|all}">
     Closes the connection to the specified user or all users.
   </Example>
-  <Example Usager="#chat {forward} {user}">
+  <Example Usage="#chat {forward} {user}">
     Forwards all chat messages to the specified user as snoop data.
     To avoid infinite loops, forwarding to a user is disabled when receiving snoop data from that user.
   </Example>

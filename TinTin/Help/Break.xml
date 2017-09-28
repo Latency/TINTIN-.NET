@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Break" Modified="9/16/2017" />
+  <Command Name="Break" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Description>
     The break command can be used to break out of the #foreach, #loop, #parse, #switch, and #while commands.

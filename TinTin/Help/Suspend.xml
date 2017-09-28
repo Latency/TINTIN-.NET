@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Suspend" Modified="9/16/2017" />
+  <Command Name="Suspend" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Description>
-This will place TinTin# in the background and you'll return to the shell. Pressing ctrl-z will do the same thing. You can
-return to TinTin# by typing fg.
-</Description>
+    This will place TinTin# in the background and you'll return to the shell.
+    Pressing 'ctrl-z' will do the same thing.
+    
+    You can return to TinTin# by typing 'fg', which stands for fore-ground.
+  </Description>
 </Help>

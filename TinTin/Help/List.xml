@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="List" Modified="9/16/2017" />
+  <Command Name="List" Modified="2017-09-16" />
   <Syntax>{&lt;variable&gt;} {&lt;option&gt;} {&lt;arguments&gt;}</Syntax>
   <Description>
     Lists are container collections that handle collisions and are highly scaleable.

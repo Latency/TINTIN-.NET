@@ -1,25 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Parse" Modified="9/16/2017" />
+  <Command Name="Parse" Modified="2017-09-16" />
   <Syntax>{string} {variable} {delegate}</Syntax>
   <Description>
     Works like a simplified loop.
     Each character in the string will be stored in the specified variable and can be used in the delegate.
 
     It can be used for some nifty stuff, like using . as a speedwalk command shortcut.
-
   </Description>
   <Example Usage="#parse {hello} {character} {say $character!}">
     Equivilant:  say h!;say e!;say l!;say l!;say o!
   </Example>
   <Example Usage="
-    #alias {.%0} {
+    #alias {.&#37;0} {
       #var cnt {};
-      #parse {%0} {char} [ {
-        #if {"$char='"' &gt;= "0" &amp;&amp; "$char" &lt;= "9"} {
-          #var cnt $cnt$char
+      #parse {&#37;0} {char} [ {
+        #if {&#34;$;char='&#34;' &gt;= &#34;0&#34; &amp;&amp; &#34;$char&#34; &lt;= &#34;9&#34;} {
+          #var cnt$cnt$char
         };
-        #elseif {"$cnt" == string.Empty} {
+        #elseif {&#34;$cnt&#34; == string.Empty} {
           #send $char
         };
         #else {

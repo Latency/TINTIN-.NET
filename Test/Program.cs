@@ -4,7 +4,7 @@ using TinTin;
 
 
 namespace Test {
-  public static class Program1 {
+  public static class Program {
     /// <summary>
     ///   The main entry point for the application.
     /// </summary>

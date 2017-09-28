@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Class" Modified="9/16/2017" />
+  <Command Name="Class" Modified="2017-09-16" />
   <Syntax>{name} {open|close|read filename|write filename|kill}</Syntax>
   <Description />
   <Example Usage="#class {&lt;classname&gt;} {open}">

@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Zap" Modified="9/16/2017" />
+  <Command Name="Zap" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Description>
-    Will close the current active session. If no session is active it will close TinTin#.
+    Will close the current active session.
   </Description>
+  <Notes>
+    If no session is active it will terminate the process.
+  </Notes>
 </Help>

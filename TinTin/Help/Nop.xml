@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Nop" Modified="9/16/2017" />
+  <Command Name="Nop" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Description>
     The name 'nop' means 'no operation' and is useful as filler instructions.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="If" Modified="9/16/2017" />
+  <Command Name="If" Modified="2017-09-16" />
   <Syntax>{condition} {true} {false}</Syntax>
   <Description>
     The condition is a C-style mathematical or regular expression.
@@ -10,7 +10,7 @@
 
     See the help file on 'Mathexp' and 'Regexp' for more information.
   </Description>
-  <Example Usage="#act {%1 tells you} {#if {"%1" == "Heidi"} {tell %1 I'm afk hon} {tell %1 I'm afk dude}}">
+  <Example Usage="#act {&#37;1 tells you} {#if {&#34;&#37;1&#34; == &#34;Heidi&#34;} {tell &#37;1 I'm afk hon} {tell &#37;1 I'm afk dude}}">
     Useful if you go afk or are busy writing scripts or something.
   </Example>
 </Help>

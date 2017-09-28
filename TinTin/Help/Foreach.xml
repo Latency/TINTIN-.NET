@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Foreach" Modified="9/16/2017" />
+  <Command Name="Foreach" Modified="2017-09-16" />
   <Syntax>{list} {variable} {commands}</Syntax>
   <Description>
     The foreach command works like a simplified loop. Each word in the list will be stored in the variable at execution time and

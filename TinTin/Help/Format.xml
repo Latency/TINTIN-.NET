@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Format" Modified="9/16/2017" />
+  <Command Name="Format" Modified="2017-09-16" />
   <Syntax>{variablename} {format} {argument1} {argument2} {etc}</Syntax>
   <Description>
     Formats text like the sprintf() function in C.

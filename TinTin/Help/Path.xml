@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Path" Modified="9/16/2017" />
+  <Command Name="Path" Modified="2017-09-16" />
   <Syntax>{del|end|ins|load|map|new|save|run|walk} {argument}</Syntax>
   <Description>
 The path command is a quick and easy way to record your movements and create a list of commands to move from one location to

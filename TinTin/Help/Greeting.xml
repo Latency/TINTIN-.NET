@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Greeting" Modified="9/16/2017" />
+  <Command Name="Greeting" Modified="2017-09-16" />
   <Syntax>greeting</Syntax>
   <Description>
     Shows the greeting-message being displayed every time the client loads.

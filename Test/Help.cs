@@ -7,6 +7,7 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System;
 using NUnit.Framework;
 using TinTin;
 
@@ -17,7 +18,7 @@ namespace Test {
     [Test]
     public void HelpTest() {
       var help = Help.Instance;
-      var cnt = Program.TinTin.help.Count;
+      Console.WriteLine($"Help entries loaded = {Program.TinTin.help.Count}");
     }
   }
 }

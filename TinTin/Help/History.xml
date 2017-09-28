@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="History" Modified="9/16/2017" />
+  <Command Name="History" Modified="2017-09-16" />
   <Syntax>{command} {argument}</Syntax>
   <Description>
     Is used in conjunction with the repeat character; set to '!' by default.

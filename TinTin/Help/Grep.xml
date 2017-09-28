@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Grep" Modified="9/16/2017" />
+  <Command Name="Grep" Modified="2017-09-16" />
   <Syntax>{pagenumber} {keywords}</Syntax>
   <Description>
     This command searches for the given keywords in your scroll back buffer.

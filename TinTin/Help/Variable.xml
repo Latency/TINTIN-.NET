@@ -1,32 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Variable" Modified="9/16/2017" />
+  <Command Name="Variable" Modified="2017-09-16" />
   <Syntax>{name} {string}</Syntax>
   <Description>
-Variables differ from the %0-99 arguments in the fact that you can specify a full word as a variable, and they stay in memory
-for the full session unless they are changed. They can be saved in the coms file, and can be set to different values if you
-have two or more sessions running at the same time. Variables are global for each session and can be accessed by adding a $
-before the variable name.
+    Variables differ from the %0-99 arguments in that a full word may be used as a variable.
+    They stay in memory for the full session unless they are changed.
+    They can be saved in the coms file, and can be set to different values if two or more sessions running at the same time.
+    Variables are global for each session and can be accessed by adding a '$' before the variable name.
+  </Description>
+  <Example Usage="#alias {target} {#var target %0}">
+    The name of a variable must exist of only letters and numbers in order to be substituted.
+    If you do not meet these requirements do not panic.  Simply encapsulate the variable within braces.
+  </Example>
+  <Example Usage="#alias {x}      {cast 'acid blast' $target}" />
+  <Example Usage="#variable {cool website} {http://tintin.sourceforge.net}">
+    Chat that you were on ${cool website} yesterday!
+    
+    Variables can be nested using brackets, causing the variable to behave like an associative array.
+  </Example>
+  <Example Usage="#var hp[self] 34;#var hp[target] 46">
+    You can see the first nest of a variable using $variable[+1] and the last nest using $variable[-1]. Using $variable[-2] will
+    report the second last variable, and so on. To show all indices use $variable[].
+  </Example>
+  <Notes>
+    To see the nesting index of a variable use &amp;variable.
+    
+    In order to check if a variable exists, the '#if {&amp;{variable}}' can be used.
 
-Example: #alias {target} {#var target %0}
-         #alias {x}      {cast 'acid blast' $target}
-The name of a variable must exist of only letters and numbers in order to be substituted. If you do not meet these
-requirements do not panic, simply encapsulate the variable in braces:
+    A non existent nested variable with an existing root variable will report itself as 0.
 
-Example: #variable {cool website} {http://tintin.sourceforge.net}
-         chat I was on ${cool website} yesterday!
-Variables can be nested using brackets, causing the variable to behave like an associative array.
-
-Example: #var hp[self] 34;#var hp[target] 46
-You can see the first nest of a variable using $variable[+1] and the last nest using $variable[-1]. Using $variable[-2] will
-report the second last variable, and so on. To show all indices use $variable[].
-
-To see the nesting index of a variable use &amp;variable.
-
-Notice: In order to check if a variable exists you can use #if {&amp;{variable}}
-
-Notice: A non existent nested variable with an existing root variable will report itself as 0.
-
-Notice: You can remove variables with the #unvariable command.
-</Description>
+    Variables can be removed with the '#unvariable' command.
+  </Notes>
 </Help>

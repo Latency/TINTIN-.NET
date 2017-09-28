@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="System" Modified="9/16/2017" />
+  <Command Name="System" Modified="2017-09-16" />
   <Syntax>{commands}</Syntax>
   <Description>
-The system command allows you to execute commands in the shell.
-
-Example: #system ls
-Useful if you forgot the exact name of a file you want to read in or something of that order.
-
-Notice: You can also use the #script and #run commands to execute shell commands.
-</Description>
+    The system command allows you to execute commands in the shell.
+  </Description>
+  <Example Usage="#system ls">
+    Useful if you forgot the exact name of a file you want to read in or something of that order.
+  </Example>
+  <Notes>
+    You can also use the #script and #run commands to execute shell commands.
+  </Notes>
 </Help>

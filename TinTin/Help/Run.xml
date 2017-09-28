@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Run" Modified="9/16/2017" />
+  <Command Name="Run" Modified="2017-09-16" />
   <Syntax>{session name} {shell commands}</Syntax>
   <Description>
 The run command runs a shell command interactively. When the shell command terminates so will the session much like a normal

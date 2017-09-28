@@ -24,7 +24,7 @@ namespace TinTin {
     private static void FileLoader(string arg) {
       foreach (var fileName in arg.Split(';')) {
         if (!File.Exists(fileName))
-          Abort($"File `{fileName}' could not be found or does not exist.");
+          throw new FileNotFoundException($"File `{fileName}' could not be found or does not exist.");
 
         Shell.Files.Add(fileName);
       }

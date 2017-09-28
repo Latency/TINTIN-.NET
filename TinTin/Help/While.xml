@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="While" Modified="9/16/2017" />
+  <Command Name="While" Modified="2017-09-16" />
   <Syntax>{variable} {commands}</Syntax>
   <Description>
     The while command works like the while command in c. The while loops will stop once the condition equals 0.

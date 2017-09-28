@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Continue" Modified="9/16/2017" />
+  <Command Name="Continue" Modified="2017-09-16" />
   <Syntax></Syntax>
   <Description>
     The continue command can be used to skip the commands inside the #foreach, #loop, #parse, #switch, and #while commands.

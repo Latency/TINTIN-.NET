@@ -42,7 +42,7 @@ namespace TinTin {
       Console.CancelKeyPress += CancelEventHandler;
       while (true) {
         // Start a console read operation.
-        var line = ReadLine.Read()?.Trim();
+        var line = ReadLine.ReadLine.Read()?.Trim();
         var kvp = cmds.ProcessCommand(line);
         kvp.Value?.DynamicInvoke(kvp.Key);
       }

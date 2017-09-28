@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Textin" Modified="9/16/2017" />
+  <Command Name="Textin" Modified="2017-09-16" />
   <Syntax>{filename}</Syntax>
   <Description>
-This will read in a file and send each line to the mud. The text will not be parsed by tintin. Useful to dump a script file
-into a mud's note editor or something of that order. Remember that most muds will close your connection if you send too much
-data.
-
-Example: #textin desc1.txt
-Would load the data of desc1 in an olc editor or something.
-</Description>
+    This will read in a file and send each line to the mud. The text will not be parsed by tintin.
+    Useful to dump a script file into a mud's note editor or something of that order.
+    
+    Remember that most muds will close your connection if you send too much data.
+  </Description>
+  <Example Usage="#textin desc1.txt">
+    Loads the data of desc1 in an olc editor or something.
+  </Example>
 </Help>

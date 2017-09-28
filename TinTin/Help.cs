@@ -7,10 +7,12 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
+using Microsoft.Extensions.Logging;
 using TinTin.Properties;
 
 namespace TinTin {
@@ -28,19 +30,26 @@ namespace TinTin {
 
       // Load schema definition file.
       var strm = assembly.GetManifestResourceStream(Resources.HELP_SCHEMA);
-      var xsd = XmlSchema.Read(strm, null);
+      var xsd = XmlSchema.Read(strm ?? throw new NullReferenceException($"Unable to fetch embedded resource for `{Resources.HELP_SCHEMA}'."), null);
 
       // Cache help files.
       foreach (var resourceName in assembly.GetManifestResourceNames().Where(name => name.EndsWith(".xml"))) {
         var stream = assembly.GetManifestResourceStream(resourceName);
+        if (stream == null)
+          throw new NullReferenceException($"Unable to fetch embedded resource for `{resourceName}'.");
+
         var document = new XmlDocument();
         using (stream) {
           try {
             document.Schemas.Add(xsd);
             document.Load(stream);
             document.Validate(null);
-          } catch (XmlSchemaValidationException ex) {
-            Program.Abort($"{MethodBase.GetCurrentMethod().Name}:  {resourceName} @ ({ex.LineNumber},{ex.LinePosition})", ex);
+          } catch (XmlSchemaValidationException) {
+            Program.Log.LogInformation($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}{Environment.NewLine}\tSchema validation failed for `{resourceName}'.");
+            throw;
+          } catch (XmlException) {
+            Program.Log.LogError($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}{Environment.NewLine}\tDocument loading failed for `{resourceName}'.");
+            throw;
           }
           // Cache stream into memory.
           Program.TinTin.help.Add(document);

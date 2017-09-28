@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Showme" Modified="9/16/2017" />
+  <Command Name="Showme" Modified="2017-09-16" />
   <Syntax>{message} {line number}</Syntax>
   <Description>
-Messages displayed by the showme command can be triggered, and can be used to debug actions, substitutions, etc. Since
-variables are substituted as well this can also be used to display information.
+    Messages displayed by the showme command can be triggered, and can be used to debug actions, substitutions, etc.
+    Since variables are substituted as well this can also be used to display information.
+  </Description>
+  <Example Usage="#showme $bla">
+    If you have the variable 'bla' defined this would show whatever bla has been set to.
 
-Example: #showme $bla
-If you have the variable 'bla' defined this would show whatever bla has been set to.
-
-The line number is optional, and works the same way as the line number in the #prompt command.
-</Description>
+    The line number is optional, and works the same way as the line number in the #prompt command.
+  </Example>
 </Help>

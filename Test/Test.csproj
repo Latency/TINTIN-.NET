@@ -2,8 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <StartupObject>Test.Program1</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Program.cs" />
+    <Compile Remove="Utilities.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
@@ -13,12 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TinTin\TinTin.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="CSTypes">
-      <HintPath>..\..\CSTypes\CSTypes\bin\Debug\netcoreapp2.0\CSTypes.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Regexp" Modified="9/16/2017" />
+  <Command Name="Regexp" Modified="2017-09-16" />
   <Syntax>{string} {regex} {true} {false}</Syntax>
   <Description>
 The #regex command (short for regular expression) is used to compare the given string to the given regular expression.
