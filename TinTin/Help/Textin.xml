@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Textin" Modified="2017-09-16" />
+  <Command Name="Textin" />
   <Syntax>{filename}</Syntax>
   <Description>
     This will read in a file and send each line to the mud. The text will not be parsed by tintin.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Split" Modified="2017-09-16" />
+  <Command Name="Split" />
   <Syntax>#split {bottom row} {top row}</Syntax>
   <Description>
     Splits the screen, resulting in the top part of the screen receiving mud output, and the bottom part receiving keyboard input.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Highlight" Modified="2017-09-16" />
+  <Command Name="Highlight" />
   <Syntax>{message} {color}</Syntax>
   <Description>
     Adds a message to your highlight list.

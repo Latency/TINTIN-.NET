@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Config" Modified="2017-09-16" />
+  <Command Name="Config" />
   <Syntax>{option} {argument}</Syntax>
   <Description>
     When TinTin# starts up it will generate a config file, it can be modified with the config command.

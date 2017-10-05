@@ -13,11 +13,11 @@ using TinTin.Entities;
 
 namespace TinTin {
   public static partial class Program {
-    public static TinTinData TinTin = new TinTinData();
-    internal static TerminalData Terminal = new TerminalData();
-    internal static ShellData Shell = new ShellData();
+    public static TinTinData TinTin;
+    internal static TerminalData Terminal;
+    internal static ShellData Shell;
 
-
+    
     /// <summary>
     ///   The main entry point for the application.
     /// </summary>

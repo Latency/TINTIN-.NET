@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Delay" Modified="2017-09-16" />
+  <Command Name="Delay" />
   <Syntax>{milliseconds} {commands}</Syntax>
   <Syntax>{name} {command} {milliseconds}</Syntax>
   <Description>

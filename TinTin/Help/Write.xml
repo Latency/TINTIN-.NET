@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Write" Modified="2017-09-16" />
+  <Command Name="Write" />
   <Syntax>{filename}</Syntax>
   <Description>
     This command will write all your tintin lists to file.

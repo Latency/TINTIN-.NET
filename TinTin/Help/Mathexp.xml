@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Mathexp" Modified="2017-09-16" />
+  <Command Name="Mathexp" />
   <Syntax></Syntax>
   <Description>
     Used for calculations and boolean if checks.

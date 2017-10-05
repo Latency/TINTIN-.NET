@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Tab" Modified="2017-09-16" />
+  <Command Name="Tab" />
   <Syntax>{completionword}</Syntax>
   <Description>
     The tab command will add the completionword to your tab completion list.

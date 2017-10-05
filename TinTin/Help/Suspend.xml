@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Suspend" Modified="2017-09-16" />
+  <Command Name="Suspend" />
   <Syntax></Syntax>
   <Description>
     This will place TinTin# in the background and you'll return to the shell.

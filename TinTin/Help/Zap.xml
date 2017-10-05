@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Zap" Modified="2017-09-16" />
+  <Command Name="Zap" />
   <Syntax></Syntax>
   <Description>
     Will close the current active session.

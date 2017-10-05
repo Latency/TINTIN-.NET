@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Replace" Modified="2017-09-16" />
+  <Command Name="Replace" />
   <Syntax>{variable} {oldtext} {newtext}</Syntax>
   <Description>
 This command will search the variable for the given string in oldtext and replace it with the string given in newtext.

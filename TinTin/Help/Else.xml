@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Else" Modified="2017-09-16" />
+  <Command Name="Else" />
   <Syntax>{commands}</Syntax>
   <Description>
     Follows an #IF or #ELSEIF statement and is only called if the proceeding #IF or #ELSEIF is false.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Bell" Modified="2017-09-16" />
+  <Command Name="Bell" />
   <Syntax>#bell</Syntax>
   <Description>
     This command rings the terminal bell. It's obsolete and should be avoided, instead use #showme {\a} to send the terminal

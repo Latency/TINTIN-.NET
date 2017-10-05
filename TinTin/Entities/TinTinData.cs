@@ -62,7 +62,7 @@ namespace TinTin.Entities {
 
     public List<string> vars = new List<string>();
 
-    public List<XmlDocument> help = new List<XmlDocument>();
+    public Dictionary<string, XmlDocument> help = new Dictionary<string, XmlDocument>();
 
     public List<string> cmds = new List<string>();
 

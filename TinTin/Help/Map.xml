@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Map" Modified="2017-09-16" />
+  <Command Name="Map" />
   <Syntax></Syntax>
   <Description>
     Used for the auto mapper and supports most of the auto mapping functionality available.

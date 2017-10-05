@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Prompt" Modified="2017-09-16" />
+  <Command Name="Prompt" />
   <Syntax>{message} {newmessage} {row}</Syntax>
   <Description>
 This command works very much like the substitute command and only works while in split mode. It will substitute the server

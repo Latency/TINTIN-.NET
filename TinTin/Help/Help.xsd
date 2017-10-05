@@ -1,38 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="Help">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="Command">
-          <xsd:complexType>
-            <xsd:simpleContent>
-              <xsd:extension base="xsd:string">
-                <xsd:attribute name="Name" type="xsd:string" />
-                <xsd:attribute name="Modified" type="xsd:date" />
-              </xsd:extension>
-            </xsd:simpleContent>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
-          <xsd:element name="Syntax" type="xsd:string" />
-        </xsd:sequence>
-        <xsd:element name="Description" type="xsd:string" />
-        <xsd:sequence minOccurs="0" maxOccurs="unbounded">
-          <xsd:element name="Example">
-            <xsd:complexType>
-              <xsd:simpleContent>
-                <xsd:extension base="xsd:string">
-                  <xsd:attribute name="Usage" type="xsd:string" />
-                  <xsd:attribute name="Default" type="xsd:string" />
-                </xsd:extension>
-              </xsd:simpleContent>
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <xsd:element name="Notes" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-</xsd:schema>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Help" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Help">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Command">
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Syntax" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="Description" />
+        <xs:element name="Example" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="Usage" type="xs:string" />
+                <xs:attribute name="Default" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Notes" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

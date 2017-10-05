@@ -8,6 +8,7 @@
 //  *****************************************************************************
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
@@ -29,21 +30,24 @@ namespace TinTin {
       var assembly = Assembly.GetAssembly(typeof(Help));
 
       // Load schema definition file.
-      var strm = assembly.GetManifestResourceStream(Resources.HELP_SCHEMA);
-      var xsd = XmlSchema.Read(strm ?? throw new NullReferenceException($"Unable to fetch embedded resource for `{Resources.HELP_SCHEMA}'."), null);
+      var xsd = XmlSchema.Read(assembly.GetManifestResourceStream(Resources.HELP_SCHEMA) ?? throw new NullReferenceException($"Unable to fetch embedded resource for `{Resources.HELP_SCHEMA}'."), null);
 
       // Cache help files.
       foreach (var resourceName in assembly.GetManifestResourceNames().Where(name => name.EndsWith(".xml"))) {
-        var stream = assembly.GetManifestResourceStream(resourceName);
-        if (stream == null)
-          throw new NullReferenceException($"Unable to fetch embedded resource for `{resourceName}'.");
-
-        var document = new XmlDocument();
-        using (stream) {
+        using (var stream = assembly.GetManifestResourceStream(resourceName)) {
+          if (stream == null)
+            throw new NullReferenceException($"Unable to fetch embedded resource for `{resourceName}'.");
           try {
+            var document = new XmlDocument();
             document.Schemas.Add(xsd);
             document.Load(stream);
             document.Validate(null);
+            // Cache stream into memory.
+            var name = Path.GetFileNameWithoutExtension(resourceName);
+            name = name?.Substring(name.LastIndexOf('.') + 1);
+            if (string.IsNullOrEmpty(name))
+              throw new NullReferenceException();
+            Program.TinTin.help.Add(name, document);
           } catch (XmlSchemaValidationException) {
             Program.Log.LogInformation($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}{Environment.NewLine}\tSchema validation failed for `{resourceName}'.");
             throw;
@@ -51,8 +55,6 @@ namespace TinTin {
             Program.Log.LogError($"{GetType().Namespace}.{GetType().Name}.{MethodBase.GetCurrentMethod().Name}{Environment.NewLine}\tDocument loading failed for `{resourceName}'.");
             throw;
           }
-          // Cache stream into memory.
-          Program.TinTin.help.Add(document);
         }
       }
     }

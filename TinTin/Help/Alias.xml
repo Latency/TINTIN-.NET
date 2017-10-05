@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Alias" Modified="2017-09-16" />
+  <Command Name="Alias" />
   <Syntax>{name} {commands}</Syntax>
   <Description>
     The #alias command can be used to shorten up long or oftenly used commands. The %1-99 variables are substituted from the

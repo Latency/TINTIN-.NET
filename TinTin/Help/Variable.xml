@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Variable" Modified="2017-09-16" />
+  <Command Name="Variable" />
   <Syntax>{name} {string}</Syntax>
   <Description>
     Variables differ from the %0-99 arguments in that a full word may be used as a variable.

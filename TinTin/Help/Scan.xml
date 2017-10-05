@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Scan" Modified="2017-09-16" />
+  <Command Name="Scan" />
   <Syntax></Syntax>
   <Description>
     Reads in a filename and sending it to the screen as if it was mud output.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Showme" Modified="2017-09-16" />
+  <Command Name="Showme" />
   <Syntax>{message} {line number}</Syntax>
   <Description>
     Messages displayed by the showme command can be triggered, and can be used to debug actions, substitutions, etc.

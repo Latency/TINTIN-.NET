@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Chat_Protocol" Modified="2017-09-16" />
+  <Command Name="Chat_Protocol" />
   <Syntax>a Connection</Syntax>
   <Description>
 Caller: 

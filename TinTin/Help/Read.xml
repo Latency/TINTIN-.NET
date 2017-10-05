@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Read" Modified="2017-09-16" />
+  <Command Name="Read" />
   <Syntax>{filename}</Syntax>
   <Description>
 This command will read in a command file.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Colors" Modified="2017-09-16" />
+  <Command Name="Colors" />
   <Syntax>{a} {b} {c}</Syntax>
   <Description>
     Parameter 'a': VT100 code

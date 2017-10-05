@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Cursor" Modified="2017-09-16" />
+  <Command Name="Cursor" />
   <Syntax>{option}</Syntax>
   <Description>
     Typing #cursor without an option will show all available cursor options. The cursor command's primarly goal is adding

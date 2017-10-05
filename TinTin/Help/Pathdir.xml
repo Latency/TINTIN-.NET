@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Pathdir" Modified="2017-09-16" />
+  <Command Name="Pathdir" />
   <Syntax>{forward direction} {backward direction} {coord}</Syntax>
   <Description>
 By default tintin sets the most commonly used movement commands meaning you generally don't really have to bother with

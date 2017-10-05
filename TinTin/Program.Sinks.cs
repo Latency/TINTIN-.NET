@@ -10,11 +10,9 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Serilog;
+using TinTin.Entities;
+using TinTin.Properties;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace TinTin {
@@ -34,27 +32,26 @@ namespace TinTin {
       // ---------------------------------------------------------------------
       #endregion Exception Sink Handlers
 
+      #region Fields
+      // ---------------------------------------------------------------------
+      TinTin = new TinTinData {
+        tintin_char = Resources.TINTIN_CHAR[0]
+      };
+
+      Terminal = new TerminalData {
+        cols = Console.WindowWidth,
+        rows = Console.WindowHeight
+      };
+
+      Shell = new ShellData();
+      // ---------------------------------------------------------------------
+      #endregion Fields
+      
       #region Logging
       // ---------------------------------------------------------------------
 
-      var services = new ServiceCollection();
-      services.AddLogging();
-
-      // Initialize Autofac
-      var builder = new ContainerBuilder();
-      // Use the Populate method to register services which were registered to IServiceCollection
-      builder.Populate(services);
-
-      // Build the final container
-      var container = builder.Build();
-
-      // Register events.
-      builder.RegisterType<LoggerFactory>().As<ILoggerFactory>().SingleInstance();
-      builder.RegisterType(typeof(Logger<>)).As(typeof(ILogger<>)).SingleInstance();
-
-      var loggerFactory = container.Resolve<ILoggerFactory>();
-      loggerFactory.AddConsole().AddSerilog();
-
+      var loggerFactory = new LoggerFactory();
+      loggerFactory.AddConsole();
       Log = loggerFactory.CreateLogger(Assembly.GetExecutingAssembly().FullName);
 
       // ---------------------------------------------------------------------

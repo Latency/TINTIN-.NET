@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Switch" Modified="2017-09-16" />
+  <Command Name="Switch" />
   <Syntax>{condition} {arguments}</Syntax>
   <Description>
     Works similar to the switch statement in other languages.

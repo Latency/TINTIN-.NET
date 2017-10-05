@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Function" Modified="2017-09-16" />
+  <Command Name="Function" />
   <Syntax>{name} {commands}</Syntax>
   <Description>
 The function command is used much like a variable, except that you can pass along arguments. You can execute commands inside

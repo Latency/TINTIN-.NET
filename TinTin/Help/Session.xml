@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Session" Modified="2017-09-16" />
+  <Command Name="Session" />
   <Syntax>{name} {address} {port}</Syntax>
   <Description>
     Will start a session with the given name, connecting to the specified address and port.

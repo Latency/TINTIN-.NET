@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Log" Modified="2017-09-16" />
+  <Command Name="Log" />
   <Syntax>{mode} {filename}</Syntax>
   <Description>
     Logs all data received in the scrolling region to the specified filename.

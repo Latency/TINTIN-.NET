@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Wildcards" Modified="2017-09-16" />
+  <Command Name="Wildcards" />
   <Syntax>used for string match searches using regular expressions.</Syntax>
   <Description>
 If the regex starts with ^ the beginning of the string must match. If the string ends with a $ the end of the string and

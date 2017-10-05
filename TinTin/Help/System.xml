@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="System" Modified="2017-09-16" />
+  <Command Name="System" />
   <Syntax>{commands}</Syntax>
   <Description>
     The system command allows you to execute commands in the shell.

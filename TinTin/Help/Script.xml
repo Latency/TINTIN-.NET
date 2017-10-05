@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
-  <Command Name="Script" Modified="2017-09-16" />
+  <Command Name="Script" />
   <Syntax>{variable} {shell commands}</Syntax>
   <Description>
 The script command allows you to execute commands in the shell. The output of these commands will be stored as a list in the
