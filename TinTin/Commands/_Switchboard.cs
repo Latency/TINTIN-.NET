@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using CSTypes;
 using TinTin.Interfaces;
 using TinTin.Properties;
@@ -43,7 +44,28 @@ namespace TinTin.Commands {
       // Re-assign the <i>kvp.Key</i> to the parameter list.
       // Assign the delegate mapping to the <i>kvp.Key</i> to the <i>kvp.Value</i>.
       var ai = new ArgInterpreter(line.TrimStart(' ', Resources.TINTIN_CHAR[0]), ArgTypes.Cut);
-      return new KeyValuePair<string, Delegate>(ai.Tokens[1].Trim(), CMD.Where(x => x.Key == ai.Tokens[0].ToLower()).Select(x => x.Value).FirstOrDefault());
+      var buf = ai.Tokens.Count > 1 ? ai.Tokens[1] : string.Empty;
+      return new KeyValuePair<string, Delegate>(buf.Trim(), CMD.Where(x => x.Key == ai.Tokens[0].ToLower()).Select(x => x.Value).FirstOrDefault());
+    }
+
+
+    /// <summary>
+    ///  Usage
+    /// </summary>
+    /// <param name="method"></param>
+    private void Usage(string method) {
+      var item = Program.TinTin.help[method];
+      var b = item.GetElementsByTagName("Command")[0];
+      if (b.Attributes == null)
+        return;
+      foreach (XmlAttribute a in b.Attributes) {
+        if (a.Name != "Name" || a.Value != method)
+          continue;
+        const string syntax = "Syntax";
+        foreach (XmlNode usage in item.GetElementsByTagName(syntax))
+          Program.Print($"{syntax}:  {a.Value} {usage.InnerText}");
+        return;
+      }
     }
   }
 }

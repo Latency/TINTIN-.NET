@@ -1,0 +1,8 @@
+﻿{
+  "type": "object",
+  "properties": {
+    "property": {
+      "type": ["number", "string", "boolean"]
+    }
+  }
+}

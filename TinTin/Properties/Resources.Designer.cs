@@ -70,6 +70,15 @@ namespace TinTin.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TinTin.Config.Class-Schema.json.
+        /// </summary>
+        internal static string CLASS_SCHEMA {
+            get {
+                return ResourceManager.GetString("CLASS_SCHEMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ;.
         /// </summary>
         internal static string COMMAND_SEPARATOR {

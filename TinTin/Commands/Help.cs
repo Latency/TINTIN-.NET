@@ -7,6 +7,7 @@
 //  Copywrite:  Bio-Hazard Industries - 1998-2017
 //  *****************************************************************************
 
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
@@ -21,7 +22,7 @@ namespace TinTin.Commands {
         case 0: {
           // Display all help entries.
           var sb = new StringBuilder();
-          Usage();
+          Usage(MethodBase.GetCurrentMethod().Name);
           sb.AppendLine(new string('=', Max(2, Program.Terminal.cols - 2)));
           foreach (var kvp in Program.TinTin.help) {
             var b = kvp.Value.GetElementsByTagName("Command")[0];
@@ -76,24 +77,8 @@ namespace TinTin.Commands {
         }
         default:
           // Display usage.
-          Usage();
+          Usage(MethodBase.GetCurrentMethod().Name);
           break;
-      }
-    }
-
-    
-    private static void Usage() {
-      var item = Program.TinTin.help["Help"];
-      var b = item.GetElementsByTagName("Command")[0];
-      if (b.Attributes == null)
-        return;
-      foreach (XmlAttribute a in b.Attributes) {
-        if (a.Name != "Name" || a.Value != "Help")
-          continue;
-        const string syntax = "Syntax";
-        foreach (XmlNode usage in item.GetElementsByTagName(syntax))
-          Program.Print($"{syntax}:  {a.Value} {usage.InnerText}");
-        return;
       }
     }
   }

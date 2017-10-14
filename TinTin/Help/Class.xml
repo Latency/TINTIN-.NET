@@ -1,23 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Help>
   <Command Name="Class" />
-  <Syntax>{name} {open|close|read filename|write filename|kill}</Syntax>
-  <Description />
-  <Example Usage="#class {&lt;classname&gt;} {open}">
-    Opens a class and automatically close the previously opened class (if any), all triggers added
-    afterwards will be assigned to this class until it is closed.
+  <Syntax>{name} &lt;JSON&gt;}</Syntax>
+  <Description>
+    Defines a class used as a container and custom complex dynamic type.
+    
+    Contains built-in properties reserved containing the following:
+    1. string     Name
+    2. string     JSON
+    3. MemberInfo PropertyInfo
+  </Description>
+  <Example Usage="#class {&lt;classname&gt;}">
+    Displays the class type registered, listing its properties and accessors.
+
+    class Test {
+      System.String   property             { get; set; }
+      System.Int32    type                 { get; set; }
+      System.String   Name                 { get; private set; }
+      System.String   JSON                 { get; private set; }
+      System.Object   PropertyInfo         { get; private set; }
+    }
   </Example>
-  <Example Usage="#class {&lt;classname&gt;} {close}">
-    Closes the currently opened class.
-  </Example>
-  <Example Usage="#class {&lt;classname&gt;} {read} {&lt;filename&gt;}">
-    The {read} option will open the provided class, read the given file, and close the class after reading.
-  </Example>
-  <Example Usage="#class {&lt;classname&gt;} {write} {&lt;filename&gt;}">
-    Writes all triggers of the given class to file.
-    This option can be used to store data by assigning variables to belong to a specific class.
-  </Example>
-  <Example Usage="#class {&lt;classname&gt;} {kill}">
-    Deletes all triggers of the given class.
+  <Example Usage="#class Test {&quot;property&quot;:&quot;string&quot;, &quot;type&quot;:&quot;int&quot;}">
+    Defines a custom complex dynamic type based on built-in basic types.
   </Example>
 </Help>
