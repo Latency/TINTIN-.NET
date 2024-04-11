@@ -22,7 +22,7 @@ namespace TinTin {
   /// <summary>
   ///  DynamicObject
   /// </summary>
-  public static class DynamicClass {
+  internal static class DynamicClass {
     private enum Instr {
       Getter,
       Setter,
@@ -148,7 +148,7 @@ namespace TinTin {
 
       // Constructor:  (Default)
       // <code>
-      //  .custom instance void [Newtonsoft.Json]Newtonsoft.Json.JsonConverterAttribute::.ctor(class [mscorlib]System.Type) = { type(ActiveMQ.Entities.PayloadComplexTypeConverter) }
+      //  .custom instance void [Newtonsoft.Json]Newtonsoft.Json.JsonConverterAttribute::.ctor(class [mscorlib]System.Type) = { type(<NameSpace>.PayloadComplexTypeConverter) }
       //   .method public hidebysig specialname rtspecialname instance void .ctor() cil managed
       //  {
       //  }

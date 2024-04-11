@@ -9,9 +9,10 @@
 
 using System.Reflection;
 using System.Reflection.Emit;
+// ReSharper disable InconsistentNaming
 
 namespace TinTin.Entities {
-  public class BuilderData {
+  internal class BuilderData {
     public BuilderData() {
       _methodAttributes = MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.HideBySig | MethodAttributes.Virtual;
     }

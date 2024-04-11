@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="Gag" />
+  <Syntax>{message}</Syntax>
+  <Description>
+    Does the same thing as #substitute {message} {.} and adds the message to your substitution list.
+    
+    A gagged message will no longer be displayed.
+  </Description>
+  <Example Usage="#gag {%iTwinkie chats}">
+    If Twinkie is an annoying person, he'll be a gagged annoying person with this gag.
+    
+    The %i at the start makes the gag case incensitive, so if Twinkie logs in as TWINKIE the gag will still work.
+  </Example>
+  <Notes>
+    Remove gags with the '#ungag' command.
+  </Notes>
+</Help>

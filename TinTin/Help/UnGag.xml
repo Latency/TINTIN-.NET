@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Help>
+  <Command Name="UnGag" />
+  <Syntax>{message}</Syntax>
+  <Description>
+    Removes the #gag matching {message} and removes it from the substitution list.
+  </Description>
+  <Example Usage="#ungag {%iTwinkie chats}" />
+</Help>
